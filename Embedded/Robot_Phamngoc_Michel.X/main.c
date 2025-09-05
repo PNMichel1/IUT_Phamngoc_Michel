@@ -15,7 +15,7 @@
 int main (void){
     InitOscillator();
     InitIO();
-    InitTimer23();
+    InitTimer1();
 
 
 while(1){

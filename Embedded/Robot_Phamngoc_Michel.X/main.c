@@ -11,11 +11,15 @@
 #include "ChipConfig.h"
 #include "IO.h"
 #include "timer.h"
+#include "PWM.h"
 
 int main (void){
     InitOscillator();
     InitIO();
-    InitTimer1();
+    InitPWM();
+    InitTimer23();
+  
+
 
 
 while(1){

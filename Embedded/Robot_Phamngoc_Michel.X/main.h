@@ -30,6 +30,8 @@
 #define STATE_TOURNE_GAUCHE_2 18
 #define STATE_TOURNE_DROITE_2 19
 #define RECULE 20
+#define STATE_CAS 21
+#define STATE_TEMPS 22
 
 #define PAS_D_OBSTACLE 0
 #define OBSTACLE_A_GAUCHE 1
@@ -44,6 +46,7 @@
 #define OBSTACLE_EN_FACE_1 8
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode();
+
 
 
 #endif	/* MAIN_H */

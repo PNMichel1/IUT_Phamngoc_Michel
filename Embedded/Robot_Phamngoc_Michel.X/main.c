@@ -15,7 +15,7 @@
 #include "ADC.h"
 #include "Robot.h"
 #include "main.h"
-int Capteur, a = 0;
+int Capteur;
 
 int main(void) {
     InitOscillator();
@@ -25,8 +25,8 @@ int main(void) {
     InitTimer1();
     InitTimer4();
     //InitTimer23();
-
-    EN_PWM = 1;
+    
+    EN_PWM=1;
 
 
 
@@ -74,40 +74,43 @@ int main(void) {
 
 
 
-            if (robotState.distanceTelemetreGauche1 < 15) {
+            if (robotState.distanceTelemetreGauche1 < 30) {
                 LED_BLANCHE_1 = 1;
                 Capteur = Capteur | 0x10;
             } else {
                 LED_BLANCHE_1 = 0;
                 Capteur = Capteur & 0b01111;
             }
-            if (robotState.distanceTelemetreGauche < 25) {
+            if (robotState.distanceTelemetreGauche < 30) {
                 LED_BLEUE_1 = 1;
                 Capteur = Capteur | 0b01000;
             } else {
                 LED_BLEUE_1 = 0;
                 Capteur = Capteur & 0b10111;
             }
-            if (robotState.distanceTelemetreCentre < 30) {
+            if (robotState.distanceTelemetreCentre < 35) {
                 LED_ORANGE_1 = 1;
                 Capteur = Capteur | 0b00100;
             } else {
                 LED_ORANGE_1 = 0;
                 Capteur = Capteur & 0b11011;
             }
-            if (robotState.distanceTelemetreDroit < 25) {
+            if (robotState.distanceTelemetreDroit < 30) {
                 LED_ROUGE_1 = 1;
                 Capteur = Capteur | 0b00010;
             } else {
                 LED_ROUGE_1 = 0;
                 Capteur = Capteur & 0b11101;
             }
-            if (robotState.distanceTelemetreDroit1 < 15) {
+            if (robotState.distanceTelemetreDroit1 < 30) {
                 LED_VERTE_1 = 1;
                 Capteur = Capteur | 0b00001;
             } else {
                 LED_VERTE_1 = 0;
                 Capteur = Capteur & 0b11110;
+            }
+            if(robotState.distanceTelemetreCentre > 35 && robotState.distanceTelemetreGauche > 20 && robotState.distanceTelemetreDroit > 20 && robotState.distanceTelemetreDroit1 > 20 && robotState.distanceTelemetreGauche1 > 20){
+                Capteur =  0b10001;
             }
         }
 
@@ -139,7 +142,6 @@ void OperatingSystemLoop(void) {
                 stateRobot = STATE_AVANCE;
             break;
         case STATE_AVANCE:
-            a = 0;
             PWMSetSpeedConsigne(30, MOTEUR_DROIT);
             PWMSetSpeedConsigne(30, MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
@@ -148,8 +150,7 @@ void OperatingSystemLoop(void) {
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_GAUCHE:
-            a = 0;
-            PWMSetSpeedConsigne(20, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(10, MOTEUR_DROIT);
             PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
@@ -157,61 +158,37 @@ void OperatingSystemLoop(void) {
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_DROITE:
-            a = 0;
             PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(20, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(10, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE:
-            PWMSetSpeedConsigne(15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
-            stateRobot = STATE_CAS;
-            if (a >= 5) {
-                timestamp = 0;
-                stateRobot = STATE_TEMPS;
-            }
-
+            PWMSetSpeedConsigne(12, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(-12, MOTEUR_GAUCHE);
+            stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE:
-            PWMSetSpeedConsigne(-15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
-            stateRobot = STATE_CAS;
-            if (a >= 10) {
-                timestamp = 0;
-                stateRobot = STATE_TEMPS;
-            }
-
+            PWMSetSpeedConsigne(-12, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(12, MOTEUR_GAUCHE);
+            stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
             SetNextRobotStateInAutomaticMode();
             break;
 
         case RECULE:
-            a = 0;
             PWMSetSpeedConsigne(-15, MOTEUR_DROIT);
             PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
-        case STATE_CAS:
-            a=a+1;
-            stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
 
-            break;
-
-        case STATE_TEMPS:
-            if (timestamp >= 3000){
-                a = 0;
-            SetNextRobotStateInAutomaticMode();
-            }
-            break;
         default:
-            a = 0;
             stateRobot = STATE_ATTENTE;
             break;
     }
@@ -329,7 +306,6 @@ void SetNextRobotStateInAutomaticMode() {
 
     else if (positionObstacle == OBSTACLE_A_DROITE_1)
         nextStateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE;
-
 
     else if (positionObstacle == OBSTACLE_EN_FACE_1)
         nextStateRobot = STATE_AVANCE;

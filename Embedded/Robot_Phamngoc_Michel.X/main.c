@@ -17,6 +17,7 @@
 #include "main.h"
 int Capteur;
 
+
 int main(void) {
     InitOscillator();
     InitIO();
@@ -88,7 +89,7 @@ int main(void) {
                 LED_BLEUE_1 = 0;
                 Capteur = Capteur & 0b10111;
             }
-            if (robotState.distanceTelemetreCentre < 37) {
+            if (robotState.distanceTelemetreCentre < 40) {
                 LED_ORANGE_1 = 1;
                 Capteur = Capteur | 0b00100;
             } else {
@@ -203,7 +204,7 @@ void SetNextRobotStateInAutomaticMode() {
 
 
     else if (Capteur == 0b00010) //Obstacle àdroite
-        positionObstacle = OBSTACLE_A_DROITE;
+        positionObstacle = OBSTACLE_A_DROITE_1;
 
     else if (Capteur == 0b00100)
         positionObstacle = OBSTACLE_EN_FACE;

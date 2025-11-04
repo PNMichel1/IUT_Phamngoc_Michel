@@ -16,6 +16,7 @@ namespace RobotInterface
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool toogle;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace RobotInterface
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
-            bool toogle;
+            TextBoxréception.Text += ("Reçu : "+textBoxEmission.Text + "\n");
+            textBoxEmission.Text = "";
             if (toogle == false )
             {
                 buttonEnvoyer.Background = Brushes.RoyalBlue;

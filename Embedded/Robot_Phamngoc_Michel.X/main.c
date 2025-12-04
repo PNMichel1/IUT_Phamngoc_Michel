@@ -15,6 +15,7 @@
 #include "ADC.h"
 #include "Robot.h"
 #include "main.h"
+//
 int Capteur;
 
 
@@ -25,6 +26,7 @@ int main(void) {
     InitPWM();
     InitTimer1();
     InitTimer4();
+    InitUART();
     //InitTimer23();
     
     EN_PWM=1;
@@ -35,6 +37,9 @@ int main(void) {
 
     while (1) {
 
+       // SendMessageDirect((unsigned char*) "Bonjour", 7);
+       
+        
         /*  
              // unsigned int  AResult[] =ADCGetResult();  
            if (AResult[0] < 1084) {
@@ -57,6 +62,10 @@ int main(void) {
 
           LED_ORANGE_1 = 0;
       }*/
+
+
+
+
         if (ADCIsConversionFinished()) { //fin de l'aquisition du convertisseur
             ADCClearConversionFinishedFlag(); // on enleve le flag pour pouvoir faire une nouvelle conversion
             unsigned int * result = ADCGetResult(); //création d'un pointeur pour récupérer les données 

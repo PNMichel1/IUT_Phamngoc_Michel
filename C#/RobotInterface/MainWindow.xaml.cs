@@ -22,7 +22,6 @@ namespace RobotInterface
     public partial class MainWindow : Window
     {
         bool toogle;
-        int a=0;
         string receivedText;
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
@@ -56,10 +55,10 @@ namespace RobotInterface
               robot.receivedText = robot.byteListReceived.ToString();
             */
 
-            if (robot.byteListReceived.Count > 1)
+            while (robot.byteListReceived.Count > 0)
             {
-                TextBoxréception.Text += robot.byteListReceived.Dequeue().ToString();
-                TextBoxréception.Text = "";
+                TextBoxréception.Text += "0x"+robot.byteListReceived.Dequeue().ToString("X2")+" "; //X2 c'est pour convertir en Hexadécimal 
+               
             }
          
 
@@ -74,7 +73,7 @@ namespace RobotInterface
                 robot.byteListReceived.Enqueue(e.Data[i]);
                 
             }
-           
+          
         }
 
 
@@ -88,7 +87,7 @@ namespace RobotInterface
             {
                
                 //TextBoxréception.Text += ("Reçu : " + textBoxEmission.Text);
-                serialPort1.WriteLine(textBoxEmission.Text);
+                serialPort1.Write(textBoxEmission.Text);
 
                 //receivedText =textBoxEmission.Text ;
                 
@@ -124,15 +123,14 @@ namespace RobotInterface
         private void Test_Click(object sender, RoutedEventArgs e)
         {
           
-            List<byte> bytesliste = new List<byte>();
+            byte[] bytesliste = new byte[20];
             for (byte i = 0; i < 20; i++)
             {
-                bytesliste.Add((byte)(2 * i));
+                bytesliste[i]= (byte)(2 * i);
                 
             }
 
-            a++;
-            serialPort1.WriteLine(bytesliste[a].ToString());
+            serialPort1.Write(bytesliste, 0, bytesliste.Length);
 
 
 

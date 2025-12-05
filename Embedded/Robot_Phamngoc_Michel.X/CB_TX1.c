@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include "CB_TX1.h"
 #define CBTX1_BUFFER_SIZE 128
-int cbTx1Head=0;
-int cbTx1Tail=0;
+int cbTx1Head = 0;
+int cbTx1Tail = 0;
 unsigned char cbTx1Buffer[CBTX1_BUFFER_SIZE];
 unsigned char isTransmitting = 0;
 
 void SendMessage(unsigned char* message, int length) {
     unsigned char i = 0;
-    if (CB_TX1_RemainingSize() > length) {
+    if (CB_TX1_GetRemainingSize() > length) {
         //On peut écrire le message
         for (i = 0; i < length; i++)
             CB_TX1_Add(message[i]);
@@ -19,18 +19,19 @@ void SendMessage(unsigned char* message, int length) {
     }
 }
 
-void CB_TX1_Add(unsigned char value) {
-    //if(cbTx1Buffer>127)
-      //  cbTx1Head=0;
+void CB_TX1_Add(unsigned char value) {    
     cbTx1Buffer[cbTx1Head] = value;
-    cbTx1Head ++;
+    cbTx1Head++;
+    if (cbTx1Head >= CBTX1_BUFFER_SIZE)
+        cbTx1Head = 0;
 }
 
 unsigned char CB_TX1_Get(void) {
-    if(cbTx1Tail>127)
-        cbTx1Tail=0;
     unsigned char word = cbTx1Buffer[cbTx1Tail];
-    cbTx1Tail ++;
+    cbTx1Tail++;    
+    if (cbTx1Tail >= CBTX1_BUFFER_SIZE)
+        cbTx1Tail = 0;
+    return word;
 }
 
 void __attribute__((interrupt, no_auto_psv)) _U1TXInterrupt(void) {
@@ -38,7 +39,7 @@ void __attribute__((interrupt, no_auto_psv)) _U1TXInterrupt(void) {
     if (cbTx1Tail != cbTx1Head) {
         SendOne();
     } else
-        isTransmitting = 0;s
+        isTransmitting = 0;
 }
 
 void SendOne() {
@@ -54,19 +55,14 @@ unsigned char CB_TX1_IsTranmitting(void) {
 int CB_TX1_GetDataSize(void) {
     //return size of data stored in circular buffer
     int dataSize;
-    if(cbTx1Head-cbTx1Tail>0)
-        dataSize= cbTx1Head-cbTx1Tail;
-    else if(cbTx1Head-cbTx1Tail<0)
-        dataSize= 128-(cbTx1Tail-cbTx1Head);
+    if (cbTx1Head >= cbTx1Tail)
+        dataSize = cbTx1Head - cbTx1Tail;
+    else
+        dataSize = CBTX1_BUFFER_SIZE - (cbTx1Tail - cbTx1Head);
     return dataSize;
 }
 
 int CB_TX1_GetRemainingSize(void) {
-    //return size of remaining size in circular buffer
-    int remainingSize;
-      if(cbTx1Head-cbTx1Tail>0)
-        remainingSize= 128-(cbTx1Head-cbTx1Tail);
-    else if(cbTx1Head-cbTx1Tail<0)
-        remainingSize= cbTx1Tail-cbTx1Head;
-    return remainingSize;
+    //return size of remaining size in circular buffer   
+    return CBTX1_BUFFER_SIZE - CB_TX1_GetDataSize();
 }

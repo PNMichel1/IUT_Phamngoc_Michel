@@ -21,6 +21,7 @@ namespace RobotInterface
 
     public partial class MainWindow : Window
     {
+        byte CalculateChecksum;
         bool toogle;
         string receivedText;
         ExtendedSerialPort serialPort1;
@@ -35,7 +36,7 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM11", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
                
@@ -134,6 +135,15 @@ namespace RobotInterface
 
 
 
+        }
+        private byte CalculateChecksum(int msgFunction,int msgPayloadLength, byte[] msgPayload)
+        {
+
+            byte checksum = 0x00;
+            checksum ^= 0xFE;
+
+            checksum ^= 0x00;
+            checksum^=(byte)
         }
     }
 }

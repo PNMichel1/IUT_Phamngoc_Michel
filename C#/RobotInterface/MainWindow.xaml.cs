@@ -23,7 +23,7 @@ namespace RobotInterface
     public partial class MainWindow : Window
     {
 
-        bool toogle;
+        bool toogle,b;
         string receivedText;
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
@@ -127,7 +127,7 @@ namespace RobotInterface
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
-
+          
 
             /*
             byte[] bytesliste = new byte[20];
@@ -140,9 +140,14 @@ namespace RobotInterface
             serialPort1.Write(bytesliste, 0, bytesliste.Length);
             */
             byte[] array = Encoding.ASCII.GetBytes("Bonjour");
-            byte[] array1 = Encoding.ASCII.GetBytes("1");
-            UartEncodeAndSendMessage(128, array.Length, array);
-            UartEncodeAndSendMessage(32, array1.Length, array1);
+            byte[] array1 = new byte[] { 40,70,7 };
+            //UartEncodeAndSendMessage(0x80, array.Length, array);
+            UartEncodeAndSendMessage(0x20, array1.Length, array1);
+            ProcessDecodedMessage(0x30, array1.Length, array1);
+           
+            
+
+
 
 
 
@@ -208,29 +213,42 @@ namespace RobotInterface
             switch(msgFunction)
             {
                 case 0x0080:
-                    TextBoxréception.Text = "Text recu :"+ Encoding.UTF8.GetString(msgPayload, 0, msgPayload.Length);
+                    TextBoxréception.Text = "Text recu : "+ Encoding.UTF8.GetString(msgPayload, 0, msgPayload.Length);
               
 
                     break;
                 case 0x0020:
 
-
-
-                    TextBoxréception.Text = "LED " + Encoding.UTF8.GetString(msgPayload, 0, 1);
-
+                    if (msgPayload[0]==1)
+                        if (msgPayload[1]==1)
+                            Led1.IsChecked = true;
+                    else
+                            Led1.IsChecked = false;
+                    if (msgPayload[0] == 2)
+                        if (msgPayload[1] == 1)
+                            Led2.IsChecked = true;
+                        else
+                            Led2.IsChecked = false;
+                    if (msgPayload[0] == 3)
+                        if (msgPayload[1] == 1)
+                            Led3.IsChecked = true;
+                        else
+                            Led3.IsChecked = false;
                     break;
+
                 case 0x0030:
-
-
-
-                 
-
+                    IRG.Text ="IR Gauche : " + msgPayload[0] + " cm";
+                    IRC.Text = "IR Centre : " + msgPayload[1] + " cm";
+                    IRD.Text = "IR Droite : " + msgPayload[2] + " cm";
                     break;
                 case 0x0040:
+                    MG.Text = "Vitesse Gauche : " + msgPayload[0] + "%";
+                    MD.Text = "Vitesse Droite : " + msgPayload[1] + "%";
 
 
 
-                   
+
+
                     break;
 
 
@@ -263,7 +281,7 @@ CheckSum
 }
 StateReception rcvState = StateReception.Waiting;
         int msgDecodedFunction = 0;
-        static int b = 0;
+        
         int msgDecodedPayloadLength = 0;
 byte[] msgDecodedPayload;
 int msgDecodedPayloadIndex = 0;
@@ -335,10 +353,10 @@ case StateReception.CheckSum:
 
                     if (calculatedChecksum == receivedChecksum)
                     {
-                        b = 1;
+                        b = true;
                     }
                     else
-                        b = 0;
+                        b = false;
 
 break;
 default:
@@ -347,4 +365,5 @@ break;
 }
 }
         }
+
 }

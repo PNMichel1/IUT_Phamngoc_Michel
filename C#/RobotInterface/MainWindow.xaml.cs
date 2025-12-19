@@ -59,7 +59,9 @@ namespace RobotInterface
 
             while (robot.byteListReceived.Count > 0)
             {
-                TextBoxréception.Text += "0x" + robot.byteListReceived.Dequeue().ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
+                byte Received = robot.byteListReceived.Dequeue();
+                TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
+                DecodeMessage(Received);
 
             }
 
@@ -73,7 +75,7 @@ namespace RobotInterface
             for (int i = 0; i < e.Data.Length; i++)
             {
                 robot.byteListReceived.Enqueue(e.Data[i]);
-                DecodeMessage(e.Data[i]);
+              
 
 
 
@@ -143,7 +145,7 @@ namespace RobotInterface
             byte[] array1 = new byte[] { 40,70,7 };
             //UartEncodeAndSendMessage(0x80, array.Length, array);
             UartEncodeAndSendMessage(0x20, array1.Length, array1);
-            ProcessDecodedMessage(0x30, array1.Length, array1);
+  
            
             
 
@@ -244,10 +246,6 @@ namespace RobotInterface
                 case 0x0040:
                     MG.Text = "Vitesse Gauche : " + msgPayload[0] + "%";
                     MD.Text = "Vitesse Droite : " + msgPayload[1] + "%";
-
-
-
-
 
                     break;
 
@@ -353,7 +351,7 @@ case StateReception.CheckSum:
 
                     if (calculatedChecksum == receivedChecksum)
                     {
-                        b = true;
+                        ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
                     }
                     else
                         b = false;

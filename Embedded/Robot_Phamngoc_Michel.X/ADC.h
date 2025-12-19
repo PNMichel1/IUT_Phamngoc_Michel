@@ -14,6 +14,7 @@ void ADC1StartConversionSequence();
 void ADCClearConversionFinishedFlag(void);
 unsigned int * ADCGetResult(void);
 void ADCClearConversionFinishedFlag(void);
+unsigned char ADCIsConversionFinished(void);
 
 #endif	/* ADC_H */
 

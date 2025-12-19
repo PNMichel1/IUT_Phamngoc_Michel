@@ -15,12 +15,15 @@
 #include "ADC.h"
 #include "Robot.h"
 #include "main.h"
+#include "UART.h"
 #include "CB_TX1.h"
 #include "CB_RX1.h"
 #include "libpic30.h"
+#include "UART_Protocol.h"
 //
 int Capteur;
-
+//unsigned char payload[] = {'B', 'o','n', 'j', 'o', 'u', 'r'};
+unsigned char payload[]={0,0,0};
 
 int main(void) {
     InitOscillator();
@@ -36,18 +39,25 @@ int main(void) {
 
 
      //SendMessageDirect((unsigned char*) "Bonjour", 7);
-
  
+   
     while (1) {
-      
+        
+        
+ //UartEncodeAndSendMessage(0x0080,7, payload);
+ //__delay32(40000000) ;       
+       
+       
+        
+ /*     
 int i;
 for(i=0; i< CB_RX1_GetDataSize(); i++)
 {
 unsigned char c = CB_RX1_Get();
 SendMessage(&c,1);
 }
-__delay32(1000);
 
+*/
         
         /*  
              // unsigned int  AResult[] =ADCGetResult();  
@@ -73,7 +83,8 @@ __delay32(1000);
       }*/
 
 
-
+     payload[0]=(char)robotState.distanceTelemetreGauche;
+            UartEncodeAndSendMessage(0x0030,256, payload);
 
         if (ADCIsConversionFinished()) { //fin de l'aquisition du convertisseur
             ADCClearConversionFinishedFlag(); // on enleve le flag pour pouvoir faire une nouvelle conversion
@@ -90,6 +101,7 @@ __delay32(1000);
             robotState.distanceTelemetreDroit1 = 34 / volts - 5;
 
 
+       
 
 
 
@@ -132,6 +144,7 @@ __delay32(1000);
                 Capteur =  0b10001;
             }
         }
+      
 
 
 

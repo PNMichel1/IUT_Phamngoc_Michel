@@ -44,7 +44,7 @@
 #define OBSTACLE_EN_FACE_1 8
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode();
-
+void CompteurEtape(void);
 
 
 #endif	/* MAIN_H */

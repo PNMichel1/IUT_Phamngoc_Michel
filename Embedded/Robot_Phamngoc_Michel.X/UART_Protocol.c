@@ -22,7 +22,7 @@ unsigned char UartCalculateChecksum(int msgFunction,
     checksum ^= msgFunction;
 
     checksum ^= msgPayloadLength >> 8;
-    checksum ^= msgPayloadLength ;
+    checksum ^= msgPayloadLength;
 
     for (int i = 0; i < msgPayloadLength; i++) {
         checksum ^= msgPayload[i];
@@ -32,6 +32,7 @@ unsigned char UartCalculateChecksum(int msgFunction,
 }
 
 static unsigned char trame[1024];
+
 void UartEncodeAndSendMessage(int msgFunction,
         int msgPayloadLength, unsigned char* msgPayload) {
     //Fonction d?encodage et d?envoi d?un message
@@ -53,25 +54,21 @@ void UartEncodeAndSendMessage(int msgFunction,
 void UartDecodeMessage(unsigned char c) {
 
     //Fonction prenant en entree un octet et servant a reconstituer les trames
-    int b = 0;
 
     switch (rcvState) {
         case Waiting:
-            if (c == 0xFE)
                 rcvState = FunctionMSB;
             break;
-            
+
         case FunctionMSB:
             // if (msgDecodedPayload == "00")
             //c byte or 00 string
-            if (c == 0x00) {
-                rcvState = FunctionLSB;
-            } else
-                rcvState = Waiting;
+            msgDecodedFunction = c;
+            rcvState = FunctionLSB;
 
             break;
         case FunctionLSB:
-            msgDecodedFunction = c;
+            msgDecodedFunction += c;
             rcvState = PayloadLengthMSB;
             break;
         case PayloadLengthMSB:
@@ -85,40 +82,26 @@ void UartDecodeMessage(unsigned char c) {
             break;
         case Payload:
 
-            msgDecodedPayload[msgDecodedPayloadIndex] += c;
+            msgDecodedPayload[msgDecodedPayloadIndex] = c;
             msgDecodedPayloadIndex++;
             if (msgDecodedPayloadIndex >= msgDecodedPayloadLength) {
                 rcvState = CheckSum;
                 msgDecodedPayloadIndex = 0;
-
             }
-
-
-
-
             break;
         case CheckSum:
 
-
-            receivedChecksum = c;
             calculatedChecksum = UartCalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
 
-            if (calculatedChecksum == receivedChecksum) {
-
-            } else
-                b = 0;
+            if (calculatedChecksum == c) {
+                UartProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+            }
             rcvState = Waiting;
             break;
         default:
             rcvState = Waiting;
             break;
     }
-
-
-
-
-
-
 
 }
 
@@ -166,12 +149,9 @@ void UartProcessDecodedMessage(int function,
 
 
             break;
+           
 
 
-        case 0x0040:
-            PWMSetSpeedConsigne(payload[0], MOTEUR_DROIT);
-            PWMSetSpeedConsigne(payload[1], MOTEUR_GAUCHE);
-            break;
 
 
 

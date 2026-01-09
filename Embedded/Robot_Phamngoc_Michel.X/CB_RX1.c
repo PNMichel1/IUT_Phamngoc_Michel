@@ -16,7 +16,6 @@ if(CB_RX1_GetRemainingSize()>0)
     cbRx1Head++;
      if(cbRx1Head>=CBRX1_BUFFER_SIZE)
         cbRx1Head=0;
-
  }
  
    

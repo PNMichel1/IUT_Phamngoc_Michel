@@ -60,7 +60,7 @@ namespace RobotInterface
             while (robot.byteListReceived.Count > 0)
             {
                 byte Received = robot.byteListReceived.Dequeue();
-                TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
+                //TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
                 DecodeMessage(Received);
 
             }
@@ -75,9 +75,7 @@ namespace RobotInterface
             for (int i = 0; i < e.Data.Length; i++)
             {
                 robot.byteListReceived.Enqueue(e.Data[i]);
-              
-
-
+          
 
             }
 
@@ -143,8 +141,8 @@ namespace RobotInterface
             */
             byte[] array = Encoding.ASCII.GetBytes("Bonjour");
             byte[] array1 = new byte[] { 40,70,7 };
-            //UartEncodeAndSendMessage(0x80, array.Length, array);
-            UartEncodeAndSendMessage(0x20, array1.Length, array1);
+            UartEncodeAndSendMessage(0x80, array.Length, array);
+            //UartEncodeAndSendMessage(0x20, array1.Length, array1);
   
            
             
@@ -165,8 +163,8 @@ namespace RobotInterface
             checksum ^= 0x00;
             checksum ^= (byte)msgFunction;
 
-            checksum ^= (byte)((msgPayloadLength >> 8) & 0xFF);
-            checksum ^= (byte)(msgPayloadLength & 0xFF);
+            checksum ^= (byte)(msgPayloadLength >> 8);
+            checksum ^= (byte)msgPayloadLength;
 
             for (int i = 0; i < msgPayloadLength; i++)
             {
@@ -248,6 +246,14 @@ namespace RobotInterface
                     MD.Text = "Vitesse Droite : " + msgPayload[1] + "%";
 
                     break;
+                case 0x0050:
+                    int instant = (((int)msgPayload[1]) << 24) + (((int)msgPayload[2]) << 16)
+                    + (((int)msgPayload[3]) << 8) + ((int)msgPayload[4]);
+                    rtbReception.Text += "\nRobot␣State␣:␣" +
+                    ((StateRobot)(msgPayload[0])).ToString() +
+                    "␣-␣" + instant.ToString() + "␣ms";
+                    break;
+
 
 
 
@@ -298,21 +304,13 @@ case StateReception.Waiting:
 
 
 break;
-case StateReception.FunctionMSB:
-                   // if (msgDecodedPayload == "00")
-                   //c byte or 00 string
-                        if (c == 0x00)
-                        {
-                  
-                        rcvState = StateReception.FunctionLSB;
-                    } else
-                        rcvState = StateReception.Waiting;
-
-
-
-break;
-case StateReception.FunctionLSB:
+case StateReception.FunctionMSB:     
                     msgDecodedFunction = c;
+                    rcvState = StateReception.FunctionLSB;
+
+                    break;
+case StateReception.FunctionLSB:
+                    msgDecodedFunction += c;
                 
                     rcvState = StateReception.PayloadLengthMSB;
                     break;
@@ -330,7 +328,7 @@ case StateReception.PayloadLengthLSB:
                     break;
 case StateReception.Payload:
 
-                    msgDecodedPayload[msgDecodedPayloadIndex] += c;
+                    msgDecodedPayload[msgDecodedPayloadIndex] = c;
                     msgDecodedPayloadIndex++;
                     if (msgDecodedPayloadIndex >= msgDecodedPayloadLength)
                     {
@@ -344,17 +342,15 @@ case StateReception.Payload:
                     
 break;
 case StateReception.CheckSum:
-                    int receivedChecksum, calculatedChecksum= 0x00;
-                    
-                    receivedChecksum = c;
-                    calculatedChecksum = CalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength,msgDecodedPayload);
+                    byte calculatedChecksum = CalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength,msgDecodedPayload);
 
-                    if (calculatedChecksum == receivedChecksum)
+                    if (calculatedChecksum == c)
                     {
                         ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+                        rcvState = StateReception.Waiting;
                     }
                     else
-                        b = false;
+                        rcvState = StateReception.Waiting;
 
 break;
 default:

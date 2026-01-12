@@ -57,12 +57,11 @@ void UartDecodeMessage(unsigned char c) {
 
     switch (rcvState) {
         case Waiting:
+            if (c == 0xFE)
                 rcvState = FunctionMSB;
             break;
 
         case FunctionMSB:
-            // if (msgDecodedPayload == "00")
-            //c byte or 00 string
             msgDecodedFunction = c;
             rcvState = FunctionLSB;
 
@@ -149,7 +148,20 @@ void UartProcessDecodedMessage(int function,
 
 
             break;
-           
+            
+        case 0x0050:
+            break;
+        case SET_ROBOT_STATE:
+            SetRobotState(msgPayload[0]);
+            break;
+        case SET_ROBOT_MANUAL_CONTROL:
+            SetRobotAutoControlState(msgPayload[0]);
+            break;
+        default:
+            break;
+
+
+
 
 
 

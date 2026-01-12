@@ -23,7 +23,8 @@ int payloadLength, unsigned char* payload);
 #define PayloadLengthLSB  4
 #define Payload 5
 #define CheckSum 6
-
+#define SET_ROBOT_STATE 0x0051
+#define SET_ROBOT_MANUAL_CONTROL 0x0052
 #ifdef	__cplusplus
 extern "C" {
 #endif

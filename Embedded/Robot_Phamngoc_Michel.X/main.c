@@ -145,14 +145,16 @@ void CompteurEtape(void) {
     UartEncodeAndSendMessage(0x50, 5, payload3);
 }
 
-void OperatingSystemLoop(void) { //zizi
+void OperatingSystemLoop(void) { 
     switch (stateRobot) {
         case STATE_ATTENTE:
             timestamp = 0;
 
             PWMSetSpeedConsigne(0, MOTEUR_DROIT);
             PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+            if(autoControlActivated)
             stateRobot = STATE_ATTENTE_EN_COURS;
+            break;
         case STATE_ATTENTE_EN_COURS:
 
             if (timestamp > 1000)
@@ -165,6 +167,7 @@ void OperatingSystemLoop(void) { //zizi
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
+              if(autoControlActivated)
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_GAUCHE:
@@ -174,6 +177,7 @@ void OperatingSystemLoop(void) { //zizi
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_EN_COURS:
+              if(autoControlActivated)
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_DROITE:
@@ -183,6 +187,7 @@ void OperatingSystemLoop(void) { //zizi
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_EN_COURS:
+            if(autoControlActivated)
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE:
@@ -192,6 +197,7 @@ void OperatingSystemLoop(void) { //zizi
             stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
+              if(autoControlActivated)
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE:
@@ -201,6 +207,7 @@ void OperatingSystemLoop(void) { //zizi
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
+              if(autoControlActivated)
             SetNextRobotStateInAutomaticMode();
             break;
 

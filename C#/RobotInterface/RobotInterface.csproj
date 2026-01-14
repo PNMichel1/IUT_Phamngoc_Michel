@@ -12,4 +12,10 @@
     <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort\ExtendedSerialPort.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="KeyboardHook">
+      <HintPath>..\KeyboardHook\bin\Release\net6.0\KeyboardHook.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

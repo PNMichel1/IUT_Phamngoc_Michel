@@ -15,7 +15,9 @@ int msgPayloadLength, unsigned char* msgPayload);
 void UartDecodeMessage(unsigned char c);
 void UartProcessDecodedMessage(int function,
 int payloadLength, unsigned char* payload);
-
+void SetRobotState(unsigned char state);
+void SetRobotAutoControlState(unsigned char state);
+extern int autoControlActivated;
 #define Waiting 0
 #define FunctionMSB 1
 #define FunctionLSB  2

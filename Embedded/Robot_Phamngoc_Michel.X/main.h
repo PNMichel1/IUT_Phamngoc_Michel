@@ -45,6 +45,7 @@
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode();
 void CompteurEtape(void);
+extern unsigned char stateRobot;
 
 
 #endif	/* MAIN_H */

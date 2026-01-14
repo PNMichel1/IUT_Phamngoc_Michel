@@ -12,6 +12,9 @@ using System.Windows.Shapes;
 using ExtendedSerialPort_NS;
 using System.Windows.Threading;
 using System.Net.NetworkInformation;
+using KeyboardHook_NS;
+
+
 
 namespace RobotInterface
 {
@@ -24,10 +27,12 @@ namespace RobotInterface
     {
 
         bool toogle,b;
+        bool autoControlActivated;
         string receivedText;
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
         Robot robot = new Robot();
+     
 
 
         public MainWindow()
@@ -40,6 +45,12 @@ namespace RobotInterface
             serialPort1 = new ExtendedSerialPort("COM3",115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
+            var _globalKeyboardHook = new GlobalKeyboardHook();
+            _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
+
+
+
+
 
 
         }
@@ -99,6 +110,7 @@ namespace RobotInterface
                 textBoxEmission.Text = "";
             }
         }
+      
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
@@ -117,9 +129,39 @@ namespace RobotInterface
                 toogle = !toogle;
 
             }
-        }   
+        }
 
-
+        private  void _globalKeyboardHook_KeyPressed(object? sender, KeyArgs e)
+        {
+            if (autoControlActivated == false)
+            {
+                switch (e.keyCode)
+                {
+                case KeyCode.LEFT:
+                     UartEncodeAndSendMessage(0x0051, 1, new byte[] {
+                        (byte)StateRobot.STATE_TOURNE_SUR_PLACE_GAUCHE });
+                break;
+                case KeyCode.RIGHT:
+                    UartEncodeAndSendMessage(0x0051, 1, new byte[] {
+                    (byte)StateRobot.STATE_TOURNE_SUR_PLACE_DROITE });
+                    break;
+                case KeyCode.UP:
+                    UartEncodeAndSendMessage(0x0051, 1, new byte[]
+                    { (byte)StateRobot.STATE_AVANCE });
+                    break;
+                case KeyCode.DOWN:
+                    UartEncodeAndSendMessage(0x0051, 1, new byte[]
+                    { (byte)StateRobot.STATE_ARRET });
+                    break;
+                case KeyCode.PAGEDOWN:
+                    UartEncodeAndSendMessage(0x0051, 1, new byte[]
+                    { (byte)StateRobot.STATE_RECULE });
+                    break;
+          
+                }
+            }
+        }
+        
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
             TextBoxréception.Text = "";
@@ -140,8 +182,8 @@ namespace RobotInterface
             serialPort1.Write(bytesliste, 0, bytesliste.Length);
             */
             byte[] array = Encoding.ASCII.GetBytes("Bonjour");
-            byte[] array1 = new byte[] { 40,70,7 };
-            UartEncodeAndSendMessage(0x80, array.Length, array);
+            byte[] array1 = new byte[] {6};
+            UartEncodeAndSendMessage(0x51, array1.Length, array1);
             //UartEncodeAndSendMessage(0x20, array1.Length, array1);
   
            
@@ -375,6 +417,17 @@ rcvState = StateReception.Waiting;
 break;
 }
 }
-        }
+
+      
+
+
+
+
+
+    }
+
+
+
+
 
 }

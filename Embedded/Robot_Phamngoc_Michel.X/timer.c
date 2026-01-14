@@ -4,6 +4,7 @@
 #include"PWM.h"
 #include"ADC.h"
 #include "main.h"
+#include "UART_Protocol.h"
 //Initialisation d?un timer 16 bits
  unsigned long timestamp=0;
  float FCY = 60000000;
@@ -55,7 +56,8 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
    
   
     timestamp++;
-    //OperatingSystemLoop();
+ 
+        OperatingSystemLoop();
   
 }
 

@@ -3,6 +3,7 @@
 #include "IO.h"
 #include "PWM.h"
 #include "CB_TX1.h"
+#include "main.h"
 
 int msgDecodedFunction = 0;
 int msgDecodedPayloadLength = 0;
@@ -10,6 +11,7 @@ unsigned char msgDecodedPayload[128];
 int msgDecodedPayloadIndex = 0;
 int receivedChecksum, calculatedChecksum = 0x00;
 int rcvState = 0;
+int autoControlActivated=0;
 
 unsigned char UartCalculateChecksum(int msgFunction,
         int msgPayloadLength, unsigned char* msgPayload) {
@@ -110,6 +112,7 @@ void UartProcessDecodedMessage(int function,
     //correspondant au message recu
 
     switch (function) {
+        /*
         case 0x0020:
             if (payload[0] == '1') {
                 if (payload[1] == '1')
@@ -145,17 +148,17 @@ void UartProcessDecodedMessage(int function,
                 else
                     LED_VERTE_1 = 0;
             }
-
-
             break;
             
-        case 0x0050:
-            break;
+      */
+            
+        
         case SET_ROBOT_STATE:
-            SetRobotState(msgPayload[0]);
+            SetRobotState(payload[0]);
             break;
         case SET_ROBOT_MANUAL_CONTROL:
-            SetRobotAutoControlState(msgPayload[0]);
+            SetRobotAutoControlState(payload[0]);
+            
             break;
         default:
             break;
@@ -173,6 +176,43 @@ void UartProcessDecodedMessage(int function,
 
 
 }
-//
-//Fonctions correspondant aux messages
-//
+
+
+void SetRobotState(unsigned char state){
+      switch(state){
+        case STATE_ATTENTE : // case 0
+            stateRobot = STATE_ATTENTE;
+        case STATE_AVANCE : // case 2
+            stateRobot = STATE_AVANCE;
+            break;
+        case STATE_TOURNE_GAUCHE : // case 4
+            stateRobot = STATE_TOURNE_GAUCHE;
+            break;
+        case STATE_TOURNE_DROITE : // case 6
+            stateRobot = STATE_TOURNE_DROITE;
+            break;
+        case STATE_TOURNE_SUR_PLACE_GAUCHE : // case 8
+            stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE;
+            break;
+        case STATE_TOURNE_SUR_PLACE_DROITE : // case 10
+            stateRobot = STATE_TOURNE_SUR_PLACE_DROITE;
+            break;
+        case STATE_ARRET : // case 12
+            stateRobot = STATE_ARRET;
+        case STATE_RECULE : // case 14
+            stateRobot = STATE_RECULE;
+            break;
+        default :
+            stateRobot = STATE_ATTENTE;
+            break;
+    }         
+        
+    
+}
+
+void SetRobotAutoControlState(unsigned char state) {
+    if(state == 0)
+        autoControlActivated=0;
+    else
+        autoControlActivated=1;//used dans timer
+}

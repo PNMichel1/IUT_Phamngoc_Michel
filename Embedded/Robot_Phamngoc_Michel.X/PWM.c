@@ -3,6 +3,7 @@
 #include "PWM.h"
 #include "Robot.h"
 #include "Toolbox.h"
+#include "main.h"
 #define PWMPER 24.0
 
 void InitPWM(void) {
@@ -53,16 +54,17 @@ void PWMSetSpeed(float vitesseEnPourcents, float moteur) {
 */
 
 void PWMSetSpeedConsigne(float vitesseEnPourcents, int moteur){
-    
+    static unsigned char payload3[2]={0,0};
     if(moteur==MOTEUR_DROIT){
         robotState.vitesseDroiteConsigne=-vitesseEnPourcents;
-        
+        payload3[1]=vitesseEnPourcents;
     }
     else {
         robotState.vitesseGaucheConsigne=vitesseEnPourcents;
+        payload3[0]=vitesseEnPourcents;
         
     }
-    
+       UartEncodeAndSendMessage(0x40, 2, payload3);
     
 }
 

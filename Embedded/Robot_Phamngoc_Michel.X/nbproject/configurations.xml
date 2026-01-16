@@ -499,6 +499,10 @@
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value="3.25"/>
       </ICD5Tool>
+      <item path="QEI.c" ex="true" overriding="false">
+      </item>
+      <item path="QEI.h" ex="true" overriding="false">
+      </item>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>

@@ -67,29 +67,30 @@ namespace RobotInterface
                   robot.receivedText = "";
               robot.receivedText = robot.byteListReceived.ToString();
             */
-
-            while (robot.byteListReceived.Count > 0)
+            //TextBoxréception.Text= robot.receivedText;/*
+            /*while (robot.byteListReceived.Count > 0)
             {
-                byte Received = robot.byteListReceived.Dequeue();
-                //TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
+                byte Received = robot.byteListReceived  .Dequeue();
+         
+                TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
                 DecodeMessage(Received);
 
             }
-
+            */
 
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
-            //robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
-
+            robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+            /*
             for (int i = 0; i < e.Data.Length; i++)
             {
                 robot.byteListReceived.Enqueue(e.Data[i]);
           
 
             }
-
+            */
         }
 
 
@@ -106,7 +107,7 @@ namespace RobotInterface
                 serialPort1.Write(textBoxEmission.Text);
 
                 //receivedText =textBoxEmission.Text ;
-
+                
                 textBoxEmission.Text = "";
             }
         }
@@ -169,25 +170,28 @@ namespace RobotInterface
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
-          
 
-            /*
-            byte[] bytesliste = new byte[20];
-            for (byte i = 0; i < 20; i++)
-            {
-                bytesliste[i] = (byte)(2 * i);
 
-            }
 
-            serialPort1.Write(bytesliste, 0, bytesliste.Length);
+            /* byte[] bytesliste = new byte[20];
+             for (byte i = 0; i < 20; i++)
+             {
+                 bytesliste[i] = (byte)(2 * i);
+
+             }
+
+             serialPort1.Write(bytesliste, 0, bytesliste.Length);
             */
+
             byte[] array = Encoding.ASCII.GetBytes("Bonjour");
-            byte[] array1 = new byte[] {6};
-            UartEncodeAndSendMessage(0x51, array1.Length, array1);
+            byte[] array1 = new byte[] {0};
+            //UartEncodeAndSendMessage(0x51, array1.Length, array1);
+            //UartEncodeAndSendMessage(0x80, array.Length, array);
+            //UartEncodeAndSendMessage(0x52, array.Length, array);
             //UartEncodeAndSendMessage(0x20, array1.Length, array1);
-  
-           
-            
+
+
+
 
 
 

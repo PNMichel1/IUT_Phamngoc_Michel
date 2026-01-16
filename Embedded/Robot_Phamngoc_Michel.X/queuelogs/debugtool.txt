@@ -1,197 +1,1001 @@
-476 1767965654744 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool is NOT null
-476 1767965654744 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 903f, AttachedToolVID = 4d8
-476 1767965654744 GEN4_CONNECT_DIAGNOSTICS:transport type = USB
-476 1767965654744 GEN4_CONNECT_DIAGNOSTICS:AttachedToolPID = 903f, AttachedToolVID = 4d8
-476 1767965656322 com.microchip.mplab.mdbcore.RealICETool.RIDbgToolCom
-476 1767965656322 GEN4_CONNECT_DIAGNOSTICS:Before MPLABCommTool.Connect()
-476 1767965656323 GEN4_CONNECT_DIAGNOSTICS:After MPLABCommTool.Connect()
-476 1767965656323 GEN4_CONNECT_DIAGNOSTICS:MPLABCommTool.Connect() returned MPLABCOMM_NO_ERROR
-476 1767965656323 GEN4_CONNECT_DIAGNOSTICS:Attaching to MPLABCommTool plugnplay
-476 1767965656352 GEN4_CONNECT_DIAGNOSTICS:Adding new plug and play observer com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@1f82ab64
-476 1767965656352 GEN4_CONNECT_DIAGNOSTICS:Begin PlugNPlayObservers list dump:
-476 1767965656352 GEN4_CONNECT_DIAGNOSTICS:com.microchip.mplab.mdbcore.RI4Tool.RI4ToolBase$RI4PlugNPlayObserver@1f82ab64
-476 1767965656352 GEN4_CONNECT_DIAGNOSTICS:End PlugNPlayObservers list dump:
-476 1767965656371 GEN4_CONNECT_DIAGNOSTICS:Registering for alternate PNP notifications. CommPnPCriteria.cPIDList = [9037, 9038], CommPnPCriteria.cSerialNumber = 020054102ryn001248
+2977 1768550236283 XXXX 1768550236283, Thread 2977: XXXX 1768550236283, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236286 XXXX 1768550236286, Thread 2977: XXXX 1768550236286, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236383 XXXX 1768550236383, Thread 2977: XXXX 1768550236383, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236385 XXXX 1768550236385, Thread 2977: XXXX 1768550236385, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236484 XXXX 1768550236484, Thread 2977: XXXX 1768550236484, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236486 XXXX 1768550236486, Thread 2977: XXXX 1768550236486, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236585 XXXX 1768550236585, Thread 2977: XXXX 1768550236585, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236586 XXXX 1768550236586, Thread 2977: XXXX 1768550236586, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236686 XXXX 1768550236686, Thread 2977: XXXX 1768550236686, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236688 XXXX 1768550236687, Thread 2977: XXXX 1768550236687, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236786 XXXX 1768550236786, Thread 2977: XXXX 1768550236786, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236788 XXXX 1768550236788, Thread 2977: XXXX 1768550236788, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236886 XXXX 1768550236886, Thread 2977: XXXX 1768550236886, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236887 XXXX 1768550236887, Thread 2977: XXXX 1768550236887, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550236987 XXXX 1768550236987, Thread 2977: XXXX 1768550236987, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550236988 XXXX 1768550236988, Thread 2977: XXXX 1768550236988, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237087 XXXX 1768550237087, Thread 2977: XXXX 1768550237087, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237088 XXXX 1768550237088, Thread 2977: XXXX 1768550237088, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237187 XXXX 1768550237187, Thread 2977: XXXX 1768550237187, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237188 XXXX 1768550237188, Thread 2977: XXXX 1768550237188, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237287 XXXX 1768550237287, Thread 2977: XXXX 1768550237287, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237288 XXXX 1768550237288, Thread 2977: XXXX 1768550237288, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237387 XXXX 1768550237387, Thread 2977: XXXX 1768550237387, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237389 XXXX 1768550237389, Thread 2977: XXXX 1768550237389, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237487 XXXX 1768550237487, Thread 2977: XXXX 1768550237487, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237488 XXXX 1768550237488, Thread 2977: XXXX 1768550237488, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237587 XXXX 1768550237587, Thread 2977: XXXX 1768550237587, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237588 XXXX 1768550237588, Thread 2977: XXXX 1768550237588, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237689 XXXX 1768550237689, Thread 2977: XXXX 1768550237689, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237691 XXXX 1768550237691, Thread 2977: XXXX 1768550237691, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237790 XXXX 1768550237790, Thread 2977: XXXX 1768550237790, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237791 XXXX 1768550237791, Thread 2977: XXXX 1768550237791, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237890 XXXX 1768550237890, Thread 2977: XXXX 1768550237890, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237892 XXXX 1768550237892, Thread 2977: XXXX 1768550237891, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550237991 XXXX 1768550237991, Thread 2977: XXXX 1768550237991, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550237992 XXXX 1768550237992, Thread 2977: XXXX 1768550237992, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238092 XXXX 1768550238092, Thread 2977: XXXX 1768550238092, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238093 XXXX 1768550238093, Thread 2977: XXXX 1768550238093, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238193 XXXX 1768550238193, Thread 2977: XXXX 1768550238193, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238194 XXXX 1768550238194, Thread 2977: XXXX 1768550238194, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238293 XXXX 1768550238293, Thread 2977: XXXX 1768550238293, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238294 XXXX 1768550238294, Thread 2977: XXXX 1768550238294, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238393 XXXX 1768550238393, Thread 2977: XXXX 1768550238393, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238394 XXXX 1768550238394, Thread 2977: XXXX 1768550238394, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238493 XXXX 1768550238493, Thread 2977: XXXX 1768550238493, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238494 XXXX 1768550238494, Thread 2977: XXXX 1768550238494, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238594 XXXX 1768550238594, Thread 2977: XXXX 1768550238594, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238595 XXXX 1768550238595, Thread 2977: XXXX 1768550238595, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238697 XXXX 1768550238697, Thread 2977: XXXX 1768550238697, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238698 XXXX 1768550238698, Thread 2977: XXXX 1768550238698, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238797 XXXX 1768550238797, Thread 2977: XXXX 1768550238797, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238799 XXXX 1768550238799, Thread 2977: XXXX 1768550238799, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238897 XXXX 1768550238897, Thread 2977: XXXX 1768550238897, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238898 XXXX 1768550238898, Thread 2977: XXXX 1768550238898, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550238997 XXXX 1768550238997, Thread 2977: XXXX 1768550238997, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550238999 XXXX 1768550238999, Thread 2977: XXXX 1768550238999, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239097 XXXX 1768550239097, Thread 2977: XXXX 1768550239097, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239099 XXXX 1768550239099, Thread 2977: XXXX 1768550239099, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239201 XXXX 1768550239201, Thread 2977: XXXX 1768550239201, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239202 XXXX 1768550239202, Thread 2977: XXXX 1768550239202, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239301 XXXX 1768550239301, Thread 2977: XXXX 1768550239301, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239302 XXXX 1768550239302, Thread 2977: XXXX 1768550239302, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239401 XXXX 1768550239401, Thread 2977: XXXX 1768550239401, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239402 XXXX 1768550239402, Thread 2977: XXXX 1768550239402, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239502 XXXX 1768550239502, Thread 2977: XXXX 1768550239502, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239503 XXXX 1768550239503, Thread 2977: XXXX 1768550239503, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239602 XXXX 1768550239602, Thread 2977: XXXX 1768550239602, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239603 XXXX 1768550239603, Thread 2977: XXXX 1768550239603, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239702 XXXX 1768550239702, Thread 2977: XXXX 1768550239702, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239703 XXXX 1768550239703, Thread 2977: XXXX 1768550239703, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239802 XXXX 1768550239802, Thread 2977: XXXX 1768550239802, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239804 XXXX 1768550239803, Thread 2977: XXXX 1768550239803, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550239903 XXXX 1768550239903, Thread 2977: XXXX 1768550239903, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550239905 XXXX 1768550239905, Thread 2977: XXXX 1768550239905, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240004 XXXX 1768550240004, Thread 2977: XXXX 1768550240004, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240005 XXXX 1768550240005, Thread 2977: XXXX 1768550240005, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240105 XXXX 1768550240105, Thread 2977: XXXX 1768550240105, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240107 XXXX 1768550240107, Thread 2977: XXXX 1768550240107, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240206 XXXX 1768550240206, Thread 2977: XXXX 1768550240206, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240207 XXXX 1768550240207, Thread 2977: XXXX 1768550240207, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240307 XXXX 1768550240307, Thread 2977: XXXX 1768550240307, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240308 XXXX 1768550240308, Thread 2977: XXXX 1768550240308, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240407 XXXX 1768550240407, Thread 2977: XXXX 1768550240407, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240408 XXXX 1768550240408, Thread 2977: XXXX 1768550240408, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240508 XXXX 1768550240508, Thread 2977: XXXX 1768550240508, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240509 XXXX 1768550240509, Thread 2977: XXXX 1768550240509, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240608 XXXX 1768550240608, Thread 2977: XXXX 1768550240608, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240609 XXXX 1768550240609, Thread 2977: XXXX 1768550240609, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240708 XXXX 1768550240708, Thread 2977: XXXX 1768550240708, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240710 XXXX 1768550240710, Thread 2977: XXXX 1768550240710, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240810 XXXX 1768550240810, Thread 2977: XXXX 1768550240810, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240812 XXXX 1768550240812, Thread 2977: XXXX 1768550240812, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550240910 XXXX 1768550240910, Thread 2977: XXXX 1768550240910, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550240911 XXXX 1768550240911, Thread 2977: XXXX 1768550240911, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241010 XXXX 1768550241010, Thread 2977: XXXX 1768550241010, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241011 XXXX 1768550241011, Thread 2977: XXXX 1768550241011, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241110 XXXX 1768550241110, Thread 2977: XXXX 1768550241110, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241111 XXXX 1768550241111, Thread 2977: XXXX 1768550241111, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241211 XXXX 1768550241211, Thread 2977: XXXX 1768550241211, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241212 XXXX 1768550241212, Thread 2977: XXXX 1768550241212, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241311 XXXX 1768550241311, Thread 2977: XXXX 1768550241311, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241312 XXXX 1768550241312, Thread 2977: XXXX 1768550241312, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241411 XXXX 1768550241411, Thread 2977: XXXX 1768550241411, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241413 XXXX 1768550241413, Thread 2977: XXXX 1768550241413, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241511 XXXX 1768550241511, Thread 2977: XXXX 1768550241511, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241513 XXXX 1768550241513, Thread 2977: XXXX 1768550241513, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241611 XXXX 1768550241611, Thread 2977: XXXX 1768550241611, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241612 XXXX 1768550241612, Thread 2977: XXXX 1768550241612, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241711 XXXX 1768550241711, Thread 2977: XXXX 1768550241711, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241712 XXXX 1768550241712, Thread 2977: XXXX 1768550241712, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241811 XXXX 1768550241811, Thread 2977: XXXX 1768550241811, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241812 XXXX 1768550241812, Thread 2977: XXXX 1768550241812, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550241911 XXXX 1768550241911, Thread 2977: XXXX 1768550241911, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550241912 XXXX 1768550241912, Thread 2977: XXXX 1768550241912, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242012 XXXX 1768550242012, Thread 2977: XXXX 1768550242012, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242013 XXXX 1768550242013, Thread 2977: XXXX 1768550242013, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242113 XXXX 1768550242113, Thread 2977: XXXX 1768550242113, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242114 XXXX 1768550242114, Thread 2977: XXXX 1768550242114, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242214 XXXX 1768550242214, Thread 2977: XXXX 1768550242214, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242215 XXXX 1768550242215, Thread 2977: XXXX 1768550242215, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242314 XXXX 1768550242314, Thread 2977: XXXX 1768550242314, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242315 XXXX 1768550242315, Thread 2977: XXXX 1768550242315, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242415 XXXX 1768550242415, Thread 2977: XXXX 1768550242415, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242416 XXXX 1768550242416, Thread 2977: XXXX 1768550242416, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242515 XXXX 1768550242515, Thread 2977: XXXX 1768550242515, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242516 XXXX 1768550242516, Thread 2977: XXXX 1768550242516, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242616 XXXX 1768550242616, Thread 2977: XXXX 1768550242616, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242618 XXXX 1768550242618, Thread 2977: XXXX 1768550242618, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242716 XXXX 1768550242716, Thread 2977: XXXX 1768550242716, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242718 XXXX 1768550242718, Thread 2977: XXXX 1768550242718, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242818 XXXX 1768550242818, Thread 2977: XXXX 1768550242818, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242820 XXXX 1768550242820, Thread 2977: XXXX 1768550242820, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550242920 XXXX 1768550242919, Thread 2977: XXXX 1768550242919, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550242921 XXXX 1768550242921, Thread 2977: XXXX 1768550242921, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243021 XXXX 1768550243021, Thread 2977: XXXX 1768550243021, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243023 XXXX 1768550243023, Thread 2977: XXXX 1768550243023, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243122 XXXX 1768550243122, Thread 2977: XXXX 1768550243122, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243124 XXXX 1768550243124, Thread 2977: XXXX 1768550243124, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243224 XXXX 1768550243224, Thread 2977: XXXX 1768550243224, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243226 XXXX 1768550243226, Thread 2977: XXXX 1768550243226, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243326 XXXX 1768550243326, Thread 2977: XXXX 1768550243326, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243328 XXXX 1768550243328, Thread 2977: XXXX 1768550243328, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243427 XXXX 1768550243427, Thread 2977: XXXX 1768550243427, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243429 XXXX 1768550243429, Thread 2977: XXXX 1768550243429, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243529 XXXX 1768550243529, Thread 2977: XXXX 1768550243529, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243531 XXXX 1768550243531, Thread 2977: XXXX 1768550243531, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243631 XXXX 1768550243631, Thread 2977: XXXX 1768550243631, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243633 XXXX 1768550243633, Thread 2977: XXXX 1768550243633, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243732 XXXX 1768550243732, Thread 2977: XXXX 1768550243732, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243734 XXXX 1768550243734, Thread 2977: XXXX 1768550243734, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243833 XXXX 1768550243833, Thread 2977: XXXX 1768550243833, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243835 XXXX 1768550243835, Thread 2977: XXXX 1768550243835, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550243934 XXXX 1768550243934, Thread 2977: XXXX 1768550243934, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550243936 XXXX 1768550243936, Thread 2977: XXXX 1768550243936, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244036 XXXX 1768550244036, Thread 2977: XXXX 1768550244036, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244038 XXXX 1768550244038, Thread 2977: XXXX 1768550244038, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244138 XXXX 1768550244138, Thread 2977: XXXX 1768550244138, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244140 XXXX 1768550244140, Thread 2977: XXXX 1768550244140, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244239 XXXX 1768550244239, Thread 2977: XXXX 1768550244239, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244241 XXXX 1768550244241, Thread 2977: XXXX 1768550244241, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244341 XXXX 1768550244341, Thread 2977: XXXX 1768550244341, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244343 XXXX 1768550244343, Thread 2977: XXXX 1768550244343, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244442 XXXX 1768550244442, Thread 2977: XXXX 1768550244442, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244444 XXXX 1768550244444, Thread 2977: XXXX 1768550244444, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244544 XXXX 1768550244544, Thread 2977: XXXX 1768550244544, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244546 XXXX 1768550244546, Thread 2977: XXXX 1768550244546, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244646 XXXX 1768550244646, Thread 2977: XXXX 1768550244646, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244648 XXXX 1768550244648, Thread 2977: XXXX 1768550244648, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244747 XXXX 1768550244747, Thread 2977: XXXX 1768550244747, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244749 XXXX 1768550244749, Thread 2977: XXXX 1768550244749, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244847 XXXX 1768550244847, Thread 2977: XXXX 1768550244847, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244849 XXXX 1768550244849, Thread 2977: XXXX 1768550244849, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550244949 XXXX 1768550244949, Thread 2977: XXXX 1768550244949, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550244951 XXXX 1768550244951, Thread 2977: XXXX 1768550244951, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245051 XXXX 1768550245051, Thread 2977: XXXX 1768550245051, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245053 XXXX 1768550245053, Thread 2977: XXXX 1768550245053, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245153 XXXX 1768550245153, Thread 2977: XXXX 1768550245153, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245155 XXXX 1768550245155, Thread 2977: XXXX 1768550245155, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245254 XXXX 1768550245254, Thread 2977: XXXX 1768550245254, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245256 XXXX 1768550245256, Thread 2977: XXXX 1768550245256, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245355 XXXX 1768550245355, Thread 2977: XXXX 1768550245355, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245357 XXXX 1768550245357, Thread 2977: XXXX 1768550245357, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245457 XXXX 1768550245457, Thread 2977: XXXX 1768550245457, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245459 XXXX 1768550245459, Thread 2977: XXXX 1768550245459, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245559 XXXX 1768550245559, Thread 2977: XXXX 1768550245559, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245561 XXXX 1768550245561, Thread 2977: XXXX 1768550245561, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245661 XXXX 1768550245661, Thread 2977: XXXX 1768550245661, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245663 XXXX 1768550245663, Thread 2977: XXXX 1768550245663, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245763 XXXX 1768550245763, Thread 2977: XXXX 1768550245763, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245765 XXXX 1768550245765, Thread 2977: XXXX 1768550245765, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245864 XXXX 1768550245864, Thread 2977: XXXX 1768550245864, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245866 XXXX 1768550245866, Thread 2977: XXXX 1768550245866, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550245965 XXXX 1768550245965, Thread 2977: XXXX 1768550245965, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550245967 XXXX 1768550245967, Thread 2977: XXXX 1768550245967, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246067 XXXX 1768550246067, Thread 2977: XXXX 1768550246067, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246069 XXXX 1768550246069, Thread 2977: XXXX 1768550246069, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246169 XXXX 1768550246169, Thread 2977: XXXX 1768550246169, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246171 XXXX 1768550246171, Thread 2977: XXXX 1768550246171, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246271 XXXX 1768550246271, Thread 2977: XXXX 1768550246271, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246273 XXXX 1768550246273, Thread 2977: XXXX 1768550246273, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246373 XXXX 1768550246373, Thread 2977: XXXX 1768550246373, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246376 XXXX 1768550246376, Thread 2977: XXXX 1768550246376, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246474 XXXX 1768550246474, Thread 2977: XXXX 1768550246474, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246476 XXXX 1768550246476, Thread 2977: XXXX 1768550246476, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246575 XXXX 1768550246575, Thread 2977: XXXX 1768550246575, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246577 XXXX 1768550246577, Thread 2977: XXXX 1768550246577, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246676 XXXX 1768550246676, Thread 2977: XXXX 1768550246676, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246679 XXXX 1768550246679, Thread 2977: XXXX 1768550246679, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246777 XXXX 1768550246777, Thread 2977: XXXX 1768550246777, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246779 XXXX 1768550246779, Thread 2977: XXXX 1768550246779, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246878 XXXX 1768550246878, Thread 2977: XXXX 1768550246878, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246880 XXXX 1768550246880, Thread 2977: XXXX 1768550246880, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550246978 XXXX 1768550246978, Thread 2977: XXXX 1768550246978, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550246981 XXXX 1768550246981, Thread 2977: XXXX 1768550246981, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247078 XXXX 1768550247078, Thread 2977: XXXX 1768550247078, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247080 XXXX 1768550247080, Thread 2977: XXXX 1768550247080, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247180 XXXX 1768550247180, Thread 2977: XXXX 1768550247180, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247182 XXXX 1768550247182, Thread 2977: XXXX 1768550247182, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247280 XXXX 1768550247280, Thread 2977: XXXX 1768550247280, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247283 XXXX 1768550247283, Thread 2977: XXXX 1768550247283, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247381 XXXX 1768550247381, Thread 2977: XXXX 1768550247381, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247383 XXXX 1768550247383, Thread 2977: XXXX 1768550247383, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247483 XXXX 1768550247483, Thread 2977: XXXX 1768550247483, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247486 XXXX 1768550247486, Thread 2977: XXXX 1768550247486, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247585 XXXX 1768550247585, Thread 2977: XXXX 1768550247585, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247588 XXXX 1768550247588, Thread 2977: XXXX 1768550247588, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247687 XXXX 1768550247687, Thread 2977: XXXX 1768550247687, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247690 XXXX 1768550247690, Thread 2977: XXXX 1768550247690, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247788 XXXX 1768550247788, Thread 2977: XXXX 1768550247788, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247791 XXXX 1768550247791, Thread 2977: XXXX 1768550247791, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247888 XXXX 1768550247888, Thread 2977: XXXX 1768550247888, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247891 XXXX 1768550247891, Thread 2977: XXXX 1768550247891, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550247989 XXXX 1768550247989, Thread 2977: XXXX 1768550247989, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550247991 XXXX 1768550247991, Thread 2977: XXXX 1768550247991, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248089 XXXX 1768550248089, Thread 2977: XXXX 1768550248089, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248092 XXXX 1768550248092, Thread 2977: XXXX 1768550248092, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248189 XXXX 1768550248189, Thread 2977: XXXX 1768550248189, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248192 XXXX 1768550248192, Thread 2977: XXXX 1768550248192, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248289 XXXX 1768550248289, Thread 2977: XXXX 1768550248289, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248291 XXXX 1768550248291, Thread 2977: XXXX 1768550248291, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248389 XXXX 1768550248389, Thread 2977: XXXX 1768550248389, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248392 XXXX 1768550248392, Thread 2977: XXXX 1768550248392, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248490 XXXX 1768550248490, Thread 2977: XXXX 1768550248490, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248491 XXXX 1768550248491, Thread 2977: XXXX 1768550248491, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248590 XXXX 1768550248590, Thread 2977: XXXX 1768550248590, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248592 XXXX 1768550248591, Thread 2977: XXXX 1768550248591, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248690 XXXX 1768550248690, Thread 2977: XXXX 1768550248690, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248691 XXXX 1768550248691, Thread 2977: XXXX 1768550248691, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248791 XXXX 1768550248791, Thread 2977: XXXX 1768550248791, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248793 XXXX 1768550248793, Thread 2977: XXXX 1768550248792, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248892 XXXX 1768550248892, Thread 2977: XXXX 1768550248892, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248895 XXXX 1768550248895, Thread 2977: XXXX 1768550248895, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550248992 XXXX 1768550248992, Thread 2977: XXXX 1768550248992, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550248994 XXXX 1768550248993, Thread 2977: XXXX 1768550248993, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249092 XXXX 1768550249092, Thread 2977: XXXX 1768550249092, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249093 XXXX 1768550249093, Thread 2977: XXXX 1768550249093, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249192 XXXX 1768550249192, Thread 2977: XXXX 1768550249192, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249193 XXXX 1768550249193, Thread 2977: XXXX 1768550249193, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249292 XXXX 1768550249292, Thread 2977: XXXX 1768550249292, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249294 XXXX 1768550249294, Thread 2977: XXXX 1768550249294, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249394 XXXX 1768550249394, Thread 2977: XXXX 1768550249394, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249396 XXXX 1768550249396, Thread 2977: XXXX 1768550249396, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249495 XXXX 1768550249495, Thread 2977: XXXX 1768550249495, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249498 XXXX 1768550249498, Thread 2977: XXXX 1768550249498, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249595 XXXX 1768550249595, Thread 2977: XXXX 1768550249595, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249597 XXXX 1768550249597, Thread 2977: XXXX 1768550249597, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249696 XXXX 1768550249696, Thread 2977: XXXX 1768550249696, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249699 XXXX 1768550249699, Thread 2977: XXXX 1768550249699, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249797 XXXX 1768550249797, Thread 2977: XXXX 1768550249797, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249798 XXXX 1768550249798, Thread 2977: XXXX 1768550249798, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550249898 XXXX 1768550249898, Thread 2977: XXXX 1768550249898, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550249901 XXXX 1768550249901, Thread 2977: XXXX 1768550249901, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250000 XXXX 1768550250000, Thread 2977: XXXX 1768550250000, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250003 XXXX 1768550250003, Thread 2977: XXXX 1768550250003, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250103 XXXX 1768550250103, Thread 2977: XXXX 1768550250103, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250105 XXXX 1768550250105, Thread 2977: XXXX 1768550250105, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250204 XXXX 1768550250204, Thread 2977: XXXX 1768550250204, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250207 XXXX 1768550250207, Thread 2977: XXXX 1768550250207, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250305 XXXX 1768550250305, Thread 2977: XXXX 1768550250305, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250306 XXXX 1768550250306, Thread 2977: XXXX 1768550250306, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250407 XXXX 1768550250407, Thread 2977: XXXX 1768550250407, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250408 XXXX 1768550250408, Thread 2977: XXXX 1768550250408, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250507 XXXX 1768550250507, Thread 2977: XXXX 1768550250507, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250510 XXXX 1768550250510, Thread 2977: XXXX 1768550250510, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250609 XXXX 1768550250609, Thread 2977: XXXX 1768550250609, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250610 XXXX 1768550250610, Thread 2977: XXXX 1768550250610, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250712 XXXX 1768550250712, Thread 2977: XXXX 1768550250712, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250714 XXXX 1768550250714, Thread 2977: XXXX 1768550250714, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250813 XXXX 1768550250813, Thread 2977: XXXX 1768550250813, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250815 XXXX 1768550250815, Thread 2977: XXXX 1768550250815, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550250915 XXXX 1768550250915, Thread 2977: XXXX 1768550250915, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550250917 XXXX 1768550250917, Thread 2977: XXXX 1768550250917, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251017 XXXX 1768550251017, Thread 2977: XXXX 1768550251017, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251019 XXXX 1768550251019, Thread 2977: XXXX 1768550251019, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251118 XXXX 1768550251118, Thread 2977: XXXX 1768550251118, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251120 XXXX 1768550251120, Thread 2977: XXXX 1768550251120, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251220 XXXX 1768550251220, Thread 2977: XXXX 1768550251220, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251222 XXXX 1768550251222, Thread 2977: XXXX 1768550251222, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251322 XXXX 1768550251322, Thread 2977: XXXX 1768550251322, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251324 XXXX 1768550251324, Thread 2977: XXXX 1768550251324, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251423 XXXX 1768550251423, Thread 2977: XXXX 1768550251423, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251425 XXXX 1768550251425, Thread 2977: XXXX 1768550251425, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251523 XXXX 1768550251523, Thread 2977: XXXX 1768550251523, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251525 XXXX 1768550251525, Thread 2977: XXXX 1768550251525, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251625 XXXX 1768550251625, Thread 2977: XXXX 1768550251625, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251627 XXXX 1768550251627, Thread 2977: XXXX 1768550251627, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251727 XXXX 1768550251727, Thread 2977: XXXX 1768550251727, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251729 XXXX 1768550251729, Thread 2977: XXXX 1768550251729, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251827 XXXX 1768550251827, Thread 2977: XXXX 1768550251827, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251829 XXXX 1768550251829, Thread 2977: XXXX 1768550251829, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550251928 XXXX 1768550251928, Thread 2977: XXXX 1768550251928, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550251930 XXXX 1768550251930, Thread 2977: XXXX 1768550251930, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252030 XXXX 1768550252030, Thread 2977: XXXX 1768550252030, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252032 XXXX 1768550252032, Thread 2977: XXXX 1768550252032, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252131 XXXX 1768550252131, Thread 2977: XXXX 1768550252131, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252133 XXXX 1768550252133, Thread 2977: XXXX 1768550252133, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252231 XXXX 1768550252231, Thread 2977: XXXX 1768550252231, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252233 XXXX 1768550252233, Thread 2977: XXXX 1768550252233, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252332 XXXX 1768550252332, Thread 2977: XXXX 1768550252332, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252334 XXXX 1768550252334, Thread 2977: XXXX 1768550252334, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252432 XXXX 1768550252432, Thread 2977: XXXX 1768550252432, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252434 XXXX 1768550252434, Thread 2977: XXXX 1768550252434, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252534 XXXX 1768550252534, Thread 2977: XXXX 1768550252534, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252536 XXXX 1768550252536, Thread 2977: XXXX 1768550252536, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252635 XXXX 1768550252635, Thread 2977: XXXX 1768550252635, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252637 XXXX 1768550252637, Thread 2977: XXXX 1768550252637, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252736 XXXX 1768550252736, Thread 2977: XXXX 1768550252736, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252738 XXXX 1768550252738, Thread 2977: XXXX 1768550252738, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252837 XXXX 1768550252837, Thread 2977: XXXX 1768550252837, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252839 XXXX 1768550252839, Thread 2977: XXXX 1768550252839, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550252937 XXXX 1768550252937, Thread 2977: XXXX 1768550252937, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550252939 XXXX 1768550252939, Thread 2977: XXXX 1768550252939, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253037 XXXX 1768550253037, Thread 2977: XXXX 1768550253037, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253039 XXXX 1768550253039, Thread 2977: XXXX 1768550253039, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253139 XXXX 1768550253139, Thread 2977: XXXX 1768550253139, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253141 XXXX 1768550253141, Thread 2977: XXXX 1768550253141, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253240 XXXX 1768550253240, Thread 2977: XXXX 1768550253240, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253242 XXXX 1768550253242, Thread 2977: XXXX 1768550253242, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253341 XXXX 1768550253341, Thread 2977: XXXX 1768550253341, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253343 XXXX 1768550253343, Thread 2977: XXXX 1768550253343, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253441 XXXX 1768550253441, Thread 2977: XXXX 1768550253441, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253443 XXXX 1768550253443, Thread 2977: XXXX 1768550253443, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253543 XXXX 1768550253543, Thread 2977: XXXX 1768550253543, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253545 XXXX 1768550253545, Thread 2977: XXXX 1768550253545, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253644 XXXX 1768550253644, Thread 2977: XXXX 1768550253644, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253646 XXXX 1768550253646, Thread 2977: XXXX 1768550253646, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253746 XXXX 1768550253746, Thread 2977: XXXX 1768550253746, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253748 XXXX 1768550253748, Thread 2977: XXXX 1768550253748, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253848 XXXX 1768550253848, Thread 2977: XXXX 1768550253848, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253850 XXXX 1768550253850, Thread 2977: XXXX 1768550253850, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550253950 XXXX 1768550253950, Thread 2977: XXXX 1768550253950, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550253952 XXXX 1768550253952, Thread 2977: XXXX 1768550253952, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254051 XXXX 1768550254051, Thread 2977: XXXX 1768550254051, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254053 XXXX 1768550254053, Thread 2977: XXXX 1768550254053, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254151 XXXX 1768550254151, Thread 2977: XXXX 1768550254151, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254153 XXXX 1768550254153, Thread 2977: XXXX 1768550254153, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254253 XXXX 1768550254253, Thread 2977: XXXX 1768550254253, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254255 XXXX 1768550254255, Thread 2977: XXXX 1768550254255, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254353 XXXX 1768550254353, Thread 2977: XXXX 1768550254353, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254355 XXXX 1768550254355, Thread 2977: XXXX 1768550254355, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254454 XXXX 1768550254454, Thread 2977: XXXX 1768550254454, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254456 XXXX 1768550254456, Thread 2977: XXXX 1768550254456, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254554 XXXX 1768550254554, Thread 2977: XXXX 1768550254554, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254556 XXXX 1768550254556, Thread 2977: XXXX 1768550254556, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254654 XXXX 1768550254654, Thread 2977: XXXX 1768550254654, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254656 XXXX 1768550254656, Thread 2977: XXXX 1768550254656, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254755 XXXX 1768550254755, Thread 2977: XXXX 1768550254755, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254757 XXXX 1768550254757, Thread 2977: XXXX 1768550254757, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254855 XXXX 1768550254855, Thread 2977: XXXX 1768550254855, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254857 XXXX 1768550254857, Thread 2977: XXXX 1768550254857, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550254955 XXXX 1768550254955, Thread 2977: XXXX 1768550254955, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550254957 XXXX 1768550254957, Thread 2977: XXXX 1768550254957, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255056 XXXX 1768550255056, Thread 2977: XXXX 1768550255056, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255058 XXXX 1768550255058, Thread 2977: XXXX 1768550255058, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255156 XXXX 1768550255156, Thread 2977: XXXX 1768550255156, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255158 XXXX 1768550255158, Thread 2977: XXXX 1768550255158, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255257 XXXX 1768550255257, Thread 2977: XXXX 1768550255257, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255259 XXXX 1768550255259, Thread 2977: XXXX 1768550255259, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255357 XXXX 1768550255357, Thread 2977: XXXX 1768550255357, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255359 XXXX 1768550255359, Thread 2977: XXXX 1768550255359, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255458 XXXX 1768550255458, Thread 2977: XXXX 1768550255458, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255460 XXXX 1768550255460, Thread 2977: XXXX 1768550255460, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255559 XXXX 1768550255559, Thread 2977: XXXX 1768550255559, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255561 XXXX 1768550255561, Thread 2977: XXXX 1768550255561, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255660 XXXX 1768550255660, Thread 2977: XXXX 1768550255660, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255662 XXXX 1768550255662, Thread 2977: XXXX 1768550255662, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255760 XXXX 1768550255760, Thread 2977: XXXX 1768550255760, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255762 XXXX 1768550255762, Thread 2977: XXXX 1768550255762, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255860 XXXX 1768550255860, Thread 2977: XXXX 1768550255860, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255862 XXXX 1768550255862, Thread 2977: XXXX 1768550255862, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550255961 XXXX 1768550255961, Thread 2977: XXXX 1768550255961, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550255963 XXXX 1768550255963, Thread 2977: XXXX 1768550255963, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256062 XXXX 1768550256062, Thread 2977: XXXX 1768550256062, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256064 XXXX 1768550256064, Thread 2977: XXXX 1768550256064, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256164 XXXX 1768550256164, Thread 2977: XXXX 1768550256164, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256166 XXXX 1768550256166, Thread 2977: XXXX 1768550256166, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256266 XXXX 1768550256266, Thread 2977: XXXX 1768550256266, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256268 XXXX 1768550256268, Thread 2977: XXXX 1768550256268, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256367 XXXX 1768550256367, Thread 2977: XXXX 1768550256367, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256370 XXXX 1768550256370, Thread 2977: XXXX 1768550256370, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256469 XXXX 1768550256469, Thread 2977: XXXX 1768550256469, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256471 XXXX 1768550256471, Thread 2977: XXXX 1768550256471, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256569 XXXX 1768550256569, Thread 2977: XXXX 1768550256569, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256571 XXXX 1768550256571, Thread 2977: XXXX 1768550256571, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256671 XXXX 1768550256671, Thread 2977: XXXX 1768550256671, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256673 XXXX 1768550256673, Thread 2977: XXXX 1768550256673, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256772 XXXX 1768550256772, Thread 2977: XXXX 1768550256772, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256774 XXXX 1768550256774, Thread 2977: XXXX 1768550256774, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256874 XXXX 1768550256874, Thread 2977: XXXX 1768550256874, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256876 XXXX 1768550256876, Thread 2977: XXXX 1768550256876, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550256975 XXXX 1768550256975, Thread 2977: XXXX 1768550256975, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550256977 XXXX 1768550256977, Thread 2977: XXXX 1768550256977, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257077 XXXX 1768550257077, Thread 2977: XXXX 1768550257077, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257079 XXXX 1768550257079, Thread 2977: XXXX 1768550257079, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257177 XXXX 1768550257177, Thread 2977: XXXX 1768550257177, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257179 XXXX 1768550257179, Thread 2977: XXXX 1768550257179, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257283 XXXX 1768550257283, Thread 2977: XXXX 1768550257283, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257285 XXXX 1768550257285, Thread 2977: XXXX 1768550257285, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257383 XXXX 1768550257383, Thread 2977: XXXX 1768550257383, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257385 XXXX 1768550257385, Thread 2977: XXXX 1768550257385, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257484 XXXX 1768550257484, Thread 2977: XXXX 1768550257484, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257486 XXXX 1768550257486, Thread 2977: XXXX 1768550257486, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257585 XXXX 1768550257585, Thread 2977: XXXX 1768550257585, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257587 XXXX 1768550257587, Thread 2977: XXXX 1768550257587, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257686 XXXX 1768550257686, Thread 2977: XXXX 1768550257686, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257688 XXXX 1768550257688, Thread 2977: XXXX 1768550257688, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257786 XXXX 1768550257786, Thread 2977: XXXX 1768550257786, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257788 XXXX 1768550257788, Thread 2977: XXXX 1768550257788, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257886 XXXX 1768550257886, Thread 2977: XXXX 1768550257886, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257888 XXXX 1768550257888, Thread 2977: XXXX 1768550257888, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550257989 XXXX 1768550257989, Thread 2977: XXXX 1768550257989, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550257991 XXXX 1768550257991, Thread 2977: XXXX 1768550257991, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258090 XXXX 1768550258090, Thread 2977: XXXX 1768550258090, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258092 XXXX 1768550258092, Thread 2977: XXXX 1768550258092, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258190 XXXX 1768550258190, Thread 2977: XXXX 1768550258190, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258192 XXXX 1768550258192, Thread 2977: XXXX 1768550258192, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258291 XXXX 1768550258291, Thread 2977: XXXX 1768550258291, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258293 XXXX 1768550258293, Thread 2977: XXXX 1768550258293, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258392 XXXX 1768550258392, Thread 2977: XXXX 1768550258392, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258394 XXXX 1768550258394, Thread 2977: XXXX 1768550258394, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258493 XXXX 1768550258493, Thread 2977: XXXX 1768550258493, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258495 XXXX 1768550258495, Thread 2977: XXXX 1768550258495, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258593 XXXX 1768550258593, Thread 2977: XXXX 1768550258593, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258595 XXXX 1768550258595, Thread 2977: XXXX 1768550258595, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258693 XXXX 1768550258693, Thread 2977: XXXX 1768550258693, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258695 XXXX 1768550258695, Thread 2977: XXXX 1768550258695, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258793 XXXX 1768550258793, Thread 2977: XXXX 1768550258793, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258795 XXXX 1768550258795, Thread 2977: XXXX 1768550258795, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258893 XXXX 1768550258893, Thread 2977: XXXX 1768550258893, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258895 XXXX 1768550258895, Thread 2977: XXXX 1768550258895, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550258994 XXXX 1768550258994, Thread 2977: XXXX 1768550258994, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550258996 XXXX 1768550258996, Thread 2977: XXXX 1768550258996, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259095 XXXX 1768550259095, Thread 2977: XXXX 1768550259095, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259097 XXXX 1768550259097, Thread 2977: XXXX 1768550259097, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259196 XXXX 1768550259196, Thread 2977: XXXX 1768550259196, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259198 XXXX 1768550259198, Thread 2977: XXXX 1768550259198, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259299 XXXX 1768550259299, Thread 2977: XXXX 1768550259299, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259301 XXXX 1768550259301, Thread 2977: XXXX 1768550259301, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259400 XXXX 1768550259400, Thread 2977: XXXX 1768550259400, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259402 XXXX 1768550259402, Thread 2977: XXXX 1768550259402, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259501 XXXX 1768550259501, Thread 2977: XXXX 1768550259501, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259503 XXXX 1768550259503, Thread 2977: XXXX 1768550259503, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259602 XXXX 1768550259602, Thread 2977: XXXX 1768550259602, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259604 XXXX 1768550259604, Thread 2977: XXXX 1768550259604, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259702 XXXX 1768550259702, Thread 2977: XXXX 1768550259702, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259704 XXXX 1768550259704, Thread 2977: XXXX 1768550259704, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259803 XXXX 1768550259803, Thread 2977: XXXX 1768550259803, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259805 XXXX 1768550259805, Thread 2977: XXXX 1768550259805, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550259903 XXXX 1768550259903, Thread 2977: XXXX 1768550259903, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550259905 XXXX 1768550259905, Thread 2977: XXXX 1768550259905, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260005 XXXX 1768550260005, Thread 2977: XXXX 1768550260005, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260007 XXXX 1768550260007, Thread 2977: XXXX 1768550260007, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260106 XXXX 1768550260106, Thread 2977: XXXX 1768550260106, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260108 XXXX 1768550260108, Thread 2977: XXXX 1768550260108, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260207 XXXX 1768550260207, Thread 2977: XXXX 1768550260207, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260209 XXXX 1768550260209, Thread 2977: XXXX 1768550260209, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260309 XXXX 1768550260309, Thread 2977: XXXX 1768550260309, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260311 XXXX 1768550260311, Thread 2977: XXXX 1768550260311, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260409 XXXX 1768550260409, Thread 2977: XXXX 1768550260409, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260411 XXXX 1768550260411, Thread 2977: XXXX 1768550260411, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260510 XXXX 1768550260510, Thread 2977: XXXX 1768550260510, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260512 XXXX 1768550260512, Thread 2977: XXXX 1768550260512, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260610 XXXX 1768550260610, Thread 2977: XXXX 1768550260610, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260613 XXXX 1768550260613, Thread 2977: XXXX 1768550260613, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260710 XXXX 1768550260710, Thread 2977: XXXX 1768550260710, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260712 XXXX 1768550260712, Thread 2977: XXXX 1768550260712, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260812 XXXX 1768550260812, Thread 2977: XXXX 1768550260812, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260814 XXXX 1768550260814, Thread 2977: XXXX 1768550260814, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550260913 XXXX 1768550260913, Thread 2977: XXXX 1768550260912, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550260915 XXXX 1768550260915, Thread 2977: XXXX 1768550260915, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261014 XXXX 1768550261014, Thread 2977: XXXX 1768550261014, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261016 XXXX 1768550261016, Thread 2977: XXXX 1768550261016, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261114 XXXX 1768550261114, Thread 2977: XXXX 1768550261114, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261116 XXXX 1768550261116, Thread 2977: XXXX 1768550261116, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261214 XXXX 1768550261214, Thread 2977: XXXX 1768550261214, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261216 XXXX 1768550261216, Thread 2977: XXXX 1768550261216, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261316 XXXX 1768550261316, Thread 2977: XXXX 1768550261316, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261318 XXXX 1768550261318, Thread 2977: XXXX 1768550261318, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261417 XXXX 1768550261417, Thread 2977: XXXX 1768550261417, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261419 XXXX 1768550261419, Thread 2977: XXXX 1768550261419, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261520 XXXX 1768550261520, Thread 2977: XXXX 1768550261520, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261522 XXXX 1768550261522, Thread 2977: XXXX 1768550261522, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261622 XXXX 1768550261622, Thread 2977: XXXX 1768550261622, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261624 XXXX 1768550261624, Thread 2977: XXXX 1768550261624, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261723 XXXX 1768550261723, Thread 2977: XXXX 1768550261723, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261725 XXXX 1768550261725, Thread 2977: XXXX 1768550261725, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261824 XXXX 1768550261824, Thread 2977: XXXX 1768550261824, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261826 XXXX 1768550261826, Thread 2977: XXXX 1768550261826, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550261924 XXXX 1768550261924, Thread 2977: XXXX 1768550261924, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550261926 XXXX 1768550261926, Thread 2977: XXXX 1768550261926, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262025 XXXX 1768550262025, Thread 2977: XXXX 1768550262025, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262027 XXXX 1768550262027, Thread 2977: XXXX 1768550262027, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262126 XXXX 1768550262126, Thread 2977: XXXX 1768550262126, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262128 XXXX 1768550262128, Thread 2977: XXXX 1768550262128, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262228 XXXX 1768550262228, Thread 2977: XXXX 1768550262228, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262230 XXXX 1768550262230, Thread 2977: XXXX 1768550262230, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262328 XXXX 1768550262328, Thread 2977: XXXX 1768550262328, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262330 XXXX 1768550262330, Thread 2977: XXXX 1768550262330, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262430 XXXX 1768550262430, Thread 2977: XXXX 1768550262430, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262432 XXXX 1768550262432, Thread 2977: XXXX 1768550262432, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262531 XXXX 1768550262531, Thread 2977: XXXX 1768550262531, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262533 XXXX 1768550262533, Thread 2977: XXXX 1768550262533, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262631 XXXX 1768550262631, Thread 2977: XXXX 1768550262631, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262633 XXXX 1768550262633, Thread 2977: XXXX 1768550262633, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262732 XXXX 1768550262732, Thread 2977: XXXX 1768550262732, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262734 XXXX 1768550262734, Thread 2977: XXXX 1768550262734, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262833 XXXX 1768550262833, Thread 2977: XXXX 1768550262833, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262835 XXXX 1768550262835, Thread 2977: XXXX 1768550262835, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550262933 XXXX 1768550262933, Thread 2977: XXXX 1768550262933, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550262935 XXXX 1768550262935, Thread 2977: XXXX 1768550262935, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263034 XXXX 1768550263034, Thread 2977: XXXX 1768550263034, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263036 XXXX 1768550263036, Thread 2977: XXXX 1768550263036, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263134 XXXX 1768550263134, Thread 2977: XXXX 1768550263134, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263136 XXXX 1768550263136, Thread 2977: XXXX 1768550263136, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263234 XXXX 1768550263234, Thread 2977: XXXX 1768550263234, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263236 XXXX 1768550263236, Thread 2977: XXXX 1768550263236, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263335 XXXX 1768550263335, Thread 2977: XXXX 1768550263335, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263337 XXXX 1768550263337, Thread 2977: XXXX 1768550263337, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263437 XXXX 1768550263437, Thread 2977: XXXX 1768550263437, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263439 XXXX 1768550263439, Thread 2977: XXXX 1768550263439, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263537 XXXX 1768550263537, Thread 2977: XXXX 1768550263537, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263539 XXXX 1768550263539, Thread 2977: XXXX 1768550263539, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263637 XXXX 1768550263637, Thread 2977: XXXX 1768550263637, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263639 XXXX 1768550263639, Thread 2977: XXXX 1768550263639, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263737 XXXX 1768550263737, Thread 2977: XXXX 1768550263737, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263739 XXXX 1768550263739, Thread 2977: XXXX 1768550263739, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263838 XXXX 1768550263838, Thread 2977: XXXX 1768550263838, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263840 XXXX 1768550263840, Thread 2977: XXXX 1768550263840, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550263939 XXXX 1768550263939, Thread 2977: XXXX 1768550263939, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550263941 XXXX 1768550263941, Thread 2977: XXXX 1768550263941, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264040 XXXX 1768550264040, Thread 2977: XXXX 1768550264040, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264042 XXXX 1768550264042, Thread 2977: XXXX 1768550264042, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264140 XXXX 1768550264140, Thread 2977: XXXX 1768550264140, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264142 XXXX 1768550264142, Thread 2977: XXXX 1768550264142, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264240 XXXX 1768550264240, Thread 2977: XXXX 1768550264240, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264242 XXXX 1768550264242, Thread 2977: XXXX 1768550264242, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264340 XXXX 1768550264340, Thread 2977: XXXX 1768550264340, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264342 XXXX 1768550264342, Thread 2977: XXXX 1768550264342, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264442 XXXX 1768550264442, Thread 2977: XXXX 1768550264442, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264444 XXXX 1768550264444, Thread 2977: XXXX 1768550264444, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264543 XXXX 1768550264543, Thread 2977: XXXX 1768550264543, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264545 XXXX 1768550264545, Thread 2977: XXXX 1768550264545, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264643 XXXX 1768550264643, Thread 2977: XXXX 1768550264643, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264645 XXXX 1768550264645, Thread 2977: XXXX 1768550264645, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264746 XXXX 1768550264746, Thread 2977: XXXX 1768550264746, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264748 XXXX 1768550264748, Thread 2977: XXXX 1768550264748, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264847 XXXX 1768550264847, Thread 2977: XXXX 1768550264847, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264849 XXXX 1768550264849, Thread 2977: XXXX 1768550264849, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550264948 XXXX 1768550264948, Thread 2977: XXXX 1768550264948, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550264950 XXXX 1768550264950, Thread 2977: XXXX 1768550264950, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265049 XXXX 1768550265049, Thread 2977: XXXX 1768550265049, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265051 XXXX 1768550265051, Thread 2977: XXXX 1768550265051, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265150 XXXX 1768550265150, Thread 2977: XXXX 1768550265150, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265152 XXXX 1768550265152, Thread 2977: XXXX 1768550265152, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265250 XXXX 1768550265250, Thread 2977: XXXX 1768550265250, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265252 XXXX 1768550265252, Thread 2977: XXXX 1768550265252, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265351 XXXX 1768550265351, Thread 2977: XXXX 1768550265351, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265353 XXXX 1768550265353, Thread 2977: XXXX 1768550265353, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265452 XXXX 1768550265452, Thread 2977: XXXX 1768550265452, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265454 XXXX 1768550265454, Thread 2977: XXXX 1768550265454, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265553 XXXX 1768550265553, Thread 2977: XXXX 1768550265553, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265555 XXXX 1768550265555, Thread 2977: XXXX 1768550265555, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265653 XXXX 1768550265653, Thread 2977: XXXX 1768550265653, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265655 XXXX 1768550265655, Thread 2977: XXXX 1768550265655, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265756 XXXX 1768550265756, Thread 2977: XXXX 1768550265756, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265758 XXXX 1768550265758, Thread 2977: XXXX 1768550265758, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265856 XXXX 1768550265856, Thread 2977: XXXX 1768550265856, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265858 XXXX 1768550265858, Thread 2977: XXXX 1768550265858, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550265957 XXXX 1768550265957, Thread 2977: XXXX 1768550265957, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550265959 XXXX 1768550265959, Thread 2977: XXXX 1768550265959, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266058 XXXX 1768550266058, Thread 2977: XXXX 1768550266058, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266060 XXXX 1768550266060, Thread 2977: XXXX 1768550266060, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266158 XXXX 1768550266158, Thread 2977: XXXX 1768550266158, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266160 XXXX 1768550266160, Thread 2977: XXXX 1768550266160, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266259 XXXX 1768550266259, Thread 2977: XXXX 1768550266259, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266261 XXXX 1768550266261, Thread 2977: XXXX 1768550266261, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266360 XXXX 1768550266360, Thread 2977: XXXX 1768550266360, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266362 XXXX 1768550266362, Thread 2977: XXXX 1768550266362, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266461 XXXX 1768550266461, Thread 2977: XXXX 1768550266461, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266463 XXXX 1768550266463, Thread 2977: XXXX 1768550266463, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266561 XXXX 1768550266561, Thread 2977: XXXX 1768550266561, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266563 XXXX 1768550266563, Thread 2977: XXXX 1768550266563, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266662 XXXX 1768550266662, Thread 2977: XXXX 1768550266662, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266664 XXXX 1768550266664, Thread 2977: XXXX 1768550266664, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266763 XXXX 1768550266763, Thread 2977: XXXX 1768550266763, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266765 XXXX 1768550266765, Thread 2977: XXXX 1768550266765, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266863 XXXX 1768550266863, Thread 2977: XXXX 1768550266863, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266865 XXXX 1768550266865, Thread 2977: XXXX 1768550266865, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550266963 XXXX 1768550266963, Thread 2977: XXXX 1768550266963, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550266965 XXXX 1768550266965, Thread 2977: XXXX 1768550266965, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267064 XXXX 1768550267064, Thread 2977: XXXX 1768550267064, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267066 XXXX 1768550267066, Thread 2977: XXXX 1768550267066, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267165 XXXX 1768550267165, Thread 2977: XXXX 1768550267165, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267167 XXXX 1768550267167, Thread 2977: XXXX 1768550267167, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267266 XXXX 1768550267266, Thread 2977: XXXX 1768550267266, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267268 XXXX 1768550267268, Thread 2977: XXXX 1768550267268, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267367 XXXX 1768550267367, Thread 2977: XXXX 1768550267367, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267369 XXXX 1768550267369, Thread 2977: XXXX 1768550267369, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267468 XXXX 1768550267468, Thread 2977: XXXX 1768550267468, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267470 XXXX 1768550267470, Thread 2977: XXXX 1768550267470, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267568 XXXX 1768550267568, Thread 2977: XXXX 1768550267568, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267570 XXXX 1768550267570, Thread 2977: XXXX 1768550267570, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267669 XXXX 1768550267669, Thread 2977: XXXX 1768550267669, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267671 XXXX 1768550267671, Thread 2977: XXXX 1768550267671, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267769 XXXX 1768550267769, Thread 2977: XXXX 1768550267769, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267771 XXXX 1768550267771, Thread 2977: XXXX 1768550267771, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267869 XXXX 1768550267869, Thread 2977: XXXX 1768550267869, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267871 XXXX 1768550267871, Thread 2977: XXXX 1768550267871, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550267969 XXXX 1768550267969, Thread 2977: XXXX 1768550267969, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550267971 XXXX 1768550267971, Thread 2977: XXXX 1768550267971, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268070 XXXX 1768550268070, Thread 2977: XXXX 1768550268070, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268072 XXXX 1768550268072, Thread 2977: XXXX 1768550268072, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268170 XXXX 1768550268170, Thread 2977: XXXX 1768550268170, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268172 XXXX 1768550268172, Thread 2977: XXXX 1768550268172, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268271 XXXX 1768550268271, Thread 2977: XXXX 1768550268271, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268273 XXXX 1768550268273, Thread 2977: XXXX 1768550268273, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268371 XXXX 1768550268371, Thread 2977: XXXX 1768550268371, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268374 XXXX 1768550268374, Thread 2977: XXXX 1768550268374, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268472 XXXX 1768550268472, Thread 2977: XXXX 1768550268472, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268474 XXXX 1768550268474, Thread 2977: XXXX 1768550268474, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268572 XXXX 1768550268572, Thread 2977: XXXX 1768550268572, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268574 XXXX 1768550268574, Thread 2977: XXXX 1768550268574, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268674 XXXX 1768550268674, Thread 2977: XXXX 1768550268674, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268676 XXXX 1768550268676, Thread 2977: XXXX 1768550268676, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268774 XXXX 1768550268774, Thread 2977: XXXX 1768550268774, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268776 XXXX 1768550268776, Thread 2977: XXXX 1768550268776, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268875 XXXX 1768550268875, Thread 2977: XXXX 1768550268875, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268877 XXXX 1768550268877, Thread 2977: XXXX 1768550268877, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550268975 XXXX 1768550268975, Thread 2977: XXXX 1768550268975, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550268977 XXXX 1768550268977, Thread 2977: XXXX 1768550268977, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269076 XXXX 1768550269076, Thread 2977: XXXX 1768550269076, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269078 XXXX 1768550269078, Thread 2977: XXXX 1768550269078, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269177 XXXX 1768550269177, Thread 2977: XXXX 1768550269177, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269179 XXXX 1768550269179, Thread 2977: XXXX 1768550269179, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269278 XXXX 1768550269278, Thread 2977: XXXX 1768550269278, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269280 XXXX 1768550269280, Thread 2977: XXXX 1768550269280, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269379 XXXX 1768550269379, Thread 2977: XXXX 1768550269379, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269381 XXXX 1768550269381, Thread 2977: XXXX 1768550269381, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269480 XXXX 1768550269480, Thread 2977: XXXX 1768550269480, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269482 XXXX 1768550269482, Thread 2977: XXXX 1768550269482, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269580 XXXX 1768550269580, Thread 2977: XXXX 1768550269580, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269582 XXXX 1768550269582, Thread 2977: XXXX 1768550269582, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269681 XXXX 1768550269681, Thread 2977: XXXX 1768550269681, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269683 XXXX 1768550269683, Thread 2977: XXXX 1768550269683, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269782 XXXX 1768550269782, Thread 2977: XXXX 1768550269782, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269784 XXXX 1768550269784, Thread 2977: XXXX 1768550269784, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269882 XXXX 1768550269882, Thread 2977: XXXX 1768550269882, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269884 XXXX 1768550269884, Thread 2977: XXXX 1768550269884, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550269982 XXXX 1768550269982, Thread 2977: XXXX 1768550269982, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550269984 XXXX 1768550269984, Thread 2977: XXXX 1768550269984, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270083 XXXX 1768550270083, Thread 2977: XXXX 1768550270083, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270085 XXXX 1768550270085, Thread 2977: XXXX 1768550270085, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270183 XXXX 1768550270183, Thread 2977: XXXX 1768550270183, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270185 XXXX 1768550270185, Thread 2977: XXXX 1768550270185, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270284 XXXX 1768550270284, Thread 2977: XXXX 1768550270284, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270286 XXXX 1768550270286, Thread 2977: XXXX 1768550270286, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270384 XXXX 1768550270384, Thread 2977: XXXX 1768550270384, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270386 XXXX 1768550270386, Thread 2977: XXXX 1768550270386, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270485 XXXX 1768550270485, Thread 2977: XXXX 1768550270485, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270487 XXXX 1768550270487, Thread 2977: XXXX 1768550270487, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270585 XXXX 1768550270585, Thread 2977: XXXX 1768550270585, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270587 XXXX 1768550270587, Thread 2977: XXXX 1768550270587, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270686 XXXX 1768550270686, Thread 2977: XXXX 1768550270686, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270688 XXXX 1768550270688, Thread 2977: XXXX 1768550270688, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270787 XXXX 1768550270787, Thread 2977: XXXX 1768550270787, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270789 XXXX 1768550270789, Thread 2977: XXXX 1768550270789, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270887 XXXX 1768550270887, Thread 2977: XXXX 1768550270887, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270889 XXXX 1768550270889, Thread 2977: XXXX 1768550270889, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550270988 XXXX 1768550270988, Thread 2977: XXXX 1768550270988, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550270990 XXXX 1768550270990, Thread 2977: XXXX 1768550270990, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271088 XXXX 1768550271088, Thread 2977: XXXX 1768550271088, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271090 XXXX 1768550271090, Thread 2977: XXXX 1768550271090, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271188 XXXX 1768550271188, Thread 2977: XXXX 1768550271188, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271190 XXXX 1768550271190, Thread 2977: XXXX 1768550271190, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271289 XXXX 1768550271289, Thread 2977: XXXX 1768550271289, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271291 XXXX 1768550271291, Thread 2977: XXXX 1768550271291, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271390 XXXX 1768550271390, Thread 2977: XXXX 1768550271390, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271392 XXXX 1768550271392, Thread 2977: XXXX 1768550271392, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271490 XXXX 1768550271490, Thread 2977: XXXX 1768550271490, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271492 XXXX 1768550271492, Thread 2977: XXXX 1768550271492, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271590 XXXX 1768550271590, Thread 2977: XXXX 1768550271590, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271592 XXXX 1768550271592, Thread 2977: XXXX 1768550271592, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271691 XXXX 1768550271691, Thread 2977: XXXX 1768550271691, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271693 XXXX 1768550271693, Thread 2977: XXXX 1768550271693, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271791 XXXX 1768550271791, Thread 2977: XXXX 1768550271791, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271793 XXXX 1768550271793, Thread 2977: XXXX 1768550271793, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271891 XXXX 1768550271891, Thread 2977: XXXX 1768550271891, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271893 XXXX 1768550271893, Thread 2977: XXXX 1768550271893, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550271992 XXXX 1768550271992, Thread 2977: XXXX 1768550271992, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550271994 XXXX 1768550271994, Thread 2977: XXXX 1768550271994, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272092 XXXX 1768550272092, Thread 2977: XXXX 1768550272092, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272095 XXXX 1768550272095, Thread 2977: XXXX 1768550272095, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272192 XXXX 1768550272192, Thread 2977: XXXX 1768550272192, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272194 XXXX 1768550272194, Thread 2977: XXXX 1768550272194, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272292 XXXX 1768550272292, Thread 2977: XXXX 1768550272292, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272294 XXXX 1768550272294, Thread 2977: XXXX 1768550272294, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272392 XXXX 1768550272392, Thread 2977: XXXX 1768550272392, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272394 XXXX 1768550272394, Thread 2977: XXXX 1768550272394, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272493 XXXX 1768550272493, Thread 2977: XXXX 1768550272493, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272495 XXXX 1768550272495, Thread 2977: XXXX 1768550272495, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272594 XXXX 1768550272594, Thread 2977: XXXX 1768550272594, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272596 XXXX 1768550272596, Thread 2977: XXXX 1768550272596, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272695 XXXX 1768550272695, Thread 2977: XXXX 1768550272695, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272697 XXXX 1768550272697, Thread 2977: XXXX 1768550272697, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272796 XXXX 1768550272796, Thread 2977: XXXX 1768550272796, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272798 XXXX 1768550272798, Thread 2977: XXXX 1768550272798, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272897 XXXX 1768550272897, Thread 2977: XXXX 1768550272897, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272899 XXXX 1768550272899, Thread 2977: XXXX 1768550272899, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550272997 XXXX 1768550272997, Thread 2977: XXXX 1768550272997, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550272999 XXXX 1768550272999, Thread 2977: XXXX 1768550272999, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273098 XXXX 1768550273098, Thread 2977: XXXX 1768550273098, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273100 XXXX 1768550273100, Thread 2977: XXXX 1768550273100, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273198 XXXX 1768550273198, Thread 2977: XXXX 1768550273198, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273200 XXXX 1768550273200, Thread 2977: XXXX 1768550273200, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273299 XXXX 1768550273299, Thread 2977: XXXX 1768550273299, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273301 XXXX 1768550273301, Thread 2977: XXXX 1768550273301, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273399 XXXX 1768550273399, Thread 2977: XXXX 1768550273399, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273401 XXXX 1768550273401, Thread 2977: XXXX 1768550273401, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273499 XXXX 1768550273499, Thread 2977: XXXX 1768550273499, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273501 XXXX 1768550273501, Thread 2977: XXXX 1768550273501, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273599 XXXX 1768550273599, Thread 2977: XXXX 1768550273599, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273601 XXXX 1768550273601, Thread 2977: XXXX 1768550273601, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273699 XXXX 1768550273699, Thread 2977: XXXX 1768550273699, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273701 XXXX 1768550273701, Thread 2977: XXXX 1768550273701, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273799 XXXX 1768550273799, Thread 2977: XXXX 1768550273799, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273801 XXXX 1768550273801, Thread 2977: XXXX 1768550273801, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550273899 XXXX 1768550273899, Thread 2977: XXXX 1768550273899, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550273901 XXXX 1768550273901, Thread 2977: XXXX 1768550273901, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274000 XXXX 1768550274000, Thread 2977: XXXX 1768550274000, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274002 XXXX 1768550274002, Thread 2977: XXXX 1768550274002, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274101 XXXX 1768550274101, Thread 2977: XXXX 1768550274101, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274103 XXXX 1768550274103, Thread 2977: XXXX 1768550274103, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274201 XXXX 1768550274201, Thread 2977: XXXX 1768550274201, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274203 XXXX 1768550274203, Thread 2977: XXXX 1768550274203, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274301 XXXX 1768550274301, Thread 2977: XXXX 1768550274301, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274303 XXXX 1768550274303, Thread 2977: XXXX 1768550274303, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274401 XXXX 1768550274401, Thread 2977: XXXX 1768550274401, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274404 XXXX 1768550274404, Thread 2977: XXXX 1768550274404, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274503 XXXX 1768550274503, Thread 2977: XXXX 1768550274503, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274505 XXXX 1768550274505, Thread 2977: XXXX 1768550274505, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274604 XXXX 1768550274604, Thread 2977: XXXX 1768550274604, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274606 XXXX 1768550274606, Thread 2977: XXXX 1768550274606, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274706 XXXX 1768550274706, Thread 2977: XXXX 1768550274706, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274708 XXXX 1768550274708, Thread 2977: XXXX 1768550274708, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274806 XXXX 1768550274806, Thread 2977: XXXX 1768550274806, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274809 XXXX 1768550274809, Thread 2977: XXXX 1768550274809, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550274908 XXXX 1768550274908, Thread 2977: XXXX 1768550274908, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550274910 XXXX 1768550274910, Thread 2977: XXXX 1768550274910, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275009 XXXX 1768550275009, Thread 2977: XXXX 1768550275009, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275011 XXXX 1768550275011, Thread 2977: XXXX 1768550275011, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275109 XXXX 1768550275109, Thread 2977: XXXX 1768550275109, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275111 XXXX 1768550275111, Thread 2977: XXXX 1768550275111, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275210 XXXX 1768550275210, Thread 2977: XXXX 1768550275210, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275212 XXXX 1768550275212, Thread 2977: XXXX 1768550275212, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275311 XXXX 1768550275311, Thread 2977: XXXX 1768550275311, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275313 XXXX 1768550275313, Thread 2977: XXXX 1768550275313, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275411 XXXX 1768550275411, Thread 2977: XXXX 1768550275411, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275413 XXXX 1768550275413, Thread 2977: XXXX 1768550275413, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275512 XXXX 1768550275512, Thread 2977: XXXX 1768550275512, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275514 XXXX 1768550275514, Thread 2977: XXXX 1768550275514, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275613 XXXX 1768550275613, Thread 2977: XXXX 1768550275613, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275615 XXXX 1768550275615, Thread 2977: XXXX 1768550275615, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275715 XXXX 1768550275715, Thread 2977: XXXX 1768550275715, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275717 XXXX 1768550275717, Thread 2977: XXXX 1768550275717, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275816 XXXX 1768550275816, Thread 2977: XXXX 1768550275816, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275818 XXXX 1768550275818, Thread 2977: XXXX 1768550275818, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550275918 XXXX 1768550275918, Thread 2977: XXXX 1768550275918, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550275920 XXXX 1768550275920, Thread 2977: XXXX 1768550275920, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276019 XXXX 1768550276019, Thread 2977: XXXX 1768550276019, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276021 XXXX 1768550276021, Thread 2977: XXXX 1768550276021, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276119 XXXX 1768550276119, Thread 2977: XXXX 1768550276119, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276121 XXXX 1768550276121, Thread 2977: XXXX 1768550276121, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276219 XXXX 1768550276219, Thread 2977: XXXX 1768550276219, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276221 XXXX 1768550276221, Thread 2977: XXXX 1768550276221, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276320 XXXX 1768550276320, Thread 2977: XXXX 1768550276320, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276322 XXXX 1768550276322, Thread 2977: XXXX 1768550276322, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276421 XXXX 1768550276421, Thread 2977: XXXX 1768550276421, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276423 XXXX 1768550276423, Thread 2977: XXXX 1768550276423, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276522 XXXX 1768550276522, Thread 2977: XXXX 1768550276522, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276524 XXXX 1768550276524, Thread 2977: XXXX 1768550276524, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276623 XXXX 1768550276623, Thread 2977: XXXX 1768550276623, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276625 XXXX 1768550276625, Thread 2977: XXXX 1768550276625, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276723 XXXX 1768550276723, Thread 2977: XXXX 1768550276723, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276725 XXXX 1768550276725, Thread 2977: XXXX 1768550276725, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276824 XXXX 1768550276824, Thread 2977: XXXX 1768550276824, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276826 XXXX 1768550276826, Thread 2977: XXXX 1768550276826, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550276924 XXXX 1768550276924, Thread 2977: XXXX 1768550276924, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550276926 XXXX 1768550276926, Thread 2977: XXXX 1768550276926, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277024 XXXX 1768550277024, Thread 2977: XXXX 1768550277024, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277026 XXXX 1768550277026, Thread 2977: XXXX 1768550277026, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277125 XXXX 1768550277125, Thread 2977: XXXX 1768550277125, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277127 XXXX 1768550277127, Thread 2977: XXXX 1768550277127, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277225 XXXX 1768550277225, Thread 2977: XXXX 1768550277225, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277227 XXXX 1768550277227, Thread 2977: XXXX 1768550277227, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277328 XXXX 1768550277328, Thread 2977: XXXX 1768550277328, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277330 XXXX 1768550277330, Thread 2977: XXXX 1768550277330, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277428 XXXX 1768550277428, Thread 2977: XXXX 1768550277428, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277430 XXXX 1768550277430, Thread 2977: XXXX 1768550277430, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277528 XXXX 1768550277528, Thread 2977: XXXX 1768550277528, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277530 XXXX 1768550277530, Thread 2977: XXXX 1768550277530, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277629 XXXX 1768550277629, Thread 2977: XXXX 1768550277629, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277631 XXXX 1768550277631, Thread 2977: XXXX 1768550277631, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277732 XXXX 1768550277732, Thread 2977: XXXX 1768550277732, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277734 XXXX 1768550277734, Thread 2977: XXXX 1768550277734, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277833 XXXX 1768550277833, Thread 2977: XXXX 1768550277833, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277835 XXXX 1768550277835, Thread 2977: XXXX 1768550277835, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550277934 XXXX 1768550277934, Thread 2977: XXXX 1768550277934, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550277936 XXXX 1768550277936, Thread 2977: XXXX 1768550277936, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278035 XXXX 1768550278035, Thread 2977: XXXX 1768550278035, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278037 XXXX 1768550278037, Thread 2977: XXXX 1768550278037, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278136 XXXX 1768550278136, Thread 2977: XXXX 1768550278136, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278139 XXXX 1768550278139, Thread 2977: XXXX 1768550278139, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278236 XXXX 1768550278236, Thread 2977: XXXX 1768550278236, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278238 XXXX 1768550278238, Thread 2977: XXXX 1768550278238, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278337 XXXX 1768550278337, Thread 2977: XXXX 1768550278337, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278339 XXXX 1768550278339, Thread 2977: XXXX 1768550278339, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278439 XXXX 1768550278439, Thread 2977: XXXX 1768550278439, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278441 XXXX 1768550278441, Thread 2977: XXXX 1768550278441, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278540 XXXX 1768550278540, Thread 2977: XXXX 1768550278540, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278542 XXXX 1768550278542, Thread 2977: XXXX 1768550278542, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278641 XXXX 1768550278641, Thread 2977: XXXX 1768550278641, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278643 XXXX 1768550278643, Thread 2977: XXXX 1768550278643, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278742 XXXX 1768550278742, Thread 2977: XXXX 1768550278742, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278744 XXXX 1768550278744, Thread 2977: XXXX 1768550278744, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278842 XXXX 1768550278842, Thread 2977: XXXX 1768550278842, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278844 XXXX 1768550278844, Thread 2977: XXXX 1768550278844, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550278943 XXXX 1768550278943, Thread 2977: XXXX 1768550278943, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550278945 XXXX 1768550278945, Thread 2977: XXXX 1768550278945, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279044 XXXX 1768550279044, Thread 2977: XXXX 1768550279044, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279046 XXXX 1768550279046, Thread 2977: XXXX 1768550279046, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279146 XXXX 1768550279146, Thread 2977: XXXX 1768550279146, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279148 XXXX 1768550279148, Thread 2977: XXXX 1768550279148, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279248 XXXX 1768550279248, Thread 2977: XXXX 1768550279248, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279250 XXXX 1768550279250, Thread 2977: XXXX 1768550279250, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279348 XXXX 1768550279348, Thread 2977: XXXX 1768550279348, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279350 XXXX 1768550279350, Thread 2977: XXXX 1768550279350, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279449 XXXX 1768550279449, Thread 2977: XXXX 1768550279449, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279451 XXXX 1768550279451, Thread 2977: XXXX 1768550279451, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279549 XXXX 1768550279549, Thread 2977: XXXX 1768550279549, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279551 XXXX 1768550279551, Thread 2977: XXXX 1768550279551, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279650 XXXX 1768550279650, Thread 2977: XXXX 1768550279650, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279652 XXXX 1768550279652, Thread 2977: XXXX 1768550279652, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279750 XXXX 1768550279750, Thread 2977: XXXX 1768550279750, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279752 XXXX 1768550279752, Thread 2977: XXXX 1768550279752, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279850 XXXX 1768550279850, Thread 2977: XXXX 1768550279850, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279852 XXXX 1768550279852, Thread 2977: XXXX 1768550279852, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550279951 XXXX 1768550279951, Thread 2977: XXXX 1768550279951, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550279953 XXXX 1768550279953, Thread 2977: XXXX 1768550279953, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280052 XXXX 1768550280052, Thread 2977: XXXX 1768550280052, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280054 XXXX 1768550280054, Thread 2977: XXXX 1768550280054, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280153 XXXX 1768550280153, Thread 2977: XXXX 1768550280153, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280155 XXXX 1768550280155, Thread 2977: XXXX 1768550280155, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280253 XXXX 1768550280253, Thread 2977: XXXX 1768550280253, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280255 XXXX 1768550280255, Thread 2977: XXXX 1768550280255, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280353 XXXX 1768550280353, Thread 2977: XXXX 1768550280353, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280355 XXXX 1768550280355, Thread 2977: XXXX 1768550280355, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280453 XXXX 1768550280453, Thread 2977: XXXX 1768550280453, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280455 XXXX 1768550280455, Thread 2977: XXXX 1768550280455, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280554 XXXX 1768550280554, Thread 2977: XXXX 1768550280554, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280556 XXXX 1768550280556, Thread 2977: XXXX 1768550280556, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280654 XXXX 1768550280654, Thread 2977: XXXX 1768550280654, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280656 XXXX 1768550280656, Thread 2977: XXXX 1768550280656, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280755 XXXX 1768550280755, Thread 2977: XXXX 1768550280755, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280757 XXXX 1768550280757, Thread 2977: XXXX 1768550280757, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280855 XXXX 1768550280855, Thread 2977: XXXX 1768550280855, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280857 XXXX 1768550280857, Thread 2977: XXXX 1768550280857, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550280957 XXXX 1768550280957, Thread 2977: XXXX 1768550280957, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550280959 XXXX 1768550280959, Thread 2977: XXXX 1768550280959, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281059 XXXX 1768550281059, Thread 2977: XXXX 1768550281059, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281061 XXXX 1768550281061, Thread 2977: XXXX 1768550281061, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281159 XXXX 1768550281159, Thread 2977: XXXX 1768550281159, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281161 XXXX 1768550281161, Thread 2977: XXXX 1768550281161, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281259 XXXX 1768550281259, Thread 2977: XXXX 1768550281259, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281261 XXXX 1768550281261, Thread 2977: XXXX 1768550281261, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281361 XXXX 1768550281361, Thread 2977: XXXX 1768550281361, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281363 XXXX 1768550281363, Thread 2977: XXXX 1768550281363, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281462 XXXX 1768550281462, Thread 2977: XXXX 1768550281462, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281464 XXXX 1768550281464, Thread 2977: XXXX 1768550281464, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281562 XXXX 1768550281562, Thread 2977: XXXX 1768550281562, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281564 XXXX 1768550281564, Thread 2977: XXXX 1768550281564, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281663 XXXX 1768550281663, Thread 2977: XXXX 1768550281663, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281665 XXXX 1768550281665, Thread 2977: XXXX 1768550281665, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281766 XXXX 1768550281766, Thread 2977: XXXX 1768550281766, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281768 XXXX 1768550281768, Thread 2977: XXXX 1768550281768, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281866 XXXX 1768550281866, Thread 2977: XXXX 1768550281866, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281868 XXXX 1768550281868, Thread 2977: XXXX 1768550281868, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550281968 XXXX 1768550281968, Thread 2977: XXXX 1768550281968, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550281970 XXXX 1768550281970, Thread 2977: XXXX 1768550281970, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282069 XXXX 1768550282069, Thread 2977: XXXX 1768550282069, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282071 XXXX 1768550282071, Thread 2977: XXXX 1768550282071, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282169 XXXX 1768550282169, Thread 2977: XXXX 1768550282169, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282171 XXXX 1768550282171, Thread 2977: XXXX 1768550282171, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282270 XXXX 1768550282270, Thread 2977: XXXX 1768550282270, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282272 XXXX 1768550282272, Thread 2977: XXXX 1768550282272, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282370 XXXX 1768550282370, Thread 2977: XXXX 1768550282370, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282372 XXXX 1768550282372, Thread 2977: XXXX 1768550282372, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282471 XXXX 1768550282471, Thread 2977: XXXX 1768550282471, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282473 XXXX 1768550282473, Thread 2977: XXXX 1768550282473, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282571 XXXX 1768550282571, Thread 2977: XXXX 1768550282571, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282573 XXXX 1768550282573, Thread 2977: XXXX 1768550282573, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282672 XXXX 1768550282672, Thread 2977: XXXX 1768550282672, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282674 XXXX 1768550282674, Thread 2977: XXXX 1768550282674, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282772 XXXX 1768550282772, Thread 2977: XXXX 1768550282772, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282774 XXXX 1768550282774, Thread 2977: XXXX 1768550282774, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282872 XXXX 1768550282872, Thread 2977: XXXX 1768550282872, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282874 XXXX 1768550282874, Thread 2977: XXXX 1768550282874, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550282973 XXXX 1768550282973, Thread 2977: XXXX 1768550282973, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550282975 XXXX 1768550282975, Thread 2977: XXXX 1768550282975, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283074 XXXX 1768550283074, Thread 2977: XXXX 1768550283074, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283076 XXXX 1768550283076, Thread 2977: XXXX 1768550283076, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283174 XXXX 1768550283174, Thread 2977: XXXX 1768550283174, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283176 XXXX 1768550283176, Thread 2977: XXXX 1768550283176, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283275 XXXX 1768550283275, Thread 2977: XXXX 1768550283275, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283277 XXXX 1768550283277, Thread 2977: XXXX 1768550283277, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283375 XXXX 1768550283375, Thread 2977: XXXX 1768550283375, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283377 XXXX 1768550283377, Thread 2977: XXXX 1768550283377, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283476 XXXX 1768550283476, Thread 2977: XXXX 1768550283476, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283478 XXXX 1768550283478, Thread 2977: XXXX 1768550283478, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283576 XXXX 1768550283576, Thread 2977: XXXX 1768550283576, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283578 XXXX 1768550283578, Thread 2977: XXXX 1768550283578, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283676 XXXX 1768550283676, Thread 2977: XXXX 1768550283676, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283678 XXXX 1768550283678, Thread 2977: XXXX 1768550283678, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283777 XXXX 1768550283777, Thread 2977: XXXX 1768550283777, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283779 XXXX 1768550283779, Thread 2977: XXXX 1768550283779, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283877 XXXX 1768550283877, Thread 2977: XXXX 1768550283877, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283879 XXXX 1768550283879, Thread 2977: XXXX 1768550283879, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550283979 XXXX 1768550283979, Thread 2977: XXXX 1768550283979, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550283981 XXXX 1768550283981, Thread 2977: XXXX 1768550283981, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284079 XXXX 1768550284079, Thread 2977: XXXX 1768550284079, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284081 XXXX 1768550284081, Thread 2977: XXXX 1768550284081, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284179 XXXX 1768550284179, Thread 2977: XXXX 1768550284179, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284182 XXXX 1768550284182, Thread 2977: XXXX 1768550284182, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284279 XXXX 1768550284279, Thread 2977: XXXX 1768550284279, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284281 XXXX 1768550284281, Thread 2977: XXXX 1768550284281, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284379 XXXX 1768550284379, Thread 2977: XXXX 1768550284379, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284382 XXXX 1768550284382, Thread 2977: XXXX 1768550284382, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284480 XXXX 1768550284480, Thread 2977: XXXX 1768550284480, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284483 XXXX 1768550284483, Thread 2977: XXXX 1768550284483, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284580 XXXX 1768550284580, Thread 2977: XXXX 1768550284580, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284582 XXXX 1768550284582, Thread 2977: XXXX 1768550284582, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284682 XXXX 1768550284682, Thread 2977: XXXX 1768550284682, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284684 XXXX 1768550284684, Thread 2977: XXXX 1768550284684, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284782 XXXX 1768550284782, Thread 2977: XXXX 1768550284782, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284784 XXXX 1768550284784, Thread 2977: XXXX 1768550284784, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284882 XXXX 1768550284882, Thread 2977: XXXX 1768550284882, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284884 XXXX 1768550284884, Thread 2977: XXXX 1768550284884, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550284982 XXXX 1768550284982, Thread 2977: XXXX 1768550284982, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550284984 XXXX 1768550284984, Thread 2977: XXXX 1768550284984, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285083 XXXX 1768550285083, Thread 2977: XXXX 1768550285083, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285085 XXXX 1768550285085, Thread 2977: XXXX 1768550285085, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285184 XXXX 1768550285184, Thread 2977: XXXX 1768550285184, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285186 XXXX 1768550285186, Thread 2977: XXXX 1768550285186, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285285 XXXX 1768550285285, Thread 2977: XXXX 1768550285285, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285287 XXXX 1768550285287, Thread 2977: XXXX 1768550285287, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285385 XXXX 1768550285385, Thread 2977: XXXX 1768550285385, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285388 XXXX 1768550285388, Thread 2977: XXXX 1768550285388, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285486 XXXX 1768550285486, Thread 2977: XXXX 1768550285486, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285488 XXXX 1768550285488, Thread 2977: XXXX 1768550285488, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285587 XXXX 1768550285587, Thread 2977: XXXX 1768550285587, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285589 XXXX 1768550285589, Thread 2977: XXXX 1768550285589, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285688 XXXX 1768550285688, Thread 2977: XXXX 1768550285688, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285690 XXXX 1768550285690, Thread 2977: XXXX 1768550285690, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285789 XXXX 1768550285789, Thread 2977: XXXX 1768550285789, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285792 XXXX 1768550285792, Thread 2977: XXXX 1768550285792, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285891 XXXX 1768550285891, Thread 2977: XXXX 1768550285891, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550285893 XXXX 1768550285893, Thread 2977: XXXX 1768550285893, Exiting Thread 2977: Commands::runScriptBasic  
+2977 1768550285992 XXXX 1768550285992, Thread 2977: XXXX 1768550285992, Entering Thread 2977: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+2977 1768550286014 XXXX 1768550286014, Thread 2977: XXXX 1768550286014, Exiting Thread 2977: Commands::runScriptBasic  
 
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:init
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: Values:
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: pcAddress = 0000002e, Vpp = 3,25, useRowEraseIfVoltageIsLow = false, voltageBelowWhichUseRowErase = 0,00, deviceName = dsPIC33EP512MU814, programmerType = DSPIC33EP
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: MemInfo values:
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffffff, exists = true, startAddr = 00000000, endAddr = 007fffff, rowSize = 0800, rowEraseSize = 0800, addrInc = 0002, widthProgram = 0004
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffff, exists = true, startAddr = 00f80004, endAddr = 00f80011, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0800, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 00ff, exists = true, startAddr = 00f80012, endAddr = 00f80013, rowSize = 0001, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = ffffff, exists = true, startAddr = 00800000, endAddr = 00800fff, rowSize = 0800, rowEraseSize = 0800, addrInc = 0002, widthProgram = 0004
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0002, widthProgram = 0002
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 7fffffff, exists = true, startAddr = 00ff0000, endAddr = 00ff0003, rowSize = 0001, rowEraseSize = 0000, addrInc = 0001, widthProgram = 0001
-476 1767965656596 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: mask = 0000, exists = false, startAddr = 00000000, endAddr = 00000000, rowSize = 0000, rowEraseSize = 0000, addrInc = 0000, widthProgram = 0000
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 DeviceInfo: CfgRequiredBitsMask Values:
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80004, Mask = 00000003
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80006, Mask = 00000087
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80008, Mask = 000000e7
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000a, Mask = 000000ff
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000c, Mask = 0000003f
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f8000e, Mask = 00000077
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Address = 00f80010, Mask = 00000003
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 BasicInfo: Values:
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 BasicInfo: InputStream = com.microchip.mplab.libs.toolpacksupport.EquatableFileInputStream@751001bd, ToolFlavor = PIC32C
-476 1767965656597 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:init
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 none
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4DebugInterface
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4DebugInterfaceImpl@3ec11532
-476 1767965660739 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ProgramInterface
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ProgramInterfaceImpl@52c8bc62
-476 1767965660911 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661052 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-476 1767965661052 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661052 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ConnectInterface
-476 1767965661052 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661054 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-476 1767965661054 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661054 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ArmToolsController.comm.ICD4ArmConnectInterfaceImpl@4baf186b
-476 1767965661054 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:selectCore
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 dsPIC33EP512MU814
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:selectCore
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 none
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 RI4ControllerDiagnosticsInterface
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.RI4ControllerDiagnosticsInterfaceImpl@3854b24b
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 ProgrammerToGo
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 null
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Pre:GetInterfaceProvider
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Status
-476 1767965661059 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661060 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Post:GetInterfaceProvider
-476 1767965661060 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661060 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.libs.RI4ToolsController.implementations.OpStatus@a0d1449
-476 1767965661060 GEN4_TO_CONTROLLER_LOG:GEN4_INIT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661128 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Pre:SetProgramExec
-476 1767965661128 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Test
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 800000
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Length = 6126
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Post:SetProgramExec
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 true
-476 1767965661131 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661134 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Pre:SetDebugExec
-476 1767965661134 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661134 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Test
-476 1767965661134 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 800000
-476 1767965661134 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Length = 2064
-476 1767965661134 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Post:SetDebugExec
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 true
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_PROGRAM_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:EstablishCommunincations
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 com.microchip.mplab.mdbcore.ICD5Tool.ICD5Com@58193d46
-476 1767965661135 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:EstablishCommunincations
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 true
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
-
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:GetFirmwareInfo
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 null
-476 1767965661145 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661155 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Post:GetFirmwareInfo
-476 1767965661155 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return Value
-476 1767965661156 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 FirmwareInfo: Values:
-476 1767965661156 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 FirmwareInfo: boot = false, bootVer = 00.00.04, apVer = 02.03.35, fpgaVer = 01.00.01, scriptVer = 00.08.91, macAddress = 0504983777653804953484850485150, devID = a1020e01, devID1 = 2, devSN0 = ffffffff, devSN1 = ffffffff, serialNumber = 020054102RYN001248, appCommitID = null, scriptCommitID = 0674c1b56b, PCB_ID = 2
-476 1767965661156 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Return End
-476 1767965661159 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.ConnectionHandler.CheckForFWUpdates()
-476 1767965661163 GEN4_CONNECT_DIAGNOSTICS:Created FirmwareUpdateHandler com.microchip.mplab.mdbcore.ICD5Tool.ICD5FirmwareUpdateHandler@62c00ea0
-476 1767965661163 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.GetUpdateInfo()
-476 1767965661240 GEN4_CONNECT_DIAGNOSTICS:Parsing file  for firmware updates
-476 1767965661240 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.ri4ParseSelectedVersionsFromJamFile()
-476 1767965661241 GEN4_CONNECT_DIAGNOSTICS:Jame file line = app.hex,020335
-476 1767965661241 GEN4_CONNECT_DIAGNOSTICS:Jame file line = boot.hex,000004
-476 1767965661241 GEN4_CONNECT_DIAGNOSTICS:Jame file line = fpga.hex,010001
-476 1767965661241 GEN4_CONNECT_DIAGNOSTICS:Jame file line = scripts.xml,000891
-476 1767965661242 GEN4_CONNECT_DIAGNOSTICS:Selected firmware version for Boot = 00.00.04
-476 1767965661242 GEN4_CONNECT_DIAGNOSTICS:Selected firmware version for ap = 02.03.35
-476 1767965661242 GEN4_CONNECT_DIAGNOSTICS:Selected firmware version for fpga = 01.00.01
-476 1767965661242 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.ri4ParseSelectedVersionsFromJamFile()
-476 1767965661242 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.GetUpdateInfo()
-476 1767965661242 GEN4_CONNECT_DIAGNOSTICS:ENTERING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.updateRI4ToolsFirmware(FirmwareInfo, UpdateMessage)
-476 1767965661325 GEN4_CONNECT_DIAGNOSTICS:appNeedsUpdate returned false
-476 1767965661325 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.FirmwareUpdateHandler.updateRI4ToolsFirmware(FirmwareInfo, UpdateMessage)
-476 1767965661325 GEN4_CONNECT_DIAGNOSTICS:EXITING: com.microchip.mplab.mdbcore.RI4Tool.ConnectionHandler.CheckForFWUpdates()
-
-476 1767965661327 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Pre:SetPowerInfo
-476 1767965661327 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload
-476 1767965661327 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 PowerInfo: Values:
-476 1767965661327 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 PowerInfo: shotDownSystem = false, isToolPower = false, voltage = 3,250000, useVppFirst = false, useLowVoltageProgramming = true, useMaintainActivePower = false
-476 1767965661327 GEN4_TO_CONTROLLER_LOG:GEN4_CONNECT_INT_LOG_dsPIC33EP512MU814 Payload End
-476 1767965661327 XXXX 1767965661327, Thread 476: XXXX 1767965661327, Entering Thread 476: Commands::runScriptBasic with script contents. contents[0] = 0x39, ...  
-476 1767965671339 XXXX 1767965671339, Thread 476: ToolCommUsb::read, com.Received returned -1 
-476 1767965671340 XXXX 1767965671340, Thread 476: transfer: exception after writeHeaderAndGetResult null 
-476 1767965671341 XXXX 1767965671341, Thread 476: XXXX 1767965671341, Entering Thread 476: ToolCommUsb::recoverFromProtocolError, type = NO_SCRIPT  
-476 1767965671342 XXXX 1767965671342, Thread 476: Send Abort Script Engine Command 
-476 1767965671342 XXXX 1767965671342, Thread 476: XXXX 1767965671342, Entering Thread 476: ToolCommUsb::killScriptEngine  
-476 1767965671343 XXXX 1767965671343, Thread 476: XXXX 1767965671343, Exiting Thread 476: ToolCommUsb::killScriptEngine  
-476 1767965671343 XXXX 1767965671343, Thread 476: Successfully Sent Abort Script EngineCommand 
-476 1767965671343 XXXX 1767965671343, Thread 476: Exiting recoverFromProtocolError 
-476 1767965671343 XXXX 1767965671343, Thread 476: XXXX 1767965671343, Exiting Thread 476: ToolCommUsb::recoverFromProtocolError,  
-476 1767965671343 XXXX 1767965671343, Thread 476: transfer: after recoverFromProtocolError 
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Pre:DebugReadTargetMemory
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Emulation
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd0068
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 fd006b
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Length = 4
+2977 1768550286026 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_dsPIC33EP512MU814 Payload End
+2977 1768550286026 XXXX 1768550286026, Thread 2977: XXXX 1768550286026, Entering Thread 2977: Commands::runScriptWithUpload, script name = ReadEmu  
+2977 1768550286026 XXXX 1768550286026, Thread 2977: XXXX 1768550286026, Entering Thread 2977: ToolCommUsb::readTransfer, sideData is 0x18 bytes long, transferDataLength is 0x4 bytes long  
+3670 1768552889212 XXXX 1768552889212, Thread 3670: ToolCommUsb::read, com.Received returned -1 
+3670 1768552889212 XXXX 1768552889212, Thread 3670: ToolCommUsb::DataReader::run, fatal RI4ControllerException: {null} 
+2977 1768552889221 XXXX 1768552889221, Thread 2977: com.Send returned false 

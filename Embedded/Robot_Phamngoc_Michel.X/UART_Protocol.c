@@ -112,7 +112,7 @@ void UartProcessDecodedMessage(int function,
     //correspondant au message recu
 
     switch (function) {
-        /*
+        
         case 0x0020:
             if (payload[0] == '1') {
                 if (payload[1] == '1')
@@ -150,7 +150,7 @@ void UartProcessDecodedMessage(int function,
             }
             break;
             
-      */
+      
             
         
         case SET_ROBOT_STATE:

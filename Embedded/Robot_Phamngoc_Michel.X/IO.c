@@ -17,6 +17,14 @@ void InitIO()
     ANSELC=0;             //Desactivation de toutes entree analogique
     ANSELE=0;             //Desactivation de toutes entree analogique
     ANSELG=0;             //Desactivation de toutes entree analogique
+    
+    
+    //******************** QEI ***************** TP3
+    _QEA2R = 97; //assign QEI A to pin RP97
+    _QEB2R = 96; //assign QEI B to pin RP96
+    _QEA1R = 70; //assign QEI A to pin RP70
+    _QEB1R = 69; //assign QEI B to pin RP69
+
 
     // Configuration des sorties
 

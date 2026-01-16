@@ -1,23 +1,9 @@
-/* 
- * File:   QEI.h
- * Author: E306-PC2
- *
- * Created on 15 janvier 2026, 10:52
- */
-
 #ifndef QEI_H
 #define	QEI_H
+void InitQEI1(void);
+void InitQEI2(void);
+void QEIUpdateData(void);
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
 
 #endif	/* QEI_H */
 

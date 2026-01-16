@@ -1,7 +1,18 @@
-#include <IO.h>
-#include<ToolBox.h>
+#include "IO.h"
+#include"ToolBox.h"
+#include "Robot.h"
 #define DISTROUES 0.2812
 #include <math.h>
+
+
+
+double QeiGauchePosition_T_1=0;
+double QeiGauchePosition;
+double QeiDroitPosition_T_1=0;
+double QeiDroitPosition=0;
+double delta_d;
+double delta_g;
+double FREQ_ECH_QEI=250;
 
 void InitQEI1()
 {
@@ -40,7 +51,7 @@ void QEIUpdateData()
     //attention a remultiplier par la frequence d echantillonnage
     robotState.vitesseDroitFromOdometry = delta_d*FREQ_ECH_QEI;
     robotState.vitesseGaucheFromOdometry = delta_g*FREQ_ECH_QEI;
-    robotState.vitesseLineaireFromOdometry = (robotState.vitesseDroitFromOdometry + robotState.vitesseGaucheFromOdometre)/2;//added
+    robotState.vitesseLineaireFromOdometry = (robotState.vitesseDroitFromOdometry + robotState.vitesseGaucheFromOdometry)/2;//added
     robotState.vitesseAngulaireFromOdometry = robotState.vitesseLineaireFromOdometry/DISTROUES;//added
     //Mise a jour du positionnement terrain a t-1
     robotState.xPosFromOdometry_1 = robotState.xPosFromOdometry;
@@ -53,6 +64,6 @@ void QEIUpdateData()
     if(robotState.angleRadianFromOdometry > PI)
     robotState.angleRadianFromOdometry -= 2*PI;
     if(robotState.angleRadianFromOdometry < -PI)
-    robotState.angleRadianFromOdometry += 2*PI;
+    robotState.angleRadianFromOdometry += 2*PI;  
 }
 

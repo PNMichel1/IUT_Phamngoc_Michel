@@ -48,7 +48,17 @@
                     <TextBlock Name="MD" Text="Vitesse Droite :" Margin="2"/>
                 </StackPanel>
             </GroupBox>
+            
 
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="4">
+
+            <GroupBox x:Name="Distance" Header="Distance" BorderBrush="Black" Margin="5"  Width="140" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock Name="X" Text="X :" Margin="2"/>
+                    <TextBlock Name="Y" Text="Y :" Margin="2"/>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
 
 

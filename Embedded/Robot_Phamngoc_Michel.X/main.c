@@ -20,6 +20,7 @@
 #include "CB_RX1.h"
 #include "libpic30.h"
 #include "UART_Protocol.h"
+#include "QEI.h"
 //
 int Capteur, etape;
 unsigned char payload[] = {'B', 'o', 'n', 'j', 'o', 'u', 'r'};
@@ -36,10 +37,12 @@ int main(void) {
     InitTimer1();
     InitTimer4();
     InitUART();
-    //InitTimer23();
-
+    InitTimer23();
+    InitQEI1();
+    InitQEI2();
 
     EN_PWM = 1;
+
 
 
     //SendMessageDirect((unsigned char*) "Bonjour", 7);
@@ -47,23 +50,31 @@ int main(void) {
 
     while (1) {
         //***************QEI****************
-       /* InitQEI1();
-        InitQEI2();*/
-        
-        
-        //*******************************************TP3
-    
-        
-        //****************************************
 
-         //Pas de IsdataAvailable sinon explosion
-            for (int i = 0; i < CB_RX1_GetDataSize(); i++) {
-                 unsigned char c = CB_RX1_Get();
-                 UartDecodeMessage(c); //Décodage foireux
-                // SendMessage(&c,1);
+        // SendMessageDirect((unsigned char*) "Bonjour", 7);
+        // __delay32(40000000);
+
+
+
+        //*******************************************TP3
+
+
+        //****************************************
+        /*
+                 //Pas de IsdataAvailable sinon explosion
+                    for (int i = 0; i < CB_RX1_GetDataSize(); i++) {
+                         unsigned char c = CB_RX1_Get();
+                         UartDecodeMessage(c); //Décodage foireux
+                        // SendMessage(&c,1);
                 
-            }
-       
+                    }*/
+        int i;
+        for (i = 0; i < CB_RX1_GetDataSize(); i++) {
+            unsigned char c = CB_RX1_Get();
+            SendMessage(&c, 1);
+        }
+        __delay32(10000);
+
 
         if (ADCIsConversionFinished()) { //fin de l'aquisition du convertisseur
             ADCClearConversionFinishedFlag(); // on enleve le flag pour pouvoir faire une nouvelle conversion
@@ -80,21 +91,21 @@ int main(void) {
             robotState.distanceTelemetreDroit1 = 34 / volts - 5;
 
 
-
-            if (counter++ % 50 == 0) {
-                // UartEncodeAndSendMessage(0x80, 7, payload);
-                unsigned char payload2[3];
-
-
-                payload2[0] = robotState.distanceTelemetreGauche;
-                payload2[1] = robotState.distanceTelemetreCentre;
-                payload2[2] = robotState.distanceTelemetreDroit;
+            /*
+                        if (counter++ % 50 == 0) {
+                            // UartEncodeAndSendMessage(0x80, 7, payload);
+                            unsigned char payload2[3];
 
 
+                            payload2[0] = robotState.distanceTelemetreGauche;
+                            payload2[1] = robotState.distanceTelemetreCentre;
+                            payload2[2] = robotState.distanceTelemetreDroit;
 
 
-                UartEncodeAndSendMessage(0x30, 3, payload2);
-            }  
+
+
+                            UartEncodeAndSendMessage(0x30, 3, payload2);
+                        }  */
 
             if (robotState.distanceTelemetreGauche1 < 30) {
                 LED_BLANCHE_1 = 1;
@@ -156,15 +167,15 @@ void CompteurEtape(void) {
     UartEncodeAndSendMessage(0x50, 5, payload3);
 }
 
-void OperatingSystemLoop(void) { 
+void OperatingSystemLoop(void) {
     switch (stateRobot) {
         case STATE_ATTENTE:
             timestamp = 0;
 
             PWMSetSpeedConsigne(0, MOTEUR_DROIT);
             PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
-            if(autoControlActivated)
-            stateRobot = STATE_ATTENTE_EN_COURS;
+            if (autoControlActivated)
+                stateRobot = STATE_ATTENTE_EN_COURS;
             break;
         case STATE_ATTENTE_EN_COURS:
 
@@ -178,8 +189,8 @@ void OperatingSystemLoop(void) {
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
-              if(autoControlActivated)
-            SetNextRobotStateInAutomaticMode();
+            if (autoControlActivated)
+                SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_GAUCHE:
             CompteurEtape();
@@ -188,8 +199,8 @@ void OperatingSystemLoop(void) {
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_EN_COURS:
-              if(autoControlActivated)
-            SetNextRobotStateInAutomaticMode();
+            if (autoControlActivated)
+                SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_DROITE:
             CompteurEtape();
@@ -198,8 +209,8 @@ void OperatingSystemLoop(void) {
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_DROITE_EN_COURS:
-            if(autoControlActivated)
-            SetNextRobotStateInAutomaticMode();
+            if (autoControlActivated)
+                SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE:
             CompteurEtape();
@@ -208,8 +219,8 @@ void OperatingSystemLoop(void) {
             stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
-              if(autoControlActivated)
-            SetNextRobotStateInAutomaticMode();
+            if (autoControlActivated)
+                SetNextRobotStateInAutomaticMode();
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE:
             CompteurEtape();
@@ -218,8 +229,8 @@ void OperatingSystemLoop(void) {
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
-              if(autoControlActivated)
-            SetNextRobotStateInAutomaticMode();
+            if (autoControlActivated)
+                SetNextRobotStateInAutomaticMode();
             break;
 
         case RECULE:

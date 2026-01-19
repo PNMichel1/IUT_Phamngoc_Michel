@@ -211,8 +211,10 @@ void SetRobotState(unsigned char state){
 }
 
 void SetRobotAutoControlState(unsigned char state) {
-    if(state == 0)
+    if(state == 0){
         autoControlActivated=0;
+        stateRobot = STATE_ATTENTE;
+    }
     else
         autoControlActivated=1;//used dans timer
 }

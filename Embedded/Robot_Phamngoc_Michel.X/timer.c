@@ -5,6 +5,7 @@
 #include"ADC.h"
 #include "main.h"
 #include "UART_Protocol.h"
+#include "QEI.h"
 //Initialisation d?un timer 16 bits
  unsigned long timestamp=0;
  float FCY = 60000000;
@@ -18,7 +19,7 @@ void InitTimer1(void) {
     //00 = 1:1 prescale value
     T1CONbits.TCS = 0; //clock source = internal clock
     //PR1 = 0x249F;
-    SetFreqTimer1(7000);
+    SetFreqTimer1(10);
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
@@ -28,7 +29,7 @@ void InitTimer1(void) {
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
   
-
+      //SendPositionData();
     ADC1StartConversionSequence();
     PWMUpdateSpeed();
       
@@ -44,7 +45,7 @@ void InitTimer4(void) {
     //00 = 1:1 prescale value
     T4CONbits.TCS = 0; //clock source = internal clock
     //PR4 = 0xEA60;
-    SetFreqTimer4(1000);
+    SetFreqTimer4(10000);
     IFS1bits.T4IF = 0; // Clear Timer Interrupt Flag
     IEC1bits.T4IE = 1; // Enable Timer interrupt
     T4CONbits.TON = 1; // Enable Timer
@@ -56,7 +57,6 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
    
   
     timestamp++;
- 
         OperatingSystemLoop();
   
 }
@@ -72,8 +72,8 @@ void InitTimer23(void) {
     T2CONbits.TCKPS = 0b00; // Select 1:1 Prescaler
     TMR3 = 0x00; // Clear 32-bit Timer (msw)
     TMR2 = 0x00; // Clear 32-bit Timer (lsw)
-    PR3 = 0x727; // Load 32-bit period value (msw)
-    PR2 = 0x0E00; // Load 32-bit period value (lsw) //clignotement en 0,5Hz or horloge de 60MHz donc cherche un facteur par lequel diviser 60Mhz pour obtenir 0,5Hz et ce facteur =120Mhz en hexa 727 0E00 la premiere horloge prends les trois premiers octets et la deuxieme prends les 4 derniers.
+    PR3 = 0x1566; // Load 32-bit period value (msw)
+    PR2 = 0x1566; // Load 32-bit period value (lsw) //clignotement en 0,5Hz or horloge de 60MHz donc cherche un facteur par lequel diviser 60Mhz pour obtenir 0,5Hz et ce facteur =120Mhz en hexa 727 0E00 la premiere horloge prends les trois premiers octets et la deuxieme prends les 4 derniers.
     IPC2bits.T3IP = 0x01; // Set Timer3 Interrupt Priority Level
     IFS0bits.T3IF = 0; // Clear Timer3 Interrupt Flag
     IEC0bits.T3IE = 1; // Enable Timer3 interrupt

@@ -27,6 +27,7 @@ namespace RobotInterface
     {
 
         bool toogle,b;
+        byte i;
         bool autoControlActivated;
         string receivedText;
         ExtendedSerialPort serialPort1;
@@ -42,7 +43,7 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM3",115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM7",115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             var _globalKeyboardHook = new GlobalKeyboardHook();
@@ -67,30 +68,30 @@ namespace RobotInterface
                   robot.receivedText = "";
               robot.receivedText = robot.byteListReceived.ToString();
             */
-            //TextBoxréception.Text= robot.receivedText;/*
-            /*while (robot.byteListReceived.Count > 0)
+            //TextBoxréception.Text= robot.receivedText;
+            while (robot.byteListReceived.Count > 0)
             {
-                byte Received = robot.byteListReceived  .Dequeue();
+                byte Received = robot.byteListReceived.Dequeue();
          
-                TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
+                //TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
                 DecodeMessage(Received);
 
             }
-            */
+            
 
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
-            robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
-            /*
+            //robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
+            
             for (int i = 0; i < e.Data.Length; i++)
             {
                 robot.byteListReceived.Enqueue(e.Data[i]);
           
 
             }
-            */
+            
         }
 
 
@@ -104,6 +105,7 @@ namespace RobotInterface
             {
 
                 //TextBoxréception.Text += ("Reçu : " + textBoxEmission.Text);
+                
                 serialPort1.Write(textBoxEmission.Text);
 
                 //receivedText =textBoxEmission.Text ;
@@ -172,8 +174,8 @@ namespace RobotInterface
         {
 
 
-
-            /* byte[] bytesliste = new byte[20];
+            /*
+            byte[] bytesliste = new byte[20];
              for (byte i = 0; i < 20; i++)
              {
                  bytesliste[i] = (byte)(2 * i);
@@ -182,16 +184,24 @@ namespace RobotInterface
 
              serialPort1.Write(bytesliste, 0, bytesliste.Length);
             */
+           //toogle = !toogle;
+           // if (toogle==true)
+           //     i = 0;
+            
+           // if (toogle==false)
+           //     i = 1;
 
-            byte[] array = Encoding.ASCII.GetBytes("Bonjour");
-            byte[] array1 = new byte[] {0};
+           
+
+            byte[] array = Encoding.ASCII.GetBytes("Decode");
+           // byte[] array1 = new byte[] {i};
             //UartEncodeAndSendMessage(0x51, array1.Length, array1);
-            //UartEncodeAndSendMessage(0x80, array.Length, array);
-            //UartEncodeAndSendMessage(0x52, array.Length, array);
+            UartEncodeAndSendMessage(0x80, array.Length, array);
+            //UartEncodeAndSendMessage(0x52, array1.Length, array1);
             //UartEncodeAndSendMessage(0x20, array1.Length, array1);
 
 
-
+            serialPort1.Write("Bonjour");
 
 
 
@@ -222,6 +232,7 @@ namespace RobotInterface
 
 
         }
+
        
 
         void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
@@ -274,19 +285,19 @@ namespace RobotInterface
 
         void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            switch(msgFunction)
+            switch (msgFunction)
             {
                 case 0x0080:
-                    TextBoxréception.Text = "Text recu : "+ Encoding.UTF8.GetString(msgPayload, 0, msgPayload.Length);
-              
+                    TextBoxréception.Text = "Text recu : " + Encoding.UTF8.GetString(msgPayload, 0, msgPayload.Length);
+
 
                     break;
                 case 0x0020:
 
-                    if (msgPayload[0]==1)
-                        if (msgPayload[1]==1)
+                    if (msgPayload[0] == 1)
+                        if (msgPayload[1] == 1)
                             Led1.IsChecked = true;
-                    else
+                        else
                             Led1.IsChecked = false;
                     if (msgPayload[0] == 2)
                         if (msgPayload[1] == 1)
@@ -301,7 +312,7 @@ namespace RobotInterface
                     break;
 
                 case 0x0030:
-                    IRG.Text ="IR Gauche : " + msgPayload[0] + " cm";
+                    IRG.Text = "IR Gauche : " + msgPayload[0] + " cm";
                     IRC.Text = "IR Centre : " + msgPayload[1] + " cm";
                     IRD.Text = "IR Droite : " + msgPayload[2] + " cm";
                     break;
@@ -316,6 +327,12 @@ namespace RobotInterface
                     TextBoxréception.Text += "\nRobot␣State␣:␣" +
                     ((StateRobot)(msgPayload[0])).ToString() +
                     "␣-␣" + instant.ToString() + "␣ms";
+                    break;
+                case 0x0061:
+                    robot.positionXOdo = BitConverter.ToSingle(msgPayload, 4);
+                    robot.positionYOdo = BitConverter.ToSingle(msgPayload, 8);
+                    X.Text = "X : " + robot.positionXOdo.ToString("N3") + " m";
+                    Y.Text = "Y : " + robot.positionYOdo.ToString("N3") + " m";
                     break;
 
 

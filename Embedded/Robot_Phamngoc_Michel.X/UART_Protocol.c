@@ -11,7 +11,7 @@ unsigned char msgDecodedPayload[128];
 int msgDecodedPayloadIndex = 0;
 int receivedChecksum, calculatedChecksum = 0x00;
 int rcvState = 0;
-int autoControlActivated=0;
+int autoControlActivated=1;
 
 unsigned char UartCalculateChecksum(int msgFunction,
         int msgPayloadLength, unsigned char* msgPayload) {

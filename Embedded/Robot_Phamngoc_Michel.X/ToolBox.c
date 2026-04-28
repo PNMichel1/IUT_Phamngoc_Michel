@@ -36,3 +36,13 @@ float DegreeToRadian(float value)
 {
 return value * PI / 180.0;
 }
+float getFloatFromBytes(const unsigned char *p, int index)
+{
+    float f;
+    unsigned char *f_ptr = (unsigned char*)&f;
+
+    for (int i = 0; i < 4; i++)
+        f_ptr[i] = p[index + i];
+
+    return f;
+}

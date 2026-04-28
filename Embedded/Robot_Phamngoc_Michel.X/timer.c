@@ -6,9 +6,11 @@
 #include "main.h"
 #include "UART_Protocol.h"
 #include "QEI.h"
+
 //Initialisation d?un timer 16 bits
  unsigned long timestamp=0;
  float FCY = 60000000;
+
 void InitTimer1(void) {
     //Timer1 pour horodater les mesures (1ms)
     T1CONbits.TON = 0; // Disable Timer
@@ -19,7 +21,7 @@ void InitTimer1(void) {
     //00 = 1:1 prescale value
     T1CONbits.TCS = 0; //clock source = internal clock
     //PR1 = 0x249F;
-    SetFreqTimer1(10);
+    SetFreqTimer1(250);
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
     T1CONbits.TON = 1; // Enable Timer
@@ -29,9 +31,12 @@ void InitTimer1(void) {
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
   
-      //SendPositionData();
-    ADC1StartConversionSequence();
+    
     PWMUpdateSpeed();
+    ADC1StartConversionSequence();
+    QEIUpdateData();
+    SendPositionData();
+    
       
 }
 //Interruption du timer 1
@@ -57,7 +62,7 @@ void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
    
   
     timestamp++;
-        OperatingSystemLoop();
+    OperatingSystemLoop();
   
 }
 

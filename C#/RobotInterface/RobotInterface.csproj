@@ -9,9 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\IUT_CASTELLO_Anthony\C#\KeyboardHook\KeyboardHook.csproj" />
     <ProjectReference Include="..\ExtendedSerialPort\ExtendedSerialPort\ExtendedSerialPort.csproj" />
-    <ProjectReference Include="..\WpfAsservissementDisplay\WpfAsservissementDisplay.csproj" />
-    <ProjectReference Include="..\WpfOscilloscope\WpfOscilloscopeControl.csproj" />
   </ItemGroup>
 
   <ItemGroup>

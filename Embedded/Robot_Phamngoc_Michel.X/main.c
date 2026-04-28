@@ -21,12 +21,16 @@
 #include "libpic30.h"
 #include "UART_Protocol.h"
 #include "QEI.h"
+#include "ToolBox.h"
+#include "Utilities.h"
 //
 int Capteur, etape;
-unsigned char payload[] = {'B', 'o', 'n', 'j', 'o', 'u', 'r'};
+//unsigned char payload[] = {'B', 'o', 'n', 'j', 'o', 'u', 'r'};
 //unsigned char payload[3];
 //unsigned char payload[]={0,0,0};
 
+ float payload = 45.55;
+ char buffer[4];
 int counter = 0;
 
 int main(void) {
@@ -41,20 +45,21 @@ int main(void) {
     InitQEI1();
     InitQEI2();
 
-    EN_PWM = 1;
 
-
+    EN_PWM=1;
 
     //SendMessageDirect((unsigned char*) "Bonjour", 7);
 
 
     while (1) {
         //***************QEI****************
-
         // SendMessageDirect((unsigned char*) "Bonjour", 7);
-        // __delay32(40000000);
-
-
+       //getBytesFromFloat(buffer,0,payload);
+       
+//        UartEncodeAndSendMessage(0x67, 8,  buffer );
+//        __delay32(40000);
+            
+    
 
         //*******************************************TP3
 
@@ -79,7 +84,7 @@ int main(void) {
         if (ADCIsConversionFinished()) { //fin de l'aquisition du convertisseur
             ADCClearConversionFinishedFlag(); // on enleve le flag pour pouvoir faire une nouvelle conversion
             unsigned int * result = ADCGetResult(); //création d'un pointeur pour récupérer les données 
-            float volts = ((float) result [0])* 3.3 / 4096; //volt
+            float volts = ((float) result [0])* 3.3 / 4096; //     n   olt
             robotState.distanceTelemetreGauche1 = 34 / volts - 5; //volt to distance
             volts = ((float) result [1])* 3.3 / 4096;
             robotState.distanceTelemetreGauche = 34 / volts - 5; //volt to distance

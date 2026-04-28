@@ -14,6 +14,7 @@ float Min(float value, float value2);
 float LimitToInterval(float value, float lowLimit, float highLimit);
 float RadianToDegree(float value);
 float DegreeToRadian(float value);
+float getFloatFromBytes(const unsigned char *p, int index);
 
 
 #endif	/* TOOLBOX_H */

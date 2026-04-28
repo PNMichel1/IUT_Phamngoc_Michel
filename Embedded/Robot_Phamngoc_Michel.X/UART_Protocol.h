@@ -20,6 +20,7 @@ void SetRobotAutoControlState(unsigned char state);
 extern int autoControlActivated;
 #define Waiting 0
 #define FunctionMSB 1
+
 #define FunctionLSB  2
 #define PayloadLengthMSB  3 
 #define PayloadLengthLSB  4

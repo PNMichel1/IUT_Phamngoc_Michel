@@ -13,6 +13,10 @@ using ExtendedSerialPort_NS;
 using System.Windows.Threading;
 using System.Net.NetworkInformation;
 using KeyboardHook_NS;
+using WpfAsservissementDisplay_NS;
+
+
+
 
 
 
@@ -33,7 +37,7 @@ namespace RobotInterface
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
         Robot robot = new Robot();
-     
+
 
 
         public MainWindow()
@@ -43,11 +47,13 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM7",115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM5",115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             var _globalKeyboardHook = new GlobalKeyboardHook();
             _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
+
+            
 
 
 
@@ -259,7 +265,7 @@ namespace RobotInterface
             }
             */
             serialPort1.Write(trame, 0, trame.Length);
-
+            
         }
 
         public enum StateRobot
@@ -331,11 +337,25 @@ namespace RobotInterface
                 case 0x0061:
                     robot.positionXOdo = BitConverter.ToSingle(msgPayload, 4);
                     robot.positionYOdo = BitConverter.ToSingle(msgPayload, 8);
+                    robot.angleRadianFromOdometry = BitConverter.ToSingle(msgPayload, 12);
+                    robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
+                    robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
                     X.Text = "X : " + robot.positionXOdo.ToString("N3") + " m";
                     Y.Text = "Y : " + robot.positionYOdo.ToString("N3") + " m";
+                    asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
+                    // Tableau.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
+
                     break;
 
 
+                case 0x0067:
+                  
+                    //Tableau.UpdatePolarOdometrySpeed(BitConverter.ToSingle(msgPayload, 4),0);
+                    asservSpeedDisplay.UpdatePolarSpeedCommandValues(BitConverter.ToSingle(msgPayload, 0), 15);
+                    
+                   
+
+                    break;
 
 
 
@@ -344,17 +364,13 @@ namespace RobotInterface
 
 
 
-
-
-
-
-
-
-
         }
 
+        
 
-        public enum StateReception
+
+
+    public enum StateReception
         {
             Waiting,
             FunctionMSB,

@@ -13,6 +13,10 @@ using ExtendedSerialPort_NS;
 using System.Windows.Threading;
 using System.Net.NetworkInformation;
 using KeyboardHook_NS;
+using WpfAsservissementDisplay_NS;
+
+
+
 
 
 
@@ -26,14 +30,15 @@ namespace RobotInterface
     public partial class MainWindow : Window
     {
 
-        bool toogle,b;
+
+        bool toogle, b;
         byte i;
         bool autoControlActivated;
         string receivedText;
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
         Robot robot = new Robot();
-     
+
 
 
         public MainWindow()
@@ -43,11 +48,13 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM7",115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             var _globalKeyboardHook = new GlobalKeyboardHook();
             _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
+
+
 
 
 
@@ -72,26 +79,26 @@ namespace RobotInterface
             while (robot.byteListReceived.Count > 0)
             {
                 byte Received = robot.byteListReceived.Dequeue();
-         
+
                 //TextBoxréception.Text += "0x" + Received.ToString("X2") + " "; //X2 c'est pour convertir en Hexadécimal 
                 DecodeMessage(Received);
 
             }
-            
+
 
         }
 
         public void SerialPort1_DataReceived(object sender, DataReceivedArgs e)
         {
             //robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
-            
+
             for (int i = 0; i < e.Data.Length; i++)
             {
                 robot.byteListReceived.Enqueue(e.Data[i]);
-          
+
 
             }
-            
+
         }
 
 
@@ -105,15 +112,15 @@ namespace RobotInterface
             {
 
                 //TextBoxréception.Text += ("Reçu : " + textBoxEmission.Text);
-                
+
                 serialPort1.Write(textBoxEmission.Text);
 
                 //receivedText =textBoxEmission.Text ;
-                
+
                 textBoxEmission.Text = "";
             }
         }
-      
+
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
@@ -134,37 +141,37 @@ namespace RobotInterface
             }
         }
 
-        private  void _globalKeyboardHook_KeyPressed(object? sender, KeyArgs e)
+        private void _globalKeyboardHook_KeyPressed(object? sender, KeyArgs e)
         {
             if (autoControlActivated == false)
             {
                 switch (e.keyCode)
                 {
-                case KeyCode.LEFT:
-                     UartEncodeAndSendMessage(0x0051, 1, new byte[] {
+                    case KeyCode.LEFT:
+                        UartEncodeAndSendMessage(0x0051, 1, new byte[] {
                         (byte)StateRobot.STATE_TOURNE_SUR_PLACE_GAUCHE });
-                break;
-                case KeyCode.RIGHT:
-                    UartEncodeAndSendMessage(0x0051, 1, new byte[] {
+                        break;
+                    case KeyCode.RIGHT:
+                        UartEncodeAndSendMessage(0x0051, 1, new byte[] {
                     (byte)StateRobot.STATE_TOURNE_SUR_PLACE_DROITE });
-                    break;
-                case KeyCode.UP:
-                    UartEncodeAndSendMessage(0x0051, 1, new byte[]
-                    { (byte)StateRobot.STATE_AVANCE });
-                    break;
-                case KeyCode.DOWN:
-                    UartEncodeAndSendMessage(0x0051, 1, new byte[]
-                    { (byte)StateRobot.STATE_ARRET });
-                    break;
-                case KeyCode.PAGEDOWN:
-                    UartEncodeAndSendMessage(0x0051, 1, new byte[]
-                    { (byte)StateRobot.STATE_RECULE });
-                    break;
-          
+                        break;
+                    case KeyCode.UP:
+                        UartEncodeAndSendMessage(0x0051, 1, new byte[]
+                        { (byte)StateRobot.STATE_AVANCE });
+                        break;
+                    case KeyCode.DOWN:
+                        UartEncodeAndSendMessage(0x0051, 1, new byte[]
+                        { (byte)StateRobot.STATE_ARRET });
+                        break;
+                    case KeyCode.PAGEDOWN:
+                        UartEncodeAndSendMessage(0x0051, 1, new byte[]
+                        { (byte)StateRobot.STATE_RECULE });
+                        break;
+
                 }
             }
         }
-        
+
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
             TextBoxréception.Text = "";
@@ -184,17 +191,17 @@ namespace RobotInterface
 
              serialPort1.Write(bytesliste, 0, bytesliste.Length);
             */
-           //toogle = !toogle;
-           // if (toogle==true)
-           //     i = 0;
-            
-           // if (toogle==false)
-           //     i = 1;
+            //toogle = !toogle;
+            // if (toogle==true)
+            //     i = 0;
 
-           
+            // if (toogle==false)
+            //     i = 1;
+
+
 
             byte[] array = Encoding.ASCII.GetBytes("Decode");
-           // byte[] array1 = new byte[] {i};
+            // byte[] array1 = new byte[] {i};
             //UartEncodeAndSendMessage(0x51, array1.Length, array1);
             UartEncodeAndSendMessage(0x80, array.Length, array);
             //UartEncodeAndSendMessage(0x52, array1.Length, array1);
@@ -233,11 +240,11 @@ namespace RobotInterface
 
         }
 
-       
+
 
         void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            byte[] trame = new byte[msgPayloadLength+6];
+            byte[] trame = new byte[msgPayloadLength + 6];
             int a = 0;
             trame[0] = 0xFE;
             trame[1] = 0x00;
@@ -252,12 +259,12 @@ namespace RobotInterface
             }
 
             trame[5 + a] = CalculateChecksum(msgFunction, msgPayloadLength, msgPayload);
-           /* foreach (byte i in trame)
-            {
+            /* foreach (byte i in trame)
+             {
 
-                TextBoxréception.Text += i;
-            }
-            */
+                 TextBoxréception.Text += i;
+             }
+             */
             serialPort1.Write(trame, 0, trame.Length);
 
         }
@@ -285,14 +292,14 @@ namespace RobotInterface
 
         void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
-            switch (msgFunction)
+            switch ((StateMessage)msgFunction)
             {
-                case 0x0080:
+                case StateMessage.Text:
                     TextBoxréception.Text = "Text recu : " + Encoding.UTF8.GetString(msgPayload, 0, msgPayload.Length);
 
 
                     break;
-                case 0x0020:
+                case StateMessage.Led:
 
                     if (msgPayload[0] == 1)
                         if (msgPayload[1] == 1)
@@ -311,31 +318,38 @@ namespace RobotInterface
                             Led3.IsChecked = false;
                     break;
 
-                case 0x0030:
+                case StateMessage.IRDistance:
                     IRG.Text = "IR Gauche : " + msgPayload[0] + " cm";
                     IRC.Text = "IR Centre : " + msgPayload[1] + " cm";
                     IRD.Text = "IR Droite : " + msgPayload[2] + " cm";
                     break;
-                case 0x0040:
+                case StateMessage.Moteur:
                     MG.Text = "Vitesse Gauche : " + msgPayload[0] + "%";
                     MD.Text = "Vitesse Droite : " + msgPayload[1] + "%";
 
                     break;
-                case 0x0050:
+                case StateMessage.Step:
                     int instant = (((int)msgPayload[1]) << 24) + (((int)msgPayload[2]) << 16)
                     + (((int)msgPayload[3]) << 8) + ((int)msgPayload[4]);
                     TextBoxréception.Text += "\nRobot␣State␣:␣" +
                     ((StateRobot)(msgPayload[0])).ToString() +
                     "␣-␣" + instant.ToString() + "␣ms";
                     break;
-                case 0x0061:
+                case StateMessage.Encodeur:
                     robot.positionXOdo = BitConverter.ToSingle(msgPayload, 4);
                     robot.positionYOdo = BitConverter.ToSingle(msgPayload, 8);
+                    robot.angleRadianFromOdometry = BitConverter.ToSingle(msgPayload, 12);
+                    robot.vitesseLineaireFromOdometry = BitConverter.ToSingle(msgPayload, 16);
+                    robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
                     X.Text = "X : " + robot.positionXOdo.ToString("N3") + " m";
                     Y.Text = "Y : " + robot.positionYOdo.ToString("N3") + " m";
+                    asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
+
+
                     break;
 
 
+              
 
 
 
@@ -344,9 +358,20 @@ namespace RobotInterface
 
 
 
+        }
 
 
-
+        public enum StateMessage : int
+        {
+            Text = 0x0080,
+            Led = 0x0020,
+            IRDistance = 0x0030,
+            Step = 0x0050,
+            PID,
+            PI,
+            P,
+            Moteur = 0x0040,
+            Encodeur = 0x0061,
 
 
 
@@ -359,55 +384,55 @@ namespace RobotInterface
             Waiting,
             FunctionMSB,
             FunctionLSB,
-PayloadLengthMSB,
-PayloadLengthLSB,
-Payload,
-CheckSum
-}
-StateReception rcvState = StateReception.Waiting;
+            PayloadLengthMSB,
+            PayloadLengthLSB,
+            Payload,
+            CheckSum
+        }
+        StateReception rcvState = StateReception.Waiting;
         int msgDecodedFunction = 0;
-        
+
         int msgDecodedPayloadLength = 0;
-byte[] msgDecodedPayload;
-int msgDecodedPayloadIndex = 0;
-       
+        byte[] msgDecodedPayload;
+        int msgDecodedPayloadIndex = 0;
 
-        
+
+
         private void DecodeMessage(byte c)
-{
-           
-switch(rcvState)
-{
-case StateReception.Waiting:
-    
-    if (c == 0xFE)
-        rcvState = StateReception.FunctionMSB;
+        {
+
+            switch (rcvState)
+            {
+                case StateReception.Waiting:
+
+                    if (c == 0xFE)
+                        rcvState = StateReception.FunctionMSB;
 
 
-break;
-case StateReception.FunctionMSB:     
+                    break;
+                case StateReception.FunctionMSB:
                     msgDecodedFunction = c;
                     rcvState = StateReception.FunctionLSB;
 
                     break;
-case StateReception.FunctionLSB:
+                case StateReception.FunctionLSB:
                     msgDecodedFunction += c;
-                
+
                     rcvState = StateReception.PayloadLengthMSB;
                     break;
-case StateReception.PayloadLengthMSB:
-                    msgDecodedPayloadLength = (c<<8);
-                    rcvState= StateReception.PayloadLengthLSB;
+                case StateReception.PayloadLengthMSB:
+                    msgDecodedPayloadLength = (c << 8);
+                    rcvState = StateReception.PayloadLengthLSB;
 
 
 
-break;
-case StateReception.PayloadLengthLSB:
-                    msgDecodedPayloadLength +=c;
-                    msgDecodedPayload=new byte[msgDecodedPayloadLength];
+                    break;
+                case StateReception.PayloadLengthLSB:
+                    msgDecodedPayloadLength += c;
+                    msgDecodedPayload = new byte[msgDecodedPayloadLength];
                     rcvState = StateReception.Payload;
                     break;
-case StateReception.Payload:
+                case StateReception.Payload:
 
                     msgDecodedPayload[msgDecodedPayloadIndex] = c;
                     msgDecodedPayloadIndex++;
@@ -418,28 +443,28 @@ case StateReception.Payload:
 
                     }
 
-                       
 
-                    
-break;
-case StateReception.CheckSum:
-                    byte calculatedChecksum = CalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength,msgDecodedPayload);
+
+
+                    break;
+                case StateReception.CheckSum:
+                    byte calculatedChecksum = CalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
 
                     if (calculatedChecksum == c)
                     {
-                       ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-                     
+                        ProcessDecodedMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
+
                     }
                     rcvState = StateReception.Waiting;
 
-break;
-default:
-rcvState = StateReception.Waiting;
-break;
-}
-}
+                    break;
+                default:
+                    rcvState = StateReception.Waiting;
+                    break;
+            }
+        }
 
-      
+
 
 
 

@@ -10,6 +10,7 @@
 //Initialisation d?un timer 16 bits
  unsigned long timestamp=0;
  float FCY = 60000000;
+ int counterQ=0;
 
 void InitTimer1(void) {
     //Timer1 pour horodater les mesures (1ms)
@@ -35,8 +36,10 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     QEIUpdateData();
-    SendPositionData();
     
+    if(counterQ++%30==0){
+            SendPositionData();
+    }
       
 }
 //Interruption du timer 1

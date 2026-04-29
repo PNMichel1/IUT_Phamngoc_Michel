@@ -64,7 +64,7 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, int moteur){
         payload3[0]=vitesseEnPourcents;
         
     }
-       //UartEncodeAndSendMessage(0x40, 2, payload3);
+       UartEncodeAndSendMessage(0x40, 2, payload3);
     
 }
 

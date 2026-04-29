@@ -48,7 +48,6 @@ int main(void) {
 
     EN_PWM=1;
 
-    //SendMessageDirect((unsigned char*) "Bonjour", 7);
 
 
     while (1) {
@@ -78,7 +77,7 @@ int main(void) {
             unsigned char c = CB_RX1_Get();
             SendMessage(&c, 1);
         }
-        __delay32(10000);
+   
 
 
         if (ADCIsConversionFinished()) { //fin de l'aquisition du convertisseur
@@ -96,7 +95,7 @@ int main(void) {
             robotState.distanceTelemetreDroit1 = 34 / volts - 5;
 
 
-            /*
+            
                         if (counter++ % 50 == 0) {
                             // UartEncodeAndSendMessage(0x80, 7, payload);
                             unsigned char payload2[3];
@@ -110,7 +109,7 @@ int main(void) {
 
 
                             UartEncodeAndSendMessage(0x30, 3, payload2);
-                        }  */
+                        }  
 
             if (robotState.distanceTelemetreGauche1 < 30) {
                 LED_BLANCHE_1 = 1;

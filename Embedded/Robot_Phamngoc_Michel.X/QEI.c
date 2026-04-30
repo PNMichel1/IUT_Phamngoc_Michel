@@ -12,6 +12,8 @@
 #include "UART.h"
 #include "timer.h"
 #include "Toolbox.h"
+#include "asservissement.h"
+
 
 #define DISTROUES 0.218
 #define POSITION_DATA 0x0061
@@ -82,5 +84,11 @@ void SendPositionData() {
     getBytesFromFloat(positionPayload, 12, (float) (robotState.angleRadianFromOdometry));
     getBytesFromFloat(positionPayload, 16, (float) (robotState.vitesseLineaireFromOdometry));
     getBytesFromFloat(positionPayload, 20, (float) (robotState.vitesseAngulaireFromOdometry));
+// 
+//    getBytesFromFloat(positionPayload, 24, (float)(PidX.Kp));
+//    getBytesFromFloat(positionPayload, 28, (float) (PidX.Ki));
+//    getBytesFromFloat(positionPayload, 32, (float) (PidX.Kd));
+//    
     UartEncodeAndSendMessage(POSITION_DATA, 24, positionPayload);
+   
 }

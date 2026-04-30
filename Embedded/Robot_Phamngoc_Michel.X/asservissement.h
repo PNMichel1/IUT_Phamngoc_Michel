@@ -25,9 +25,13 @@ double corrI;
 double corrD;
 }PidCorrector;
 
-double proportionelleMax;
-double integralMax;
-double deriveeMax;
+extern double proportionelleMax;
+extern double integralMax;
+extern double deriveeMax;
+
+extern PidCorrector PidX;
+extern PidCorrector PidTheta;
+
 
 
 #ifdef	__cplusplus

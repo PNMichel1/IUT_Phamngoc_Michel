@@ -30,15 +30,12 @@ void InitTimer1(void) {
 }
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
-    IFS0bits.T1IF = 0;
-  
-    
+    IFS0bits.T1IF = 0;     
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
-    QEIUpdateData();
-    
+    QEIUpdateData();    
     if(counterQ++%30==0){
-            SendPositionData();
+        SendPositionData();
     }
       
 }
@@ -61,8 +58,7 @@ void InitTimer4(void) {
 }
 
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
-    IFS1bits.T4IF = 0;
-   
+    IFS1bits.T4IF = 0;  
   
     timestamp++;
     OperatingSystemLoop();

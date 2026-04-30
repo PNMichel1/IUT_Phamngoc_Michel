@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:RobotInterface" 
         xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay_NS;assembly=WpfAsservissementDisplay"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
-            <RowDefinition Height="237"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="96.04"/>
+            <RowDefinition Height="159"/>
+
+            <RowDefinition Height="134.04"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
@@ -22,48 +22,70 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="30" Focusable="False"/>
         </Grid.ColumnDefinitions>
-        <GroupBox x:Name="emission" Header="Emission" Background="#FF9A9696" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1">
+        <GroupBox x:Name="emission" Header="Emission" Background="#FF9A9696" BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="1" >
             <TextBox x:Name="textBoxEmission" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" TextChanged="TextBox_TextChanged" AcceptsReturn="True" KeyUp="TextBoxEmission_KeyUp"/>
         </GroupBox>
-        <GroupBox x:Name="Reception" Header="Réception" Background="#FFBDBDBD" Grid.Column="3" BorderBrush="Black" Grid.Row="1">
+        <GroupBox x:Name="Reception" Header="Réception" Background="#FFBDBDBD" Grid.Column="1" BorderBrush="Black" Grid.Row="2" Margin="0,0,0,18">
             <TextBox x:Name="TextBoxréception" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True"/>
         </GroupBox>
-        <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Width="355" >
-            <GroupBox x:Name="Leds" Header="Leds" BorderBrush="Black" Width="67" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Width="355"  >
+            <GroupBox x:Name="Leds" Header="Leds" BorderBrush="Black" Width="67" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <StackPanel>
                     <CheckBox x:Name="Led1" Content="Led1" IsChecked="False" Margin="5" />
                     <CheckBox x:Name="Led2" Content="Led2" IsChecked="False"  Margin="5" />
                     <CheckBox x:Name="Led3" Content="Led3" IsChecked="False" Margin="5"  />
                 </StackPanel>
             </GroupBox>
-            <GroupBox x:Name="IR" Header="Télémètres IR" BorderBrush="Black" Width="124" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <GroupBox x:Name="IR" Header="Télémètres IR" BorderBrush="Black" Width="124" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <StackPanel>
                     <TextBlock x:Name="IRG" Text="IR Gauche :" Margin="5"/>
                     <TextBlock x:Name="IRC" Text="IR Centre :" Margin="5"/>
                     <TextBlock x:Name="IRD" Text="IR Droit :" Margin="5"/>
                 </StackPanel>
             </GroupBox>
-            <GroupBox x:Name="Moteur" Header="Moteur" BorderBrush="Black"  Width="162" Height="100" VerticalAlignment="Top">
+            <GroupBox x:Name="Moteur" Header="Moteur" BorderBrush="Black"  Width="162" Height="130" VerticalAlignment="Top">
                 <StackPanel>
                     <TextBlock x:Name="MG" Text="Vitesse Gauche :" Margin="2"/>
                     <TextBlock x:Name="MD" Text="Vitesse Droite :" Margin="2"/>
                     <TextBlock x:Name="X" Text="X :" Margin="2"/>
                     <TextBlock x:Name="Y" Text="Y :" Margin="2"/>
+                    <TextBlock x:Name="angle" Text="θ :" Margin="2"/>
                 </StackPanel>
             </GroupBox>
 
             <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Width="355">
 
             </StackPanel>
-           
+
         </StackPanel>
-        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" Width="355" >
-            <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Height="236"/>
+        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Width="355" Grid.RowSpan="2" >
+            <AsservDisplay:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Height="316" Width="358"/>
 
         </StackPanel>
 
-        <Button x:Name="buttonEnvoyer" Grid.Column="3" Content="Envoyer" Grid.Row="4" Width="56" Click="buttonEnvoyer_Click" Margin="10,33,0,32" HorizontalAlignment="Left"/>
-        <Button x:Name="ButtonClear" Grid.Column="3" Content="Clear" Grid.Row="4" Click="ButtonClear_Click" Margin="177,33,128,32" />
-        <Button x:Name="Test" Grid.Column="3" Content="Test" HorizontalAlignment="Left" Margin="96,33,0,32" Grid.Row="4" Click="Test_Click" Width="54"/>
+        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Width="355"  >
+            <GroupBox x:Name="IR1" Header="Assertissement" BorderBrush="Black" Width="170" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <StackPanel HorizontalAlignment="Center" >
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                        <TextBlock x:Name="KpName" Text="Kp"  />
+                        <TextBox x:Name="Kp" HorizontalAlignment="Right" Width="106" KeyUp="TextKp_KeyUp"  />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Margin="0,10,0,0" HorizontalAlignment="Center" >
+                        <TextBlock x:Name="KiName" Text="Ki" />
+                        <TextBox x:Name="Ki" Width="106" KeyUp="TextKi_KeyUp"  />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Margin="0,10,0,0">
+                        <TextBlock x:Name="KdName" Text="Kd" />
+                        <TextBox x:Name="Kd" HorizontalAlignment="Center" Width="106" TextChanged="Kd_TextChanged" KeyUp="TextKd_KeyUp"  />
+                    </StackPanel>
+                    
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <Button x:Name="buttonEnvoyer" Grid.Column="3" Content="Envoyer" Grid.Row="3" Width="56" Click="buttonEnvoyer_Click" Margin="0,10,120,82" HorizontalAlignment="Right"/>
+        <Button x:Name="ButtonClear" Grid.Column="3" Content="Clear" Grid.Row="3" Click="ButtonClear_Click" Margin="350,10,10,82" />
+        <Button x:Name="Test" Grid.Column="3" Content="Test" HorizontalAlignment="Right" Margin="91,10,190,82" Grid.Row="3" Click="Test_Click" Width="54"/>
     </Grid>
 </Window>

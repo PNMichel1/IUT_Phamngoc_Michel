@@ -4,6 +4,7 @@
 #include "Robot.h"
 #include "Toolbox.h"
 #include "main.h"
+#include "UART_Protocol.h"
 #define PWMPER 24.0
 
 void InitPWM(void) {

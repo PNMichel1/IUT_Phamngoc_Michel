@@ -121,9 +121,34 @@ namespace RobotInterface
             }
         }
 
-
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
+     
+
+
+            if (!float.TryParse(Kd.Text, out float valeur))
+                return;
+            if (!float.TryParse(Ki.Text, out float valeur2))
+                return;
+            if (!float.TryParse(Kp.Text, out float valeur3))
+                return;
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(valeur3, 0, valeur2, 0, valeur,0);
+
+            List<byte> values = new List<byte>();
+            values.AddRange(BitConverter.GetBytes(valeur));
+            values.AddRange(BitConverter.GetBytes(valeur2));
+            values.AddRange(BitConverter.GetBytes(valeur3));
+
+            byte[] tableau = values.ToArray();
+
+
+
+            UartEncodeAndSendMessage(0x67, tableau.Length, tableau);
+
+
+
+
+
 
             TextBoxréception.Text += ("Reçu : " + textBoxEmission.Text + "\n");
             textBoxEmission.Text = "";
@@ -139,6 +164,11 @@ namespace RobotInterface
                 toogle = !toogle;
 
             }
+
+
+           
+
+
         }
 
         private void _globalKeyboardHook_KeyPressed(object? sender, KeyArgs e)
@@ -343,9 +373,9 @@ namespace RobotInterface
                     robot.vitesseAngulaireFromOdometry = BitConverter.ToSingle(msgPayload, 20);
                     X.Text = "X : " + robot.positionXOdo.ToString("N3") + " m";
                     Y.Text = "Y : " + robot.positionYOdo.ToString("N3") + " m";
-                    asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);
-
-
+                    angle.Text = "θ : " + robot.angleRadianFromOdometry.ToString("N3") + " rad";
+                    asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);        
+                    
                     break;
 
 
@@ -396,7 +426,25 @@ namespace RobotInterface
         byte[] msgDecodedPayload;
         int msgDecodedPayloadIndex = 0;
 
+        private void TextKp_KeyUp(object sender, KeyEventArgs e)
+        {
 
+        }
+
+        private void TextKi_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Kd_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextKd_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
 
         private void DecodeMessage(byte c)
         {

@@ -105,9 +105,6 @@ int main(void) {
                             payload2[1] = robotState.distanceTelemetreCentre;
                             payload2[2] = robotState.distanceTelemetreDroit;
 
-
-
-
                             UartEncodeAndSendMessage(0x30, 3, payload2);
                         }  
 

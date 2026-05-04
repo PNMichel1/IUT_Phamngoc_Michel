@@ -23,6 +23,8 @@ float yPosFromOdometry_1;
 float yPosFromOdometry;
 float angleRadianFromOdometry_1;
 float angleRadianFromOdometry;
+float vitesseDroitePercent;
+float vitesseGauchePercent;
 
 };
 };

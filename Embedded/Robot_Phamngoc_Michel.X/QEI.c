@@ -15,7 +15,6 @@
 #include "asservissement.h"
 
 
-#define DISTROUES 0.218
 #define POSITION_DATA 0x0061
 
 float QeiDroitPosition_T_1;

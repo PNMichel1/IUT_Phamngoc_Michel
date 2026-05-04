@@ -7,6 +7,7 @@
 
 #ifndef ASSERVISSEMENT_H
 #define	ASSERVISSEMENT_H
+#define M_TO_PERCENT 10
 
 typedef struct _PidCorrector
 {
@@ -32,7 +33,11 @@ extern double deriveeMax;
 extern PidCorrector PidX;
 extern PidCorrector PidTheta;
 
+void UpdateAsservissement();
+double Correcteur(volatile PidCorrector* PidCorr, double erreur);
+void PWMSetSpeedConsignePolaire(float vitesseLineaire, float vitesseAngulaire);
 
+#define DISTROUES 0.218
 
 #ifdef	__cplusplus
 extern "C" {

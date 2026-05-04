@@ -23,6 +23,7 @@
 #include "QEI.h"
 #include "ToolBox.h"
 #include "Utilities.h"
+#include "asservissement.h"
 //
 int Capteur, etape;
 //unsigned char payload[] = {'B', 'o', 'n', 'j', 'o', 'u', 'r'};
@@ -51,6 +52,9 @@ int main(void) {
 
 
     while (1) {
+     
+    
+        
         //***************QEI****************
         // SendMessageDirect((unsigned char*) "Bonjour", 7);
        //getBytesFromFloat(buffer,0,payload);
@@ -64,9 +68,9 @@ int main(void) {
 
 
         //****************************************
-        /*
+        
                  //Pas de IsdataAvailable sinon explosion
-                    for (int i = 0; i < CB_RX1_GetDataSize(); i++) {
+                  /*  for (int i = 0; i < CB_RX1_GetDataSize(); i++) {
                          unsigned char c = CB_RX1_Get();
                          UartDecodeMessage(c); //Décodage foireux
                         // SendMessage(&c,1);
@@ -75,7 +79,7 @@ int main(void) {
         int i;
         for (i = 0; i < CB_RX1_GetDataSize(); i++) {
             unsigned char c = CB_RX1_Get();
-            SendMessage(&c, 1);
+            //SendMessage(&c, 1);
         }
    
 
@@ -152,7 +156,7 @@ int main(void) {
 }
 
 
-unsigned char stateRobot = 0;
+unsigned char stateRobot = 0;//change??
 
 void CompteurEtape(void) {
 
@@ -171,10 +175,9 @@ void CompteurEtape(void) {
 void OperatingSystemLoop(void) {
     switch (stateRobot) {
         case STATE_ATTENTE:
-            timestamp = 0;
-
-            PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+           timestamp = 0;
+           PWMSetSpeedConsignePolaire(0,0);
+           
             if (autoControlActivated)
                 stateRobot = STATE_ATTENTE_EN_COURS;
             break;
@@ -185,8 +188,7 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_AVANCE:
             CompteurEtape();
-            PWMSetSpeedConsigne(30, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(30, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePolaire(1,2/DISTROUES);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
@@ -195,8 +197,7 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_TOURNE_GAUCHE:
             CompteurEtape();
-            PWMSetSpeedConsigne(10, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePolaire(0, 0.3*2/DISTROUES);
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
         case STATE_TOURNE_GAUCHE_EN_COURS:
@@ -205,19 +206,20 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_TOURNE_DROITE:
             CompteurEtape();
-            PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(10, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePolaire(0.3 , 0);
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
+            
             break;
         case STATE_TOURNE_DROITE_EN_COURS:
             if (autoControlActivated)
                 SetNextRobotStateInAutomaticMode();
+            
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE:
             CompteurEtape();
-            PWMSetSpeedConsigne(12, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(-12, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePolaire(0.4,-0.4*2/DISTROUES);
             stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
+            
             break;
         case STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS:
             if (autoControlActivated)
@@ -225,8 +227,7 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE:
             CompteurEtape();
-            PWMSetSpeedConsigne(-12, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(12, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePolaire(-0.4,0.4*2/DISTROUES);
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
         case STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS:
@@ -236,8 +237,7 @@ void OperatingSystemLoop(void) {
 
         case RECULE:
             CompteurEtape();
-            PWMSetSpeedConsigne(-15, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
+            PWMSetSpeedConsignePolaire(-0.5,-0.5*2/DISTROUES);
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
 

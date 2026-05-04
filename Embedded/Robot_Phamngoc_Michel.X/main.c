@@ -52,8 +52,8 @@ int main(void) {
 
 
     while (1) {
-     
-    
+        robotState.vitesseGauchePercent=20;
+        //PWMSetSpeedConsignePolaire(10,0);
         
         //***************QEI****************
         // SendMessageDirect((unsigned char*) "Bonjour", 7);
@@ -188,7 +188,7 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_AVANCE:
             CompteurEtape();
-            PWMSetSpeedConsignePolaire(1,2/DISTROUES);
+            PWMSetSpeedConsignePolaire(1,30);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:

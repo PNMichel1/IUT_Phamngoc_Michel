@@ -7,7 +7,7 @@
 
 #ifndef ASSERVISSEMENT_H
 #define	ASSERVISSEMENT_H
-#define M_TO_PERCENT 10
+#define M_TO_PERCENT 30
 
 typedef struct _PidCorrector
 {

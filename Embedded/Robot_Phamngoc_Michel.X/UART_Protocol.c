@@ -4,6 +4,8 @@
 #include "PWM.h"
 #include "CB_TX1.h"
 #include "main.h"
+#include "asservissement.h"
+#include "ToolBox.h"
 
 int msgDecodedFunction = 0;
 int msgDecodedPayloadLength = 0;
@@ -12,6 +14,7 @@ int msgDecodedPayloadIndex = 0;
 int receivedChecksum, calculatedChecksum = 0x00;
 int rcvState = 0;
 int autoControlActivated=1;
+PidCorrector PidX;
 
 unsigned char UartCalculateChecksum(int msgFunction,
         int msgPayloadLength, unsigned char* msgPayload) {
@@ -160,6 +163,12 @@ void UartProcessDecodedMessage(int function,
             SetRobotAutoControlState(payload[0]);
             
             break;
+        case COMMAND_PID_MOTEUR:
+           
+            SetupPidAsservissement(&PidX,getFloatFromBytes(payload,0),getFloatFromBytes(payload,1),getFloatFromBytes(payload,2),0,0,0);
+            UartEncodeAndSendMessage(COEFFICIENT_PID_VERIFY,payloadLength,payload);
+            PWMSetSpeedConsignePolaire(getFloatFromBytes(payload,3),getFloatFromBytes(payload,4));
+            
         default:
             break;
 

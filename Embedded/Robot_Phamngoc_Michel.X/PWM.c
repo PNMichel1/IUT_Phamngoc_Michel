@@ -71,14 +71,14 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, int moteur){
 
 void PWMUpdateSpeed() {
     // Cette fonction est appelee sur timer et permet de suivre des rampes d acceleration
-    if (robotState.vitesseGaucheCommandeCourante < robotState.vitesseGaucheConsigne)
+    if (robotState.vitesseGaucheCommandeCourante < robotState.vitesseGauchePercent)
         robotState.vitesseGaucheCommandeCourante = Min(
             robotState.vitesseGaucheCommandeCourante + acceleration,
-            robotState.vitesseGaucheConsigne);
-    if (robotState.vitesseGaucheCommandeCourante > robotState.vitesseGaucheConsigne)
+            robotState.vitesseGauchePercent);
+    if (robotState.vitesseGaucheCommandeCourante > robotState.vitesseGauchePercent)
         robotState.vitesseGaucheCommandeCourante = Max(
             robotState.vitesseGaucheCommandeCourante - acceleration,
-            robotState.vitesseGaucheConsigne);
+            robotState.vitesseGauchePercent);
     if (robotState.vitesseGaucheCommandeCourante > 0) {
         PDC1 = robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
         SDC1 = talon;
@@ -86,14 +86,14 @@ void PWMUpdateSpeed() {
         PDC1 = talon;
         SDC1 = -robotState.vitesseGaucheCommandeCourante * PWMPER + talon;
     }
-    if (robotState.vitesseDroiteCommandeCourante < robotState.vitesseDroiteConsigne)
+    if (robotState.vitesseDroiteCommandeCourante < robotState.vitesseDroitePercent)
         robotState.vitesseDroiteCommandeCourante = Min(
             robotState.vitesseDroiteCommandeCourante + acceleration,
-            robotState.vitesseDroiteConsigne);
-    if (robotState.vitesseDroiteCommandeCourante > robotState.vitesseDroiteConsigne)
+            robotState.vitesseDroitePercent);
+    if (robotState.vitesseDroiteCommandeCourante > robotState.vitesseDroitePercent)
         robotState.vitesseDroiteCommandeCourante = Max(
             robotState.vitesseDroiteCommandeCourante - acceleration,
-            robotState.vitesseDroiteConsigne);
+            robotState.vitesseDroitePercent);
     if (robotState.vitesseDroiteCommandeCourante >= 0) {
         PDC2 = robotState.vitesseDroiteCommandeCourante * PWMPER + talon;
         SDC2 = talon;

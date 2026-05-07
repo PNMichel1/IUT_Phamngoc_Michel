@@ -17,7 +17,13 @@ PidCorr->erreurDeriveeMax = deriveeMax;
 }
 
 void PWMSetSpeedConsignePolaire(float vitesseLineaire, float vitesseAngulaire) {
-robotState.vitesseDroiteConsigne = -(vitesseLineaire + vitesseAngulaire*(0.218/2));   //si consigne=20m/s vitesse=0.5m/s facteur de 40 entre les deux 
+    /*
+     
+     
+     PWMSetSpeedConsignePolaire(0,0) ,n'arrete pas le moteur a régler
+     
+     */
+robotState.vitesseDroiteConsigne = vitesseLineaire + vitesseAngulaire*(0.218/2);   //si consigne=20m/s vitesse=0.5m/s facteur de 40 entre les deux 
 robotState.vitesseGaucheConsigne = vitesseLineaire - vitesseAngulaire*(0.218/2);   
 robotState.vitesseDroitePercent = -M_TO_PERCENT * robotState.vitesseDroiteConsigne;
 robotState.vitesseGauchePercent = M_TO_PERCENT * robotState.vitesseGaucheConsigne;

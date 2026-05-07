@@ -28,6 +28,8 @@ extern int autoControlActivated;
 #define CheckSum 6
 #define SET_ROBOT_STATE 0x0051
 #define SET_ROBOT_MANUAL_CONTROL 0x0052
+#define COMMAND_PID_MOTEUR 0x0067
+#define COEFFICIENT_PID_VERIFY 0x0068
 #ifdef	__cplusplus
 extern "C" {
 #endif

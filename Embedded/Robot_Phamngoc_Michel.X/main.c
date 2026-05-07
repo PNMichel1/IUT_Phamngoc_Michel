@@ -52,8 +52,12 @@ int main(void) {
 
 
     while (1) {
-        robotState.vitesseGauchePercent=20;
-        //PWMSetSpeedConsignePolaire(10,0);
+        PWMSetSpeedConsignePolaire(1,0);
+        __delay32(3000);
+        PWMSetSpeedConsignePolaire(0,0);
+         __delay32(3000);
+        
+    
         
         //***************QEI****************
         // SendMessageDirect((unsigned char*) "Bonjour", 7);
@@ -70,17 +74,17 @@ int main(void) {
         //****************************************
         
                  //Pas de IsdataAvailable sinon explosion
-                  /*  for (int i = 0; i < CB_RX1_GetDataSize(); i++) {
+                    for (int i = 0; i < CB_RX1_GetDataSize(); i++) {
                          unsigned char c = CB_RX1_Get();
                          UartDecodeMessage(c); //Décodage foireux
                         // SendMessage(&c,1);
                 
-                    }*/
-        int i;
-        for (i = 0; i < CB_RX1_GetDataSize(); i++) {
-            unsigned char c = CB_RX1_Get();
-            //SendMessage(&c, 1);
-        }
+                    }
+//        int i;
+//        for (i = 0; i < CB_RX1_GetDataSize(); i++) {
+//            unsigned char c = CB_RX1_Get();
+//            //SendMessage(&c, 1);
+//        }
    
 
 
@@ -173,6 +177,11 @@ void CompteurEtape(void) {
 }
 
 void OperatingSystemLoop(void) {
+    /*
+     
+     Probleme a regler avec le switch case car le robot passe tout le temps au case tourne a gauche
+     
+     */
     switch (stateRobot) {
         case STATE_ATTENTE:
            timestamp = 0;
@@ -188,7 +197,7 @@ void OperatingSystemLoop(void) {
             break;
         case STATE_AVANCE:
             CompteurEtape();
-            PWMSetSpeedConsignePolaire(1,30);
+            PWMSetSpeedConsignePolaire(1,0);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:

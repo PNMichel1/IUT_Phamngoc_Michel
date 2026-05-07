@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RobotInterface" 
         xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay_NS;assembly=WpfAsservissementDisplay"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="500" Width="1100">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -84,8 +84,33 @@
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        <Button x:Name="buttonEnvoyer" Grid.Column="3" Content="Envoyer" Grid.Row="3" Width="56" Click="buttonEnvoyer_Click" Margin="0,10,120,82" HorizontalAlignment="Right"/>
-        <Button x:Name="ButtonClear" Grid.Column="3" Content="Clear" Grid.Row="3" Click="ButtonClear_Click" Margin="350,10,10,82" />
-        <Button x:Name="Test" Grid.Column="3" Content="Test" HorizontalAlignment="Right" Margin="91,10,190,82" Grid.Row="3" Click="Test_Click" Width="54"/>
+
+
+        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="180,0,0,0" Width="355"  >
+            <GroupBox x:Name="VitesseLetA" Header="Vitesse Linéaire et Angulaire" BorderBrush="Black" Width="170" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <StackPanel HorizontalAlignment="Center" >
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                        <TextBlock x:Name="Lineaire" Text="Linéaire"  />
+                        <TextBox x:Name="LineaireBox" HorizontalAlignment="Right" Width="106" KeyUp="TextKp_KeyUp"  />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Margin="0,10,0,0" HorizontalAlignment="Center" >
+                        <TextBlock x:Name="Angulaire" Text="Angulaire" />
+                        <TextBox x:Name="AngulaireBox" Width="106" KeyUp="TextKi_KeyUp"  />
+                    </StackPanel>
+
+
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+
+
+        <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right">
+            <Button x:Name="buttonEnvoyer" Content="Envoyer"  Width="56" Click="buttonEnvoyer_Click"/>
+            <Button x:Name="ButtonClear" Content="Clear" Click="ButtonClear_Click"   />
+            <Button x:Name="Test"  Content="Test"  Click="Test_Click" Width="54"/>
+        </StackPanel>
+      
     </Grid>
 </Window>

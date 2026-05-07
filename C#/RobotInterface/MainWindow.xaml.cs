@@ -14,6 +14,7 @@ using System.Windows.Threading;
 using System.Net.NetworkInformation;
 using KeyboardHook_NS;
 using WpfAsservissementDisplay_NS;
+using SciChart.Data.Model;
 
 
 
@@ -123,26 +124,36 @@ namespace RobotInterface
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
-     
-
 
             if (!float.TryParse(Kd.Text, out float valeur))
                 return;
+            
             if (!float.TryParse(Ki.Text, out float valeur2))
                 return;
+
             if (!float.TryParse(Kp.Text, out float valeur3))
+
                 return;
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(valeur3, 0, valeur2, 0, valeur,0);
+
+            if (!float.TryParse(LineaireBox.Text, out float valeur4))
+
+                return;
+            if (!float.TryParse(AngulaireBox.Text, out float valeur5))
+                return;
+
+
 
             List<byte> values = new List<byte>();
             values.AddRange(BitConverter.GetBytes(valeur));
             values.AddRange(BitConverter.GetBytes(valeur2));
             values.AddRange(BitConverter.GetBytes(valeur3));
+            values.AddRange(BitConverter.GetBytes(valeur4));
+            values.AddRange(BitConverter.GetBytes(valeur5));
 
             byte[] tableau = values.ToArray();
 
 
-
+            asservSpeedDisplay.UpdatePolarSpeedCommandValues(valeur4, valeur5);
             UartEncodeAndSendMessage(0x67, tableau.Length, tableau);
 
 
@@ -377,7 +388,13 @@ namespace RobotInterface
                     asservSpeedDisplay.UpdatePolarOdometrySpeed(robot.vitesseLineaireFromOdometry, robot.vitesseAngulaireFromOdometry);        
                     
                     break;
-
+                case StateMessage.PID_Verifiy:
+                    float Kd, Ki, Kp;
+                    Kp = BitConverter.ToSingle(msgPayload, 0);
+                    Ki = BitConverter.ToSingle(msgPayload, 4);
+                    Kd = BitConverter.ToSingle(msgPayload, 8);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(Kp, 0, Ki,0, Kd, 0);
+                    break;
 
               
 
@@ -402,6 +419,7 @@ namespace RobotInterface
             P,
             Moteur = 0x0040,
             Encodeur = 0x0061,
+            PID_Verifiy= 0x0068,
 
 
 

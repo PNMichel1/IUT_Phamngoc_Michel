@@ -6,6 +6,7 @@
 #include "main.h"
 #include "asservissement.h"
 #include "ToolBox.h"
+#include "Robot.h"
 
 int msgDecodedFunction = 0;
 int msgDecodedPayloadLength = 0;
@@ -13,8 +14,11 @@ unsigned char msgDecodedPayload[128];
 int msgDecodedPayloadIndex = 0;
 int receivedChecksum, calculatedChecksum = 0x00;
 int rcvState = 0;
-int autoControlActivated=1;
+int autoControlActivated=0;
 PidCorrector PidX;
+float a;
+float b;
+float c;
 
 unsigned char UartCalculateChecksum(int msgFunction,
         int msgPayloadLength, unsigned char* msgPayload) {
@@ -164,11 +168,17 @@ void UartProcessDecodedMessage(int function,
             
             break;
         case COMMAND_PID_MOTEUR:
-           
-            SetupPidAsservissement(&PidX,getFloatFromBytes(payload,0),getFloatFromBytes(payload,1),getFloatFromBytes(payload,2),10,150,0);
+
+           // SetupPidAsservissement(&robotState.PidX,getFloatFromBytes(payload,8),getFloatFromBytes(payload,4),getFloatFromBytes(payload,0),10,150,0);
+            SetupPidAsservissement(&robotState.PidTheta,getFloatFromBytes(payload,8),getFloatFromBytes(payload,4),getFloatFromBytes(payload,0),10,150,0);
             UartEncodeAndSendMessage(COEFFICIENT_PID_VERIFY,payloadLength,payload);
-            PWMSetSpeedConsignePolaire(getFloatFromBytes(payload,3),getFloatFromBytes(payload,4));
+            PWMSetSpeedConsignePolaire(getFloatFromBytes(payload,12),getFloatFromBytes(payload,16));
+            PWMSetSpeedCommandPolaire(getFloatFromBytes(payload,12),getFloatFromBytes(payload,16));
             
+            a=getFloatFromBytes(payload,0);
+            b=getFloatFromBytes(payload,4);
+            c=getFloatFromBytes(payload,8);
+            break;
         default:
             break;
 

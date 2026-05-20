@@ -17,16 +17,21 @@ PidCorr->erreurDeriveeMax = deriveeMax;
 
 
 }
-
 void PWMSetSpeedConsignePolaire(float vitesseLineaire, float vitesseAngulaire) {
+    robotState.saveSpeed_Lineaire=vitesseLineaire;
+robotState.saveSpeed_Angulaire=vitesseAngulaire;
+}
+
+
+
+//
+void PWMSetSpeedCommandPolaire(float vitesseLineaire, float vitesseAngulaire) {
     /*
      
      
      PWMSetSpeedConsignePolaire(0,0) ,n'arrete pas le moteur a régler
      
      */
-robotState.saveSpeed_Lineaire=vitesseLineaire;
-robotState.saveSpeed_Angulaire=vitesseAngulaire;
 robotState.vitesseDroiteConsigne = vitesseLineaire + vitesseAngulaire*(0.218/2);   //si consigne=20m/s vitesse=0.5m/s facteur de 40 entre les deux 
 robotState.vitesseGaucheConsigne = vitesseLineaire - vitesseAngulaire*(0.218/2);   
 robotState.vitesseDroitePercent = -M_TO_PERCENT * robotState.vitesseDroiteConsigne;
@@ -34,7 +39,7 @@ robotState.vitesseGauchePercent = M_TO_PERCENT * robotState.vitesseGaucheConsign
 LimitToInterval(robotState.vitesseDroitePercent , -100, 100);
 LimitToInterval(robotState.vitesseGauchePercent , -100, 100);
 }
-// kp quand oscille mettre Kp/2 ki 30 pourcent quand il oscille  kd =0,5 pas a mettre pour l instant 
+ //kp quand oscille mettre Kp/2 ki 30 pourcent quand il oscille  kd =0,5 pas a mettre pour l instant 
 double Correcteur(volatile PidCorrector* PidCorr, double erreur)
 {
 PidCorr->erreur = erreur;
@@ -53,19 +58,19 @@ return PidCorr->corrP+PidCorr->corrI+PidCorr->corrD;
 
 void UpdateAsservissement()
 {
-//robotState.PidX.erreur = robotState.saveSpeed_Lineaire - robotState.vitesseLineaireFromOdometry;
-//robotState.PidTheta.erreur = robotState.saveSpeed_Angulaire - robotState.vitesseAngulaireFromOdometry;
-//robotState.CorrectionVitesseLineaire =Correcteur(&robotState.PidX, robotState.PidX.erreur);
-//robotState.CorrectionVitesseAngulaire = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
-//
-//PWMSetSpeedConsignePolaire(robotState.CorrectionVitesseLineaire,robotState.CorrectionVitesseAngulaire);
+robotState.PidX.erreur = 0; // robotState.saveSpeed_Lineaire - robotState.vitesseLineaireFromOdometry;
+robotState.PidTheta.erreur = robotState.saveSpeed_Angulaire - robotState.vitesseAngulaireFromOdometry;
+robotState.CorrectionVitesseLineaire =Correcteur(&robotState.PidX, robotState.PidX.erreur);
+robotState.CorrectionVitesseAngulaire = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);
+
+PWMSetSpeedCommandPolaire(robotState.CorrectionVitesseLineaire,robotState.CorrectionVitesseAngulaire);
     
 TransmitAsserv();
 }
 
 void TransmitAsserv()
 {
-    unsigned char payload[22];
+    unsigned char payload[88];
     
     getBytesFromFloat(payload, 0,  robotState.PidX.erreur);
     getBytesFromFloat(payload, 4,  robotState.vitesseLineaireFromOdometry);
@@ -90,6 +95,6 @@ void TransmitAsserv()
     getBytesFromFloat(payload, 76, robotState.PidTheta.Kd);
     getBytesFromFloat(payload, 80, robotState.PidTheta.corrD);
     getBytesFromFloat(payload, 84, robotState.PidTheta.erreurDeriveeMax); 
-    UartEncodeAndSendMessage(0x69,22,payload);
+    UartEncodeAndSendMessage(0x69,88,payload);
 
 }

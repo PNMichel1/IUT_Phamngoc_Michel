@@ -153,8 +153,9 @@ namespace RobotInterface
             byte[] tableau = values.ToArray();
 
 
-            asservSpeedDisplay.UpdatePolarSpeedCommandValues(valeur4, valeur5);
+            asservSpeedDisplay.UpdatePolarSpeedConsigneValues(valeur4, valeur5);
             UartEncodeAndSendMessage(0x67, tableau.Length, tableau);
+            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(valeur3, 0, valeur2, 0, valeur, 0);
 
 
 
@@ -444,7 +445,7 @@ namespace RobotInterface
                     asservSpeedDisplay.UpdatePolarSpeedErrorValues(erreurX, erreurT);
                     asservSpeedDisplay.UpdatePolarSpeedCommandValues(CommandX, CommandT);
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(KpX, KpT, KiX, KiT, KdX, KdT);
-                    asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(CorrPX, CorrPT, CorrIX, CorrIT, CorrDX, CorrDT);
+                   asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(CorrPX, CorrPT, CorrIX, CorrIT, CorrDX, CorrDT);
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(erreurPMaxX, erreurPMaxT, erreurIMaxX, erreurIMaxT, erreurDMaxX, erreurDMaxT);
 
 

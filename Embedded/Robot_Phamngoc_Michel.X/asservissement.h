@@ -9,6 +9,7 @@
 #define	ASSERVISSEMENT_H
 #define M_TO_PERCENT 32
 
+
 typedef struct _PidCorrector
 {
 double Kp;
@@ -26,12 +27,14 @@ double corrI;
 double corrD;
 }PidCorrector;
 
-extern double proportionelleMax;
-extern double integralMax;
-extern double deriveeMax;
+ 
 
 extern PidCorrector PidX;
+extern PidCorrector PidTheta;
+extern float saveSpeed;
+extern float saveSpeed_1;
 
+void TransmitAsserv();
 void UpdateAsservissement();
 double Correcteur(volatile PidCorrector* PidCorr, double erreur);
 void PWMSetSpeedConsignePolaire(float vitesseLineaire, float vitesseAngulaire);

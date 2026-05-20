@@ -30,6 +30,7 @@ extern int autoControlActivated;
 #define SET_ROBOT_MANUAL_CONTROL 0x0052
 #define COMMAND_PID_MOTEUR 0x0067
 #define COEFFICIENT_PID_VERIFY 0x0068
+#define CORR_PID_VARIABLES 0x0069
 #ifdef	__cplusplus
 extern "C" {
 #endif

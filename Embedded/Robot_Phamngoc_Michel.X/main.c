@@ -52,10 +52,10 @@ int main(void) {
 
 
     while (1) {
-        PWMSetSpeedConsignePolaire(1,0);
-        __delay32(3000);
-        PWMSetSpeedConsignePolaire(0,0);
-         __delay32(3000);
+     //PWMSetSpeedConsignePolaire(1,0);
+//        __delay32(3000);
+//        PWMSetSpeedConsignePolaire(0,0);
+//         __delay32(3000);
         
     
         

@@ -165,7 +165,7 @@ void UartProcessDecodedMessage(int function,
             break;
         case COMMAND_PID_MOTEUR:
            
-            SetupPidAsservissement(&PidX,getFloatFromBytes(payload,0),getFloatFromBytes(payload,1),getFloatFromBytes(payload,2),0,0,0);
+            SetupPidAsservissement(&PidX,getFloatFromBytes(payload,0),getFloatFromBytes(payload,1),getFloatFromBytes(payload,2),10,150,0);
             UartEncodeAndSendMessage(COEFFICIENT_PID_VERIFY,payloadLength,payload);
             PWMSetSpeedConsignePolaire(getFloatFromBytes(payload,3),getFloatFromBytes(payload,4));
             

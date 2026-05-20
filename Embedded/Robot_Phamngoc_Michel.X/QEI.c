@@ -73,6 +73,7 @@ void QEIUpdateData() {
         robotState.angleRadianFromOdometry -= 2 * PI;
     if (robotState.angleRadianFromOdometry < -PI)
         robotState.angleRadianFromOdometry += 2 * PI;
+    
 }
 
 void SendPositionData() {

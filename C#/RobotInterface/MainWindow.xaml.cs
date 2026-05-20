@@ -283,6 +283,26 @@ namespace RobotInterface
 
 
 
+        private void TextKp_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void TextKi_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Kd_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextKd_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
         void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
             byte[] trame = new byte[msgPayloadLength + 6];
@@ -395,7 +415,45 @@ namespace RobotInterface
                     Kd = BitConverter.ToSingle(msgPayload, 8);
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(Kp, 0, Ki,0, Kd, 0);
                     break;
+                case StateMessage.Corr_Pid_Variables:
+                
+                    float erreurX = BitConverter.ToSingle(msgPayload, 0);
+                    float CommandX = BitConverter.ToSingle(msgPayload, 4);
+                    float KpX = BitConverter.ToSingle(msgPayload, 8);
+                    float CorrPX = BitConverter.ToSingle(msgPayload, 12);
+                    float erreurPMaxX = BitConverter.ToSingle(msgPayload,16);
+                    float KiX = BitConverter.ToSingle(msgPayload, 20);
+                    float CorrIX = BitConverter.ToSingle(msgPayload, 24);
+                    float erreurIMaxX = BitConverter.ToSingle(msgPayload, 28);
+                    float KdX = BitConverter.ToSingle(msgPayload, 32);
+                    float CorrDX = BitConverter.ToSingle(msgPayload, 36);
+                    float erreurDMaxX = BitConverter.ToSingle(msgPayload, 40);
 
+                    float erreurT = BitConverter.ToSingle(msgPayload, 44);
+                    float CommandT = BitConverter.ToSingle(msgPayload, 48);
+                    float KpT = BitConverter.ToSingle(msgPayload, 52);
+                    float CorrPT = BitConverter.ToSingle(msgPayload, 56);
+                    float erreurPMaxT = BitConverter.ToSingle(msgPayload, 60);
+                    float KiT = BitConverter.ToSingle(msgPayload, 64);
+                    float CorrIT = BitConverter.ToSingle(msgPayload, 68);
+                    float erreurIMaxT = BitConverter.ToSingle(msgPayload, 72);
+                    float KdT = BitConverter.ToSingle(msgPayload, 76);
+                    float CorrDT = BitConverter.ToSingle(msgPayload, 80);
+                    float erreurDMaxT = BitConverter.ToSingle(msgPayload, 84);
+
+                    asservSpeedDisplay.UpdatePolarSpeedErrorValues(erreurX, erreurT);
+                    asservSpeedDisplay.UpdatePolarSpeedCommandValues(CommandX, CommandT);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(KpX, KpT, KiX, KiT, KdX, KdT);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(CorrPX, CorrPT, CorrIX, CorrIT, CorrDX, CorrDT);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(erreurPMaxX, erreurPMaxT, erreurIMaxX, erreurIMaxT, erreurDMaxX, erreurDMaxT);
+
+
+
+
+
+
+
+                    break;
               
 
 
@@ -420,6 +478,8 @@ namespace RobotInterface
             Moteur = 0x0040,
             Encodeur = 0x0061,
             PID_Verifiy= 0x0068,
+            Corr_Pid_Variables = 0x0069,
+
 
 
 
@@ -444,25 +504,8 @@ namespace RobotInterface
         byte[] msgDecodedPayload;
         int msgDecodedPayloadIndex = 0;
 
-        private void TextKp_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void TextKi_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void Kd_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextKd_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
+     
+        
 
         private void DecodeMessage(byte c)
         {

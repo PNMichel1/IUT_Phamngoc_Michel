@@ -1,5 +1,6 @@
 #ifndef ROBOT_H
 #define ROBOT_H
+#include "asservissement.h"
 typedef struct robotStateBITS {
 union {
 struct {
@@ -25,7 +26,12 @@ float angleRadianFromOdometry_1;
 float angleRadianFromOdometry;
 float vitesseDroitePercent;
 float vitesseGauchePercent;
-
+float CorrectionVitesseLineaire;
+float CorrectionVitesseAngulaire;
+PidCorrector PidX;
+PidCorrector PidTheta;
+ float saveSpeed_Lineaire;
+ float saveSpeed_Angulaire;
 };
 };
 } ROBOT_STATE_BITS;

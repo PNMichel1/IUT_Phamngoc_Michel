@@ -43,9 +43,10 @@ LimitToInterval(robotState.vitesseGauchePercent , -100, 100);
 double Correcteur(volatile PidCorrector* PidCorr, double erreur)
 {
 PidCorr->erreur = erreur;
-double erreurProportionnelle = LimitToInterval(erreur,-PidCorr->erreurProportionelleMax/PidCorr->Kd,PidCorr->erreurProportionelleMax/PidCorr->Kd); 
+double erreurProportionnelle = LimitToInterval(erreur,-PidCorr->erreurProportionelleMax/PidCorr->Kp,PidCorr->erreurProportionelleMax/PidCorr->Kp); 
 PidCorr->corrP = PidCorr->Kp*erreurProportionnelle;
-PidCorr->erreurIntegrale += PidCorr->erreurIntegrale + erreur/FREQ_ECH_QEI ;
+PidCorr->erreurIntegrale = PidCorr->erreurIntegrale + erreur/FREQ_ECH_QEI ;
+
 PidCorr->erreurIntegrale = LimitToInterval(PidCorr->erreurIntegrale,- PidCorr->erreurIntegraleMax/PidCorr->Ki, PidCorr->erreurIntegraleMax/PidCorr->Ki);
 PidCorr->corrI = PidCorr->Ki* PidCorr->erreurIntegrale;
 double erreurDerivee = (erreur - PidCorr->epsilon_1)*FREQ_ECH_QEI;
@@ -58,7 +59,7 @@ return PidCorr->corrP+PidCorr->corrI+PidCorr->corrD;
 
 void UpdateAsservissement()
 {
-robotState.PidX.erreur = 0; // robotState.saveSpeed_Lineaire - robotState.vitesseLineaireFromOdometry;
+robotState.PidX.erreur = robotState.saveSpeed_Lineaire - robotState.vitesseLineaireFromOdometry;
 robotState.PidTheta.erreur = robotState.saveSpeed_Angulaire - robotState.vitesseAngulaireFromOdometry;
 robotState.CorrectionVitesseLineaire =Correcteur(&robotState.PidX, robotState.PidX.erreur);
 robotState.CorrectionVitesseAngulaire = Correcteur(&robotState.PidTheta, robotState.PidTheta.erreur);

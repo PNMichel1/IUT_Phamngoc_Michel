@@ -16,7 +16,7 @@ using KeyboardHook_NS;
 using WpfAsservissementDisplay_NS;
 using SciChart.Data.Model;
 
-
+//kp==7 et Kp==140
 
 
 
@@ -143,19 +143,35 @@ namespace RobotInterface
 
 
 
+            if (!float.TryParse(KpX.Text, out float valeur6))
+
+                return;
+
+            if (!float.TryParse(KiX.Text, out float valeur7))
+
+                return;
+            if (!float.TryParse(KdX.Text, out float valeur8))
+                return;
+
+
+
             List<byte> values = new List<byte>();
             values.AddRange(BitConverter.GetBytes(valeur));
             values.AddRange(BitConverter.GetBytes(valeur2));
             values.AddRange(BitConverter.GetBytes(valeur3));
             values.AddRange(BitConverter.GetBytes(valeur4));
             values.AddRange(BitConverter.GetBytes(valeur5));
+            values.AddRange(BitConverter.GetBytes(valeur6));
+            values.AddRange(BitConverter.GetBytes(valeur7));
+            values.AddRange(BitConverter.GetBytes(valeur8));
+
 
             byte[] tableau = values.ToArray();
 
 
             asservSpeedDisplay.UpdatePolarSpeedConsigneValues(valeur4, valeur5);
             UartEncodeAndSendMessage(0x67, tableau.Length, tableau);
-            asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(valeur3, 0, valeur2, 0, valeur, 0);
+    
 
 
 
@@ -303,6 +319,8 @@ namespace RobotInterface
         {
 
         }
+      
+    
 
         void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
@@ -445,7 +463,7 @@ namespace RobotInterface
                     asservSpeedDisplay.UpdatePolarSpeedErrorValues(erreurX, erreurT);
                     asservSpeedDisplay.UpdatePolarSpeedCommandValues(CommandX, CommandT);
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(KpX, KpT, KiX, KiT, KdX, KdT);
-                   asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(CorrPX, CorrPT, CorrIX, CorrIT, CorrDX, CorrDT);
+                    asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(CorrPX, CorrPT, CorrIX, CorrIT, CorrDX, CorrDT);
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(erreurPMaxX, erreurPMaxT, erreurIMaxX, erreurIMaxT, erreurDMaxX, erreurDMaxT);
 
 

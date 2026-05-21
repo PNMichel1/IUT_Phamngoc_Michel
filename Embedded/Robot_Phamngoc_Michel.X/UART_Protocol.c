@@ -169,15 +169,15 @@ void UartProcessDecodedMessage(int function,
             break;
         case COMMAND_PID_MOTEUR:
 
-           // SetupPidAsservissement(&robotState.PidX,getFloatFromBytes(payload,8),getFloatFromBytes(payload,4),getFloatFromBytes(payload,0),10,150,0);
-            SetupPidAsservissement(&robotState.PidTheta,getFloatFromBytes(payload,8),getFloatFromBytes(payload,4),getFloatFromBytes(payload,0),10,150,0);
+            SetupPidAsservissement(&robotState.PidX,getFloatFromBytes(payload,20),getFloatFromBytes(payload,24),getFloatFromBytes(payload,28),10,400,0);
+            SetupPidAsservissement(&robotState.PidTheta,getFloatFromBytes(payload,8),getFloatFromBytes(payload,4),getFloatFromBytes(payload,0),10,400,0);
             UartEncodeAndSendMessage(COEFFICIENT_PID_VERIFY,payloadLength,payload);
             PWMSetSpeedConsignePolaire(getFloatFromBytes(payload,12),getFloatFromBytes(payload,16));
             PWMSetSpeedCommandPolaire(getFloatFromBytes(payload,12),getFloatFromBytes(payload,16));
             
-            a=getFloatFromBytes(payload,0);
-            b=getFloatFromBytes(payload,4);
-            c=getFloatFromBytes(payload,8);
+            a=getFloatFromBytes(payload,20);
+            b=getFloatFromBytes(payload,24);
+            c=getFloatFromBytes(payload,28);
             break;
         default:
             break;

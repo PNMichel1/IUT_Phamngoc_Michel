@@ -1,4 +1,3 @@
-
 #include "Toolbox.h"
 float Abs(float value)
 {

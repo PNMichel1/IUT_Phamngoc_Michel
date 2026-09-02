@@ -49,7 +49,9 @@ int main(void) {
 
     EN_PWM=1;
 
-
+ 
+    SetupPidAsservissement(&robotState.PidX,7,140,0,10,200,0);
+    SetupPidAsservissement(&robotState.PidTheta,7,140,0,10,200,0);
 
     while (1) {
 //     PWMSetSpeedConsignePolaire(1,0);

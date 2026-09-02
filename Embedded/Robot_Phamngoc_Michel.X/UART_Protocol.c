@@ -179,6 +179,10 @@ void UartProcessDecodedMessage(int function,
             b=getFloatFromBytes(payload,24);
             c=getFloatFromBytes(payload,28);
             break;
+           
+        case ROTATION_GHOST: 
+            
+            break;
         default:
             break;
 

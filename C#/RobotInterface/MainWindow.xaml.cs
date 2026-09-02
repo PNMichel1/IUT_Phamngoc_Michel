@@ -122,6 +122,8 @@ namespace RobotInterface
             }
         }
 
+        
+
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
 
@@ -258,7 +260,10 @@ namespace RobotInterface
 
 
 
-            byte[] array = Encoding.ASCII.GetBytes("Decode");
+            //byte[] array = Encoding.ASCII.GetBytes("Decode");
+            byte[] array = new byte[10];
+            array[0] = 0x01;
+            
             // byte[] array1 = new byte[] {i};
             //UartEncodeAndSendMessage(0x51, array1.Length, array1);
             UartEncodeAndSendMessage(0x80, array.Length, array);
@@ -267,7 +272,8 @@ namespace RobotInterface
 
 
             serialPort1.Write("Bonjour");
-
+            //Test Ghost orientation
+            UartEncodeAndSendMessage(0x81, array.Length, array);
 
 
 

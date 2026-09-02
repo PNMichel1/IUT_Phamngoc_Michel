@@ -27,13 +27,26 @@ double corrI;
 double corrD;
 }PidCorrector;
 
+double ThetaRestant;
+double ThetaGhost=0;
+double ThetaWaypoint;
+double ThetaArret;
+double VitesseTheta=3 ;
+double incrementTheta=0;
+double TSampling;
+double AccelerationTheta=1;
+double incrementAng=5*;
+double VitesseThetaMax;
+
+
  
 
 extern PidCorrector PidX;
 extern PidCorrector PidTheta;
 extern float saveSpeed;
 extern float saveSpeed_1;
-
+void RotationGhost();
+void ModuloByAngle();
 void TransmitAsserv();
 void UpdateAsservissement();
 double Correcteur(volatile PidCorrector* PidCorr, double erreur);

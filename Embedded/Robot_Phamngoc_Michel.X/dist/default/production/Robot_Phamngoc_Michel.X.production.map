@@ -29,7 +29,7 @@ Command:
   build/default/production/asservissement.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
-  -Tp33EP512MU814.000097dc.00 \
+  -Tp33EP512MU814.00003050.00 \
   --stack=16 \
   --check-sections \
   --data-init \

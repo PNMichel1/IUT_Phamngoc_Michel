@@ -1,4 +1,6 @@
 
+#include <stdlib.h>
+
 #include "asservissement.h"
 #include "UART_Protocol.h"
 #include "Robot.h"
@@ -97,5 +99,59 @@ void TransmitAsserv()
     getBytesFromFloat(payload, 80, robotState.PidTheta.corrD);
     getBytesFromFloat(payload, 84, robotState.PidTheta.erreurDeriveeMax); 
     UartEncodeAndSendMessage(0x69,88,payload);
+
+}
+
+
+
+
+
+
+
+void RotationGhost(double ThetaWaypoint, double VitesseTheta) {
+    
+ThetaRestant=ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost; 
+            
+    ThetaArret = VitesseTheta*VitesseTheta /(2*AccelerationTheta);
+            
+    incrementTheta = VitesseTheta/FREQ_ECH_QEI;
+    
+        if(VitesseTheta<0){
+        ThetaArret=-ThetaArret;
+    }
+    
+    
+    if(((ThetaArret >= 0 && ThetaRestant>=0) || (ThetaArret <= 0 && ThetaRestant <=0)) && (Abs(ThetaRestant) >= Abs(ThetaArret)))
+    {
+        if (ThetaRestant > 0) {
+            VitesseTheta = Min(VitesseTheta + AccelerationTheta/ FREQ_ECH_QEI,VitesseThetaMax);
+        }
+        else if (ThetaRestant < 0) {
+            VitesseTheta = Min(VitesseTheta - AccelerationTheta/ FREQ_ECH_QEI,-VitesseThetaMax);// 
+        }
+       
+            
+    }
+    
+    else {
+        
+        if (VitesseTheta >0) {
+            
+           VitesseTheta = Min(VitesseTheta - AccelerationTheta/ FREQ_ECH_QEI,0);
+        }
+        
+        else if (VitesseTheta <0) {
+           VitesseTheta = Max(VitesseTheta + AccelerationTheta/ FREQ_ECH_QEI,0);
+        }
+        if (Abs(ThetaRestant) < Abs(incrementAng)){
+            incrementTheta = ThetaRestant;
+        }
+    }
+   
+   ThetaGhost = ThetaGhost + incrementTheta;
+           
+   if(VitesseTheta==0 && Abs(ThetaRestant) <0.01){
+       ThetaGhost = ThetaWaypoint;
+   }
 
 }

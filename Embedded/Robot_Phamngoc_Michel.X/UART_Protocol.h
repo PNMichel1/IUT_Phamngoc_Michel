@@ -31,6 +31,7 @@ extern int autoControlActivated;
 #define COMMAND_PID_MOTEUR 0x0067
 #define COEFFICIENT_PID_VERIFY 0x0068
 #define CORR_PID_VARIABLES 0x0069
+#define ROTATION_GHOST 0x0081
 #ifdef	__cplusplus
 extern "C" {
 #endif

@@ -173,7 +173,7 @@ void UartProcessDecodedMessage(int function,
             SetupPidAsservissement(&robotState.PidTheta,getFloatFromBytes(payload,8),getFloatFromBytes(payload,4),getFloatFromBytes(payload,0),10,400,0);
             UartEncodeAndSendMessage(COEFFICIENT_PID_VERIFY,payloadLength,payload);
             PWMSetSpeedConsignePolaire(getFloatFromBytes(payload,12),getFloatFromBytes(payload,16));
-            PWMSetSpeedCommandPolaire(getFloatFromBytes(payload,12),getFloatFromBytes(payload,16));
+         
             
             a=getFloatFromBytes(payload,20);
             b=getFloatFromBytes(payload,24);
@@ -181,6 +181,9 @@ void UartProcessDecodedMessage(int function,
             break;
            
         case ROTATION_GHOST: 
+            
+            
+           
             
             break;
         default:

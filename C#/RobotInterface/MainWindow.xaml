@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:RobotInterface" 
         xmlns:AsservDisplay="clr-namespace:WpfAsservissementDisplay_NS;assembly=WpfAsservissementDisplay"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1500">
+        Title="MainWindow" Height="700" Width="1500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
-            <RowDefinition Height="159"/>
+            <RowDefinition Height="96"/>
 
-            <RowDefinition Height="134.04"/>
+            <RowDefinition Height="344.04"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
@@ -80,7 +80,7 @@
                         <TextBlock x:Name="KdName" Text="Kd" />
                         <TextBox x:Name="Kd" HorizontalAlignment="Center" Width="106" TextChanged="Kd_TextChanged" KeyUp="TextKd_KeyUp"  />
                     </StackPanel>
-                    
+
                 </StackPanel>
             </GroupBox>
         </StackPanel>
@@ -111,7 +111,7 @@
 
 
 
-        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="400,0,0,0" Width="355"  >
+        <StackPanel Orientation="Horizontal"  Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="400,0,0,0" Width="355" Grid.ColumnSpan="2"  >
             <GroupBox x:Name="VitesseLetA" Header="Vitesse Linéaire et Angulaire" BorderBrush="Black" Width="170" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <StackPanel HorizontalAlignment="Center" >
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
@@ -128,21 +128,21 @@
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        
-        
-        
 
 
 
-        <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right">
-            <Button x:Name="buttonEnvoyer" Content="Envoyer"  Width="56" Click="buttonEnvoyer_Click"/>sss
+
+
+
+        <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="649,0,0,0" Width="56">
+            <Button x:Name="buttonEnvoyer" Content="Envoyer"  Width="56" Click="buttonEnvoyer_Click"/>
             <Button x:Name="ButtonClear" Content="Clear" Click="ButtonClear_Click"   />
             <Button x:Name="Test"  Content="Test"  Click="Test_Click" Width="54"/>
-           
-           
+
+
         </StackPanel>
-        <StackPanel Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right">
-        
+        <StackPanel Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="651,0,0,0" Width="54">
+
             <Button x:Name="Nord"  Content="Nord"  Click="Test_Click" Width="54"/>
             <Button x:Name="Est"  Content="Est"  Click="Test_Click" Width="54"/>
             <Button x:Name="Ouest"  Content="Ouest"  Click="Test_Click" Width="54"/>

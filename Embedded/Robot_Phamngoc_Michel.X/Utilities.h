@@ -2,7 +2,7 @@
 #define	UTILITIES_H
 
 # define PI 3.141592653589793
-
+double ModuloByAngle(double angleToCenterAround, double angle);
 double Modulo2PIAngleRadian(double angleRadian) ;
 float getFloat(unsigned char *p, int index);
 double getDouble(unsigned char *p, int index);

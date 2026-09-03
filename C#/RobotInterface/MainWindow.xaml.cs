@@ -473,12 +473,16 @@ namespace RobotInterface
                     asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(erreurPMaxX, erreurPMaxT, erreurIMaxX, erreurIMaxT, erreurDMaxX, erreurDMaxT);
 
 
-
-
-
-
-
                     break;
+
+                case StateMessage.Ghost:
+
+                    float ghost = BitConverter.ToSingle(msgPayload, 0);
+                    TextBoxréception.Text +=  BitConverter.ToSingle(msgPayload, 0) + "    ";
+
+                    break; 
+
+
               
 
 
@@ -504,6 +508,7 @@ namespace RobotInterface
             Encodeur = 0x0061,
             PID_Verifiy= 0x0068,
             Corr_Pid_Variables = 0x0069,
+            Ghost = 0x0081,
 
 
 

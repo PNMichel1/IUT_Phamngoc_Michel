@@ -105,21 +105,31 @@ void TransmitAsserv()
 
 
 
+ double ThetaRestant;
+double ThetaGhost;
+double ThetaWaypoint=90;
+double ThetaArret;
+double VitesseTheta=250;
+double incrementTheta=5;
+double TSampling;
+double AccelerationTheta=0.5;
+double incrementAng=5;
+double VitesseThetaMax=15;
 
 
 
-void RotationGhost(double ThetaWaypoint, double VitesseTheta) {
+
+void RotationGhost() {
     
-ThetaRestant=ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost; 
+ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;
             
     ThetaArret = VitesseTheta*VitesseTheta /(2*AccelerationTheta);
             
-    incrementTheta = VitesseTheta/FREQ_ECH_QEI;
+    incrementTheta =VitesseTheta/FREQ_ECH_QEI ;
     
         if(VitesseTheta<0){
         ThetaArret=-ThetaArret;
     }
-    
     
     if(((ThetaArret >= 0 && ThetaRestant>=0) || (ThetaArret <= 0 && ThetaRestant <=0)) && (Abs(ThetaRestant) >= Abs(ThetaArret)))
     {
@@ -128,9 +138,7 @@ ThetaRestant=ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;
         }
         else if (ThetaRestant < 0) {
             VitesseTheta = Min(VitesseTheta - AccelerationTheta/ FREQ_ECH_QEI,-VitesseThetaMax);// 
-        }
-       
-            
+        }        
     }
     
     else {
@@ -149,9 +157,14 @@ ThetaRestant=ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;
     }
    
    ThetaGhost = ThetaGhost + incrementTheta;
+   unsigned char payload[24];
+   getBytesFromFloat(payload, 0,  ThetaGhost);
+   UartEncodeAndSendMessage(0x81,24,payload);
            
    if(VitesseTheta==0 && Abs(ThetaRestant) <0.01){
        ThetaGhost = ThetaWaypoint;
+
+       
    }
 
 }

@@ -48,7 +48,8 @@ int main(void) {
 
 
     EN_PWM=1;
-
+   
+    
  
     SetupPidAsservissement(&robotState.PidX,7,140,0,10,200,0);
     SetupPidAsservissement(&robotState.PidTheta,7,140,0,10,200,0);
@@ -59,6 +60,9 @@ int main(void) {
 //        PWMSetSpeedConsignePolaire(0,0);
 //         __delay32(3000);
         
+     RotationGhost();
+          __delay32(3000);
+      
     
         
         //***************QEI****************

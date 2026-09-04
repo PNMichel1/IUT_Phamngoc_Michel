@@ -143,10 +143,10 @@
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="651,0,0,0" Width="54">
 
-            <Button x:Name="Nord"  Content="Nord"  Click="Test_Click" Width="54"/>
-            <Button x:Name="Est"  Content="Est"  Click="Test_Click" Width="54"/>
-            <Button x:Name="Ouest"  Content="Ouest"  Click="Test_Click" Width="54"/>
-            <Button x:Name="Sud"  Content="Sud"  Click="Test_Click" Width="54"/>
+            <Button x:Name="Nord"  Content="Nord"  Click="Test_Click_Nord" Width="54"/>
+            <Button x:Name="Est"  Content="Est"  Click="Test_Click_Est" Width="54"/>
+            <Button x:Name="Ouest"  Content="Ouest"  Click="Test_Click_Ouest" Width="54"/>
+            <Button x:Name="Sud"  Content="Sud"  Click="Test_Click_Sud" Width="54"/>
 
         </StackPanel>
 

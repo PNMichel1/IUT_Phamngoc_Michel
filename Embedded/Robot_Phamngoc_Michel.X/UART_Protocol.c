@@ -113,11 +113,12 @@ void UartDecodeMessage(unsigned char c) {
 
 }
 
+float array;
 void UartProcessDecodedMessage(int function,
         int payloadLength, unsigned char* payload) {
     //Fonction appelee apres le decodage pour executer l?action
     //correspondant au message recu
-
+    
     switch (function) {
         
         case 0x0020:
@@ -181,9 +182,9 @@ void UartProcessDecodedMessage(int function,
             break;
            
         case ROTATION_GHOST: 
+            array =getFloatFromBytes(payload,0);
+            RotationGhost(getFloatFromBytes(payload,0));
             
-            
-           
             
             break;
         default:

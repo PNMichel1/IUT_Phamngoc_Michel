@@ -122,7 +122,28 @@ namespace RobotInterface
             }
         }
 
-        
+        private void Test_Click_Ouest(object sender, RoutedEventArgs e)
+        {
+
+            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes((float)90) );
+        }
+        private void Test_Click_Est(object sender, RoutedEventArgs e)
+        {
+
+            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes(-90));
+        }
+        private void Test_Click_Nord(object sender, RoutedEventArgs e)
+        {
+
+            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes(0));
+        }
+        private void Test_Click_Sud(object sender, RoutedEventArgs e)
+        {
+
+            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes((float)180));
+        }
+
+
 
         private void buttonEnvoyer_Click(object sender, RoutedEventArgs e)
         {
@@ -273,7 +294,7 @@ namespace RobotInterface
 
             serialPort1.Write("Bonjour");
             //Test Ghost orientation
-            UartEncodeAndSendMessage(0x81, array.Length, array);
+            UartEncodeAndSendMessage(0x0081, array.Length, array);
 
 
 

@@ -60,8 +60,8 @@ int main(void) {
 //        PWMSetSpeedConsignePolaire(0,0);
 //         __delay32(3000);
         
-     RotationGhost();
-          __delay32(3000);
+     //RotationGhost();
+       //   __delay32(3000);
       
     
         

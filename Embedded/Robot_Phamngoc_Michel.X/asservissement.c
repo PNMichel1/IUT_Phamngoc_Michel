@@ -107,7 +107,7 @@ void TransmitAsserv()
 
  double ThetaRestant;
 double ThetaGhost;
-double ThetaWaypoint=90;
+double ThetaWaypoint=97;
 double ThetaArret;
 double VitesseTheta=250;
 double incrementTheta=5;
@@ -121,7 +121,7 @@ double VitesseThetaMax=15;
 
 void RotationGhost() {
     
-ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;
+ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;//]-pi, pi] 90 
             
     ThetaArret = VitesseTheta*VitesseTheta /(2*AccelerationTheta);
             
@@ -160,10 +160,10 @@ ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;
    unsigned char payload[24];
    getBytesFromFloat(payload, 0,  ThetaGhost);
    UartEncodeAndSendMessage(0x81,24,payload);
-           
+   
    if(VitesseTheta==0 && Abs(ThetaRestant) <0.01){
        ThetaGhost = ThetaWaypoint;
-
+       
        
    }
 

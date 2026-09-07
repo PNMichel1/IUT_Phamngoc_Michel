@@ -28,13 +28,15 @@ double corrD;
 }PidCorrector;
 
 
+
+void RotationGhost(double ThetaWaypoint);
  
 
 extern PidCorrector PidX;
 extern PidCorrector PidTheta;
 extern float saveSpeed;
 extern float saveSpeed_1;
-void RotationGhost();
+
 
 void TransmitAsserv();
 void UpdateAsservissement();

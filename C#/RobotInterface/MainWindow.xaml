@@ -28,7 +28,7 @@
         <GroupBox x:Name="Reception" Header="Réception" Background="#FFBDBDBD" Grid.Column="1" BorderBrush="Black" Grid.Row="2" Margin="0,0,0,18">
             <TextBox x:Name="TextBoxréception" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True"/>
         </GroupBox>
-        <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Width="355"  >
+        <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Width="544"  >
             <GroupBox x:Name="Leds" Header="Leds" BorderBrush="Black" Width="67" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <StackPanel>
                     <CheckBox x:Name="Led1" Content="Led1" IsChecked="False" Margin="5" />
@@ -50,6 +50,16 @@
                     <TextBlock x:Name="X" Text="X :" Margin="2"/>
                     <TextBlock x:Name="Y" Text="Y :" Margin="2"/>
                     <TextBlock x:Name="angle" Text="θ :" Margin="2"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="Ghost" Header="Ghost" BorderBrush="Black"  Width="180" Height="130" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock x:Name="XG" Text="XGhost : " Margin="2"/>
+                    <TextBlock x:Name="YG" Text="YGhost : " Margin="2"/>
+                    <TextBlock x:Name="ThetaG" Text="ThetaGhost : " Margin="2"/>
+                    <TextBlock x:Name="XW" Text="XWaypoint : " Margin="2"/>
+                    <TextBlock x:Name="YW" Text="YWaypoint : " Margin="2"/>
+              
                 </StackPanel>
             </GroupBox>
 
@@ -143,10 +153,10 @@
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="651,0,0,0" Width="54">
 
-            <Button x:Name="Nord"  Content="Nord"  Click="Test_Click_Nord" Width="54"/>
-            <Button x:Name="Est"  Content="Est"  Click="Test_Click_Est" Width="54"/>
-            <Button x:Name="Ouest"  Content="Ouest"  Click="Test_Click_Ouest" Width="54"/>
-            <Button x:Name="Sud"  Content="Sud"  Click="Test_Click_Sud" Width="54"/>
+            <Button x:Name="Nord"  Content="0;1"  Click="Test_Click_Nord" Width="54"/>
+            <Button x:Name="Est"  Content="1;0"  Click="Test_Click_Est" Width="54"/>
+            <Button x:Name="Ouest"  Content="-1;0"  Click="Test_Click_Ouest" Width="54"/>
+            <Button x:Name="Sud"  Content="0;-1"  Click="Test_Click_Sud" Width="54"/>
 
         </StackPanel>
 

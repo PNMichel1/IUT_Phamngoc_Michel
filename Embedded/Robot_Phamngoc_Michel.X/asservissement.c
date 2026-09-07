@@ -105,9 +105,10 @@ void TransmitAsserv()
 
 
 
- double ThetaRestant;
-double ThetaGhost;
-double ThetaWaypoint=97;
+ 
+
+double ThetaRestant;
+static double ThetaGhost;
 double ThetaArret;
 double VitesseTheta=250;
 double incrementTheta=5;
@@ -118,8 +119,7 @@ double VitesseThetaMax=15;
 
 
 
-
-void RotationGhost() {
+void RotationGhost(double ThetaWaypoint) {
     
 ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;//]-pi, pi] 90 
             

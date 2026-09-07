@@ -1,4 +1,5 @@
 #include <xc.h>
+#include <math.h>
 #include "UART_Protocol.h"
 #include "IO.h"
 #include "PWM.h"
@@ -7,6 +8,7 @@
 #include "asservissement.h"
 #include "ToolBox.h"
 #include "Robot.h"
+#include "Utilities.h"
 
 int msgDecodedFunction = 0;
 int msgDecodedPayloadLength = 0;
@@ -113,7 +115,7 @@ void UartDecodeMessage(unsigned char c) {
 
 }
 
-float array;
+float X,Y,ThetaWay;
 void UartProcessDecodedMessage(int function,
         int payloadLength, unsigned char* payload) {
     //Fonction appelee apres le decodage pour executer l?action
@@ -182,8 +184,12 @@ void UartProcessDecodedMessage(int function,
             break;
            
         case ROTATION_GHOST: 
-            array =getFloatFromBytes(payload,0);
-            RotationGhost(getFloatFromBytes(payload,0));
+            X =getFloatFromBytes(payload,0);
+            Y =getFloatFromBytes(payload,4);
+            ThetaWay=(M_PI/2)-atan(X/Y);
+            RotationGhost(ThetaWay);
+       
+            
             
             
             break;

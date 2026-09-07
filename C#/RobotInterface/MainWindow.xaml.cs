@@ -122,25 +122,35 @@ namespace RobotInterface
             }
         }
 
+        private void SendWaypoint(float x, float Y)
+        {
+            byte[] payload = new byte[8];
+            byte[] array = BitConverter.GetBytes(x);
+            Array.Copy(array, 0, payload, 0, 4);
+            array = BitConverter.GetBytes(Y);
+            Array.Copy(array, 0, payload, 4, 4);
+            UartEncodeAndSendMessage(0x0081, payload.Length, payload); //1.57   
+        }
+
         private void Test_Click_Ouest(object sender, RoutedEventArgs e)
         {
-
-            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes((float)90) );
+            SendWaypoint(-1, 0);
         }
+
         private void Test_Click_Est(object sender, RoutedEventArgs e)
         {
 
-            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes(-90));
+            SendWaypoint(1, 0);
         }
         private void Test_Click_Nord(object sender, RoutedEventArgs e)
         {
 
-            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes(0));
+            SendWaypoint(0, 1);
         }
         private void Test_Click_Sud(object sender, RoutedEventArgs e)
         {
 
-            UartEncodeAndSendMessage(0x0081, 1, BitConverter.GetBytes((float)180));
+            SendWaypoint(0, -1);
         }
 
 
@@ -555,8 +565,10 @@ namespace RobotInterface
         byte[] msgDecodedPayload;
         int msgDecodedPayloadIndex = 0;
 
-     
-        
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid.Row
+        }
 
         private void DecodeMessage(byte c)
         {

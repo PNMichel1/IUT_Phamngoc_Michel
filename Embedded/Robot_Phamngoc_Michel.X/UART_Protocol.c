@@ -186,8 +186,21 @@ void UartProcessDecodedMessage(int function,
         case ROTATION_GHOST: 
             X =getFloatFromBytes(payload,0);
             Y =getFloatFromBytes(payload,4);
-            ThetaWay=(M_PI/2)-atan(X/Y);
-            RotationGhost(ThetaWay);
+            if(X>0)
+                ThetaWay=atan(X/Y);
+            else
+                if(Y>0)
+                    ThetaWay=M_PI-atan(X/Y);
+                else
+                    ThetaWay=-M_PI+atan(X/Y);
+            RotationGhost(ThetaWay,X,Y);
+            if(X==0)
+                if(Y<0)
+                    ThetaWay=-M_PI/2;
+                else
+                    ThetaWay=-M_PI/2;
+                    
+                    
        
             
             

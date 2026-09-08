@@ -144,7 +144,7 @@
 
 
 
-        <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="649,0,0,0" Width="56">
+        <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="649,42,0,-42" Width="56">
             <Button x:Name="buttonEnvoyer" Content="Envoyer"  Width="56" Click="buttonEnvoyer_Click"/>
             <Button x:Name="ButtonClear" Content="Clear" Click="ButtonClear_Click"   />
             <Button x:Name="Test"  Content="Test"  Click="Test_Click" Width="54"/>
@@ -157,6 +157,7 @@
             <Button x:Name="Est"  Content="1;0"  Click="Test_Click_Est" Width="54"/>
             <Button x:Name="Ouest"  Content="-1;0"  Click="Test_Click_Ouest" Width="54"/>
             <Button x:Name="Sud"  Content="0;-1"  Click="Test_Click_Sud" Width="54"/>
+            <Button x:Name="Nord_VPN"  Content="1;-1"  Click="Test_Click_Sud" Width="54"/>
 
         </StackPanel>
 

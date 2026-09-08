@@ -29,7 +29,7 @@ double corrD;
 
 
 
-void RotationGhost(double ThetaWaypoint);
+void RotationGhost(double ThetaWaypoint, double X, double Y);
  
 
 extern PidCorrector PidX;

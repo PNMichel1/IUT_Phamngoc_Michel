@@ -155,6 +155,12 @@ namespace RobotInterface
 
             SendWaypoint(0, -1);
         }
+        private void Test_Click_NordVpn(object sender, RoutedEventArgs e)
+        {
+
+            SendWaypoint(1, -1);
+        }
+
 
 
 
@@ -515,8 +521,8 @@ namespace RobotInterface
                     float ghost = BitConverter.ToSingle(msgPayload, 0);
                     XG.Text = "XGhost : " + BitConverter.ToSingle(msgPayload, 0);
                     YG.Text = "YGhost : " + BitConverter.ToSingle(msgPayload, 4);
-                    TextBoxréception.Text +=  BitConverter.ToSingle(msgPayload, 0) + "    ";
-                    ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8);
+               
+                    ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8).ToString("N3");
                     
 
 

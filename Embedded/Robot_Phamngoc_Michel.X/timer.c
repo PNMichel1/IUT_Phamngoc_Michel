@@ -36,12 +36,14 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
     QEIUpdateData();  
     UpdateAsservissement();
-   
-    if(counterQ++%30==0){
+    RotationGhost();
+    if(counterQ++%15==0){
+        Send_Ghost();
         SendPositionData();
         TransmitAsserv();
+        
     }
-      
+  
 }
 //Interruption du timer 1
 void InitTimer4(void) {

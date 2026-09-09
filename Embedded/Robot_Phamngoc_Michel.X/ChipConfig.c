@@ -56,7 +56,6 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
-
 void InitOscillator() {
 
     //F_IN = 7.37 MHz    

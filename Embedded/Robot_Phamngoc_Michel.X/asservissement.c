@@ -7,6 +7,9 @@
 #include "ToolBox.h"
 #include "QEI.h"
 #include "Utilities.h"
+Ghost Rotation;
+
+
 
 
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki, double Kd, double proportionelleMax, double integralMax,double deriveeMax){
@@ -107,36 +110,28 @@ void TransmitAsserv()
 
  
 
-double ThetaRestant;
-static double ThetaGhost=0;
-double ThetaArret;
-double VitesseTheta=250;
-double incrementTheta=5;
-double TSampling;
-double AccelerationTheta=0.5;
-double incrementAng=5;
-double VitesseThetaMax=15;
 
 
 
-void RotationGhost(double ThetaWaypoint, double X, double Y) {
+
+void RotationGhost() {
     
-ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;//]-pi, pi] 90 
+Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rotation.ThetaGhost;//]-pi, pi] 90 
             
-    ThetaArret = VitesseTheta*VitesseTheta /(2*AccelerationTheta);
+    Rotation.ThetaArret = VitesseTheta*VitesseTheta /(2*AccelerationTheta);
             
-    incrementTheta =VitesseTheta/FREQ_ECH_QEI ;
+    Rotation.incrementTheta =VitesseTheta/FREQ_ECH_QEI ;
     
         if(VitesseTheta<0){
-        ThetaArret=-ThetaArret;
+        Rotation.ThetaArret=-Rotation.ThetaArret;
     }
     
-    if(((ThetaArret >= 0 && ThetaRestant>=0) || (ThetaArret <= 0 && ThetaRestant <=0)) && (Abs(ThetaRestant) >= Abs(ThetaArret)))
+    if(((Rotation.ThetaArret >= 0 && Rotation.ThetaRestant>=0) || (Rotation.ThetaArret <= 0 && Rotation.ThetaRestant <=0)) && (Abs(Rotation.ThetaRestant) >= Abs(Rotation.ThetaArret)))
     {
-        if (ThetaRestant > 0) {
+        if (Rotation.ThetaRestant > 0) {
             VitesseTheta = Min(VitesseTheta + AccelerationTheta/ FREQ_ECH_QEI,VitesseThetaMax);
         }
-        else if (ThetaRestant < 0) {
+        else if (Rotation.ThetaRestant < 0) {
             VitesseTheta = Min(VitesseTheta - AccelerationTheta/ FREQ_ECH_QEI,-VitesseThetaMax);// 
         }        
     }
@@ -151,26 +146,22 @@ ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;//]-pi, pi] 90
         else if (VitesseTheta <0) {
            VitesseTheta = Max(VitesseTheta + AccelerationTheta/ FREQ_ECH_QEI,0);
         }
-        if (Abs(ThetaRestant) < Abs(incrementAng)){
-            incrementTheta = ThetaRestant;
+        if (Abs(Rotation.ThetaRestant) < Abs(incrementAng)){
+            Rotation.incrementTheta = Rotation.ThetaRestant;
         }
     }
    
-   ThetaGhost = ThetaGhost + incrementTheta;
-   unsigned char payload[15];
-   getBytesFromFloat(payload,0,X);
-   getBytesFromFloat(payload,4,Y);
-   getBytesFromFloat(payload, 8,  ThetaGhost);
-   UartEncodeAndSendMessage(0x81,15,payload);
+   Rotation.ThetaGhost = Rotation.ThetaGhost + Rotation.incrementTheta;
+  
 //   UartEncodeAndSendMessage(0x81,72,payload);
    
-   if(VitesseTheta==0 && Abs(ThetaRestant) <0.01){
-       ThetaGhost = ThetaWaypoint;
+   if(VitesseTheta==0 && Abs(Rotation.ThetaRestant) <0.01){
+       Rotation.ThetaGhost = Rotation.ThetaWay;
        
  
 //       getBytesFromFloat(payload,48,Y);
      
-       ThetaGhost = ThetaWaypoint;
+     
        
        
        
@@ -178,4 +169,12 @@ ThetaRestant= ModuloByAngle(ThetaGhost,ThetaWaypoint)-ThetaGhost;//]-pi, pi] 90
    }
 
 }
-void DeplacementTo_waypoint();
+void Send_Ghost(){
+    
+   unsigned char payload[15];
+   getBytesFromFloat(payload,0,Rotation.X);
+   getBytesFromFloat(payload,4,Rotation.Y);
+   getBytesFromFloat(payload, 8,  Rotation.ThetaGhost);
+   UartEncodeAndSendMessage(0x81,15,payload);
+    
+}

@@ -9,6 +9,9 @@
 #define	ASSERVISSEMENT_H
 #define M_TO_PERCENT 32
 
+#define VitesseThetaMax 1
+#define AccelerationTheta 0.1
+#define incrementAng 0.2
 
 typedef struct _PidCorrector
 {
@@ -27,10 +30,22 @@ double corrI;
 double corrD;
 }PidCorrector;
 
+typedef struct _Ghost
+{
+ double ThetaGhost;
+ double X;
+ double Y;
+ double ThetaWay;
+ double ThetaRestant;
+ double ThetaWaypoint;
+ double ThetaArret;
+ double incrementTheta;
 
-
-void RotationGhost(double ThetaWaypoint, double X, double Y);
- 
+} Ghost;
+extern Ghost Rotation;
+void RotationGhost();
+ void Send_Ghost();
+static double VitesseTheta = 2;
 
 extern PidCorrector PidX;
 extern PidCorrector PidTheta;

@@ -18,6 +18,7 @@ int receivedChecksum, calculatedChecksum = 0x00;
 int rcvState = 0;
 int autoControlActivated=0;
 PidCorrector PidX;
+
 float a;
 float b;
 float c;
@@ -115,7 +116,7 @@ void UartDecodeMessage(unsigned char c) {
 
 }
 
-float X,Y,ThetaWay;
+ 
 void UartProcessDecodedMessage(int function,
         int payloadLength, unsigned char* payload) {
     //Fonction appelee apres le decodage pour executer l?action
@@ -184,24 +185,28 @@ void UartProcessDecodedMessage(int function,
             break;
            
         case ROTATION_GHOST: 
-            X =getFloatFromBytes(payload,0);
-            Y =getFloatFromBytes(payload,4);
-            if(X>0)
-                ThetaWay=atan(X/Y);
-            else
-                if(Y>0)
-                    ThetaWay=M_PI-atan(X/Y);
+            Rotation.X =getFloatFromBytes(payload,0);
+            Rotation.Y =getFloatFromBytes(payload,4);
+            if(Rotation.X>0)
+                Rotation.ThetaWay=atan(Rotation.Y/Rotation.X);
+            
+            else if(Rotation.X<0){
+                if(Rotation.Y>0)
+                    Rotation.ThetaWay=M_PI-atan(Rotation.Y/Rotation.X);
                 else
-                    ThetaWay=-M_PI+atan(X/Y);
-            RotationGhost(ThetaWay,X,Y);
-            if(X==0)
-                if(Y<0)
-                    ThetaWay=-M_PI/2;
+                    Rotation.ThetaWay=-M_PI+atan(Rotation.Y/Rotation.X);
+            }
+            
+            
+            
+            if(Rotation.X==0)
+                if(Rotation.Y<0)
+                    Rotation.ThetaWay=-M_PI/2;
                 else
-                    ThetaWay=-M_PI/2;
+                    Rotation.ThetaWay=M_PI/2;
+                 
                     
-                    
-       
+         
             
             
             

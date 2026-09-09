@@ -157,7 +157,7 @@
             <Button x:Name="Est"  Content="1;0"  Click="Test_Click_Est" Width="54"/>
             <Button x:Name="Ouest"  Content="-1;0"  Click="Test_Click_Ouest" Width="54"/>
             <Button x:Name="Sud"  Content="0;-1"  Click="Test_Click_Sud" Width="54"/>
-            <Button x:Name="Nord_VPN"  Content="1;-1"  Click="Test_Click_Sud" Width="54"/>
+            <Button x:Name="Nord_VPN"  Content="1;-1"  Click="Test_Click_NordVpn" Width="54"/>
 
         </StackPanel>
 

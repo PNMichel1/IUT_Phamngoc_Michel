@@ -34,6 +34,7 @@ int Capteur, etape;
  char buffer[4];
 int counter = 0;
 
+
 int main(void) {
     InitOscillator();
     InitIO();
@@ -45,6 +46,7 @@ int main(void) {
     InitTimer23();
     InitQEI1();
     InitQEI2();
+
 
 
     EN_PWM=1;

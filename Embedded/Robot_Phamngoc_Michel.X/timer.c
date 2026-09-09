@@ -35,11 +35,12 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     QEIUpdateData();  
-    UpdateAsservissement();
+    //UpdateAsservissement();
     RotationGhost();
+    Send_Ghost();
+    SendPositionData();
     if(counterQ++%15==0){
-        Send_Ghost();
-        SendPositionData();
+ 
         TransmitAsserv();
         
     }

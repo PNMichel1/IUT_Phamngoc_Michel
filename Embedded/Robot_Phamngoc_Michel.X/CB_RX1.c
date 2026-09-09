@@ -62,7 +62,7 @@ int CB_RX1_GetDataSize(void)
 {
 //return size of data stored in circular buffer
 int dataSize;
- if (cbRx1Head >= cbRx1Tail)
+       if (cbRx1Head >= cbRx1Tail)
         dataSize = cbRx1Head - cbRx1Tail;
     else
         dataSize = CBRX1_BUFFER_SIZE - (cbRx1Tail - cbRx1Head);

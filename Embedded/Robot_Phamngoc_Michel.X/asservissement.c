@@ -7,6 +7,8 @@
 #include "ToolBox.h"
 #include "QEI.h"
 #include "Utilities.h"
+#include "math.h"
+
 Ghost Rotation;
 
 
@@ -157,6 +159,8 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
    
    if(VitesseTheta==0 && Abs(Rotation.ThetaRestant) <0.01){
        Rotation.ThetaGhost = Rotation.ThetaWay;
+       Distance_to_waypoint();
+       
        
  
 //       getBytesFromFloat(payload,48,Y);
@@ -171,10 +175,20 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
 }
 void Send_Ghost(){
     
-   unsigned char payload[15];
+   unsigned char payload[20];
    getBytesFromFloat(payload,0,Rotation.X);
    getBytesFromFloat(payload,4,Rotation.Y);
    getBytesFromFloat(payload, 8,  Rotation.ThetaGhost);
-   UartEncodeAndSendMessage(0x81,15,payload);
+
+   getBytesFromFloat(payload,12,Rotation.Hypotenus);
+   UartEncodeAndSendMessage(0x81,20,payload);
     
+}
+
+void Distance_to_waypoint(){
+    Rotation.Hypotenus= sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y))*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
+    int a;
+    a++;
+    
+
 }

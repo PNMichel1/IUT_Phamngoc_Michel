@@ -521,7 +521,7 @@ namespace RobotInterface
                     float ghost = BitConverter.ToSingle(msgPayload, 0);
                     XG.Text = "XGhost : " + BitConverter.ToSingle(msgPayload, 0);
                     YG.Text = "YGhost : " + BitConverter.ToSingle(msgPayload, 4);
-               
+                    TextBoxréception.Text = "Distance" + BitConverter.ToSingle(msgPayload, 12);
                     ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8).ToString("N3");
                     
 

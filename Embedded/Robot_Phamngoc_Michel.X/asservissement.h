@@ -37,9 +37,11 @@ typedef struct _Ghost
  double Y;
  double ThetaWay;
  double ThetaRestant;
- double ThetaWaypoint;
  double ThetaArret;
  double incrementTheta;
+ double Distance;
+ double Hypotenus;
+ 
 
 } Ghost;
 extern Ghost Rotation;
@@ -52,7 +54,7 @@ extern PidCorrector PidTheta;
 extern float saveSpeed;
 extern float saveSpeed_1;
 
-
+void Distance_to_waypoint();
 void TransmitAsserv();
 void UpdateAsservissement();
 double Correcteur(volatile PidCorrector* PidCorr, double erreur);

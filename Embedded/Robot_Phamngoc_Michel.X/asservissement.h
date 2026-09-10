@@ -41,6 +41,10 @@ typedef struct _Ghost
  double incrementTheta;
  double Distance;
  double Hypotenus;
+ double HypoWay;
+ double X_Ghost;
+ double Y_Ghost;
+
  
 
 } Ghost;

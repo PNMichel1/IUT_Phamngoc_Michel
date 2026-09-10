@@ -36,11 +36,12 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
     QEIUpdateData();  
     //UpdateAsservissement();
-    RotationGhost();
+    RotationGhost();    
     Send_Ghost();
-    SendPositionData();
+     Distance_to_waypoint();
+  SendPositionData();
     if(counterQ++%15==0){
- 
+  
         TransmitAsserv();
         
     }

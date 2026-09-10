@@ -156,10 +156,13 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
    Rotation.ThetaGhost = Rotation.ThetaGhost + Rotation.incrementTheta;
   
 //   UartEncodeAndSendMessage(0x81,72,payload);
-   
+ 
    if(VitesseTheta==0 && Abs(Rotation.ThetaRestant) <0.01){
        Rotation.ThetaGhost = Rotation.ThetaWay;
-       Distance_to_waypoint();
+       Rotation.X_Ghost=Rotation.X;
+       Rotation.Y_Ghost=Rotation.Y;
+       
+       
        
        
  
@@ -176,8 +179,8 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
 void Send_Ghost(){
     
    unsigned char payload[20];
-   getBytesFromFloat(payload,0,Rotation.X);
-   getBytesFromFloat(payload,4,Rotation.Y);
+   getBytesFromFloat(payload,0,Rotation.X_Ghost);
+   getBytesFromFloat(payload,4,Rotation.Y_Ghost);
    getBytesFromFloat(payload, 8,  Rotation.ThetaGhost);
 
    getBytesFromFloat(payload,12,Rotation.Hypotenus);
@@ -187,8 +190,8 @@ void Send_Ghost(){
 
 void Distance_to_waypoint(){
     Rotation.Hypotenus= sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y))*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
-    int a;
-    a++;
+    
+    
     
 
 }

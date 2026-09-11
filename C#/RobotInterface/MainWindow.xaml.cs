@@ -13,6 +13,7 @@ using ExtendedSerialPort_NS;
 using System.Windows.Threading;
 using System.Net.NetworkInformation;
 using KeyboardHook_NS;
+using System.Windows.Media.Animation;
 using WpfAsservissementDisplay_NS;
 using SciChart.Data.Model;
 using static SciChart.Drawing.Utility.PointUtil;
@@ -40,13 +41,14 @@ namespace RobotInterface
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
         Robot robot = new Robot();
+
        
 
 
 
         public MainWindow()
         {
-        
+          
             timerAffichage = new DispatcherTimer();
             timerAffichage.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timerAffichage.Tick += TimerAffichage_Tick;
@@ -57,6 +59,7 @@ namespace RobotInterface
             serialPort1.Open();
             var _globalKeyboardHook = new GlobalKeyboardHook();
             _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
+            this.Loaded += MainWindow_Loaded;
 
 
 
@@ -139,7 +142,7 @@ namespace RobotInterface
 
         private void Test_Click_Ouest(object sender, RoutedEventArgs e)
         {
-            Graph();
+            
             SendWaypoint(-1, 0);
 
             
@@ -147,22 +150,22 @@ namespace RobotInterface
         
         private void Test_Click_Est(object sender, RoutedEventArgs e)
         {
-            Graph();
+          
             SendWaypoint(1, 0);
         }
         private void Test_Click_Nord(object sender, RoutedEventArgs e)
         {
-            Graph();
+        
             SendWaypoint(0, 1);
         }
         private void Test_Click_Sud(object sender, RoutedEventArgs e)
         {
-            Graph();
+           
             SendWaypoint(0, -1);
         }
         private void Test_Click_NordVpn(object sender, RoutedEventArgs e)
         {
-            Graph();
+           
             SendWaypoint(1, -1);
         }
 
@@ -405,6 +408,10 @@ namespace RobotInterface
             serialPort1.Write(trame, 0, trame.Length);
 
         }
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Repere();
+        }
 
         public enum StateRobot
         {
@@ -426,7 +433,24 @@ namespace RobotInterface
             STATE_RECULE_EN_COURS = 15
         }
 
-        void Graph(      )
+        void Graph( double X, double Y)
+        {
+            System.Windows.Shapes.Line line2 = new System.Windows.Shapes.Line();
+            line2.Stroke = Brushes.Red;
+            line2.StrokeThickness = 2;
+
+            line2.X1 = myGrid.ActualWidth / 2;
+            line2.Y1 = myGrid.ActualHeight / 2;
+            line2.X2 = (myGrid.ActualWidth / 2) + (X *50);
+            line2.Y2 = (myGrid.ActualHeight / 2 )+ (Y *50);
+
+
+
+            myGrid.Children.Add(line2);
+
+
+        }
+        void Repere()
         {
               System.Windows.Shapes.Line line = new System.Windows.Shapes.Line();
               line.Stroke = Brushes.Black;
@@ -436,13 +460,7 @@ namespace RobotInterface
             line1.Stroke = Brushes.Black;
             line1.StrokeThickness = 2;
 
-            System.Windows.Shapes.Line line2 = new System.Windows.Shapes.Line();
-            line2.Stroke = Brushes.Red;
-            line2.StrokeThickness = 2;
-
-            System.Windows.Shapes.Line line3 = new System.Windows.Shapes.Line();
-            line3.Stroke = Brushes.Blue;
-            line3.StrokeThickness = 2;
+        
 
             line.X1 = 0;
             line.Y1 = myGrid.ActualHeight/2;
@@ -454,16 +472,7 @@ namespace RobotInterface
             line1.X2 = myGrid.ActualWidth/2;
             line1.Y2 = myGrid.ActualHeight;
 
-            line2.X1 = myGrid.ActualWidth / 2;
-            line2.Y1 = myGrid.ActualHeight / 2;
-            line2.X2 = 10;
-            line2.Y2 = 80;
-
-            line3.X1 = myGrid.ActualWidth / 2;
-            line3.Y1 = myGrid.ActualHeight / 2;
-            line3.X2 = 50;
-            line3.Y2 = 50;
-
+       
 
 
 
@@ -486,8 +495,7 @@ namespace RobotInterface
 
             myGrid.Children.Add(line);
             myGrid.Children.Add(line1);
-            myGrid.Children.Add(line2);
-            myGrid.Children.Add(line3);
+          
 
 
 
@@ -600,7 +608,7 @@ namespace RobotInterface
                     YG.Text = "YGhost : " + BitConverter.ToSingle(msgPayload, 4);
                     TextBoxréception.Text = "Distance" + BitConverter.ToSingle(msgPayload, 12);
                     ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8).ToString("N3");
-
+                    Graph(BitConverter.ToSingle(msgPayload, 16), BitConverter.ToSingle(msgPayload, 20));
                     
 
 

@@ -44,6 +44,8 @@ typedef struct _Ghost
  double HypoWay;
  double X_Ghost;
  double Y_Ghost;
+ double X_Droite;
+ double Y_Droite;
 
  
 

@@ -178,18 +178,30 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
 }
 void Send_Ghost(){
     
-   unsigned char payload[20];
+   unsigned char payload[24];
    getBytesFromFloat(payload,0,Rotation.X_Ghost);
    getBytesFromFloat(payload,4,Rotation.Y_Ghost);
-   getBytesFromFloat(payload, 8,  Rotation.ThetaGhost);
-
+   getBytesFromFloat(payload, 8,Rotation.ThetaGhost);
    getBytesFromFloat(payload,12,Rotation.Hypotenus);
-   UartEncodeAndSendMessage(0x81,20,payload);
+   getBytesFromFloat(payload,16,Rotation.X_Droite);
+   getBytesFromFloat(payload,20,Rotation.Y_Droite);
+
+  
+   UartEncodeAndSendMessage(0x81,24,payload);
     
 }
 
 void Distance_to_waypoint(){
+    int a;
     Rotation.Hypotenus= sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y))*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
+     Rotation.X_Droite= cos(Rotation.ThetaGhost);
+      Rotation.Y_Droite= sin(Rotation.ThetaGhost);
+      if(a%25==0)
+      {
+          int stop;
+      }
+          
+      a++;
     
     
     

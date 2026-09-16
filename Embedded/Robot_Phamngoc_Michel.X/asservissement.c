@@ -14,6 +14,7 @@ Ghost Rotation;
 
 
 
+
 void SetupPidAsservissement(volatile PidCorrector* PidCorr, double Kp, double Ki, double Kd, double proportionelleMax, double integralMax,double deriveeMax){
 PidCorr->Kp = Kp;
 PidCorr->erreurProportionelleMax = proportionelleMax; //On limite la correction due au Kp
@@ -182,7 +183,7 @@ void Send_Ghost(){
    getBytesFromFloat(payload,0,Rotation.X_Ghost);
    getBytesFromFloat(payload,4,Rotation.Y_Ghost);
    getBytesFromFloat(payload, 8,Rotation.ThetaGhost);
-   getBytesFromFloat(payload,12,Rotation.Hypotenus);
+   getBytesFromFloat(payload,12,Rotation.DisPro);
    getBytesFromFloat(payload,16,Rotation.X_Droite);
    getBytesFromFloat(payload,20,Rotation.Y_Droite);
 
@@ -192,18 +193,15 @@ void Send_Ghost(){
 }
 
 void Distance_to_waypoint(){
-    int a;
-    Rotation.Hypotenus= sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y))*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
-     Rotation.X_Droite= cos(Rotation.ThetaGhost);
-      Rotation.Y_Droite= sin(Rotation.ThetaGhost);
-      if(a%25==0)
-      {
-          int stop;
-      }
-          
-      a++;
+    
+    Rotation.DisPro= sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y))*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
+    Rotation.DisPar = sqrt(robotState.xPosFromOdometry*robotState.xPosFromOdometry+robotState.yPosFromOdometry*robotState.yPosFromOdometry);
+ 
+    Rotation.ecartangle = atan((Rotation.Hypotenus*sin(robotState.angleRadianFromOdometry-Rotation.ThetaWay))/(Rotation.DisPro-Rotation.DisPar));
     
     
     
 
+    
+    
 }

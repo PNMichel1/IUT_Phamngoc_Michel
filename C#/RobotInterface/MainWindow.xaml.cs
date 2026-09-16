@@ -58,8 +58,9 @@ namespace RobotInterface
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
             var _globalKeyboardHook = new GlobalKeyboardHook();
-            _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
+          //  _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
             this.Loaded += MainWindow_Loaded;
+
 
 
 
@@ -70,6 +71,10 @@ namespace RobotInterface
 
         }
 
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
 
 
         public void TimerAffichage_Tick(object sender, EventArgs e)
@@ -138,6 +143,21 @@ namespace RobotInterface
             UartEncodeAndSendMessage(0x0081, payload.Length, payload); //1.57   
             XW.Text = "XWaypoint :" + x;
             YW.Text = "YWaypoint :" + Y;
+            PointWay(x, Y);
+        }
+
+
+
+
+        private void PointWay(float x, float y )
+        {
+
+  
+            HypWay.X1 = myGrid.ActualWidth / 2;
+            HypWay.Y1 = myGrid. ActualHeight / 2;
+            HypWay.X2 = (myGrid.ActualWidth / 2) + 50*x;
+            HypWay.Y2 = (myGrid.ActualHeight / 2) - 50 * y;
+
         }
 
         private void Test_Click_Ouest(object sender, RoutedEventArgs e)
@@ -178,7 +198,9 @@ namespace RobotInterface
 
             if (!float.TryParse(Kd.Text, out float valeur))
                 return;
-            
+
+          
+
             if (!float.TryParse(Ki.Text, out float valeur2))
                 return;
 
@@ -203,8 +225,7 @@ namespace RobotInterface
                 return;
             if (!float.TryParse(KdX.Text, out float valeur8))
                 return;
-
-
+         
 
             List<byte> values = new List<byte>();
             values.AddRange(BitConverter.GetBytes(valeur));
@@ -279,6 +300,9 @@ namespace RobotInterface
                         { (byte)StateRobot.STATE_RECULE });
                         break;
 
+                   
+                      
+
                 }
             }
         }
@@ -288,46 +312,52 @@ namespace RobotInterface
             TextBoxréception.Text = "";
         }
 
+        private void SizeGrid ( object sender, System.EventArgs e)
+        {
+            Abscisse.X1 = 0;
+            Abscisse.Y1 = myGrid.ActualHeight / 2;
+            Abscisse.X2 = myGrid.ActualWidth;
+            Abscisse.Y2 = myGrid.ActualHeight / 2;
+
+            Ordonnee.X1 = myGrid.ActualWidth / 2;
+            Ordonnee.Y1 = 0;
+            Ordonnee.X2 = myGrid.ActualWidth / 2;
+            Ordonnee.Y2 = myGrid.ActualHeight;
+
+
+            System.Windows.Point Point1 = new System.Windows.Point(myGrid.ActualWidth / 2, (myGrid.ActualHeight / 2) - 50);
+            System.Windows.Point Point2 = new System.Windows.Point(myGrid.ActualWidth / 2, (myGrid.ActualHeight / 2) + 50);
+            System.Windows.Point Point3 = new System.Windows.Point((myGrid.ActualWidth / 2) + 50, myGrid.ActualHeight / 2);
+            PointCollection myPointCollection = new PointCollection();
+            myPointCollection.Add(Point1);
+            myPointCollection.Add(Point2);
+            myPointCollection.Add(Point3);
+            PositionGhost.Points = myPointCollection;
+            RotateTransform RotationGhost = new RotateTransform();
+
+            RotationGhost.CenterX = myGrid.ActualWidth / 2;
+            RotationGhost.CenterY = myGrid.ActualHeight / 2;
+            PositionGhost.RenderTransform = RotationGhost;
+
+
+        }
+
         private void Test_Click(object sender, RoutedEventArgs e)
         {
+            if (!float.TryParse(XInput.Text, out float XInput1))
+                return;
+            if (!float.TryParse(YInput.Text, out float YInput1))
+                return;
 
-
-            /*
-            byte[] bytesliste = new byte[20];
-             for (byte i = 0; i < 20; i++)
-             {
-                 bytesliste[i] = (byte)(2 * i);
-
-             }
-
-             serialPort1.Write(bytesliste, 0, bytesliste.Length);
-            */
-            //toogle = !toogle;
-            // if (toogle==true)
-            //     i = 0;
-
-            // if (toogle==false)
-            //     i = 1;
-
-
-
-            //byte[] array = Encoding.ASCII.GetBytes("Decode");
-            byte[] array = new byte[10];
-            array[0] = 0x01;
             
-            // byte[] array1 = new byte[] {i};
-            //UartEncodeAndSendMessage(0x51, array1.Length, array1);
-            UartEncodeAndSendMessage(0x80, array.Length, array);
-            //UartEncodeAndSendMessage(0x52, array1.Length, array1);
-            //UartEncodeAndSendMessage(0x20, array1.Length, array1);
+            PointWay(XInput1, YInput1);
 
+            List<byte> Input = new List<byte>();
+            Input.AddRange(BitConverter.GetBytes(XInput1));
+            Input.AddRange(BitConverter.GetBytes(YInput1));
+            byte[] ThetaTab = Input.ToArray();
 
-            serialPort1.Write("Bonjour");
-            //Test Ghost orientation
-            UartEncodeAndSendMessage(0x0081, array.Length, array);
-
-
-
+            UartEncodeAndSendMessage(0x81, ThetaTab.Length, ThetaTab);
 
         }
         private byte CalculateChecksum(int msgFunction, int msgPayloadLength, byte[] msgPayload)
@@ -376,8 +406,12 @@ namespace RobotInterface
         {
 
         }
-      
-    
+        private void ThetaInput_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
+
+
 
         void UartEncodeAndSendMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
@@ -408,10 +442,7 @@ namespace RobotInterface
             serialPort1.Write(trame, 0, trame.Length);
 
         }
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            Repere();
-        }
+      
 
         public enum StateRobot
         {
@@ -433,73 +464,35 @@ namespace RobotInterface
             STATE_RECULE_EN_COURS = 15
         }
 
-        void Graph( double X, double Y)
+        void Graph( double Theta)
         {
-            System.Windows.Shapes.Line line2 = new System.Windows.Shapes.Line();
-            line2.Stroke = Brushes.Red;
-            line2.StrokeThickness = 2;
+          double Degres = - Theta * 180 / 3.14;
 
-            line2.X1 = myGrid.ActualWidth / 2;
-            line2.Y1 = myGrid.ActualHeight / 2;
-            line2.X2 = (myGrid.ActualWidth / 2) + (X *50);
-            line2.Y2 = (myGrid.ActualHeight / 2 )+ (Y *50);
+        RotateTransform rotateTransform = new RotateTransform();
+            rotateTransform.Angle = Degres;
+
+        rotateTransform.CenterX = myGrid.ActualWidth / 2;
+        rotateTransform.CenterY = myGrid.ActualHeight / 2;
+        PositionGhost.RenderTransform = rotateTransform;
 
 
 
-            myGrid.Children.Add(line2);
 
 
         }
-        void Repere()
-        {
-              System.Windows.Shapes.Line line = new System.Windows.Shapes.Line();
-              line.Stroke = Brushes.Black;
-              line.StrokeThickness = 2;
+        
+           
 
-            System.Windows.Shapes.Line line1 = new System.Windows.Shapes.Line();
-            line1.Stroke = Brushes.Black;
-            line1.StrokeThickness = 2;
+
+
+      
+
+
+         
+
+
 
         
-
-            line.X1 = 0;
-            line.Y1 = myGrid.ActualHeight/2;
-            line.X2 = myGrid.ActualWidth;
-            line.Y2 = myGrid.ActualHeight / 2;
-
-            line1.X1 = myGrid.ActualWidth/2;
-            line1.Y1 =0;
-            line1.X2 = myGrid.ActualWidth/2;
-            line1.Y2 = myGrid.ActualHeight;
-
-       
-
-
-
-        /*    System.Windows.Shapes.Polygon myPolygon = new Polygon();
-            myPolygon.Stroke = System.Windows.Media.Brushes.Black;
-            myPolygon.Fill = System.Windows.Media.Brushes.LightSeaGreen;
-            myPolygon.StrokeThickness = 2;
-            myPolygon.HorizontalAlignment = HorizontalAlignment.Left;
-            myPolygon.VerticalAlignment = VerticalAlignment.Center;
-            System.Windows.Point Point1 = new System.Windows.Point(myGrid.ActualWidth / 2, myGrid.ActualHeight / 2);
-            System.Windows.Point Point2 = new System.Windows.Point(10, 80);
-            System.Windows.Point Point3 = new System.Windows.Point(50, 50);
-            PointCollection myPointCollection = new PointCollection();
-            myPointCollection.Add(Point1);
-            myPointCollection.Add(Point2);
-            myPointCollection.Add(Point3);
-            myPolygon.Points = myPointCollection;
-          */
-
-
-            myGrid.Children.Add(line);
-            myGrid.Children.Add(line1);
-          
-
-
-
-        }
 
         void ProcessDecodedMessage(int msgFunction, int msgPayloadLength, byte[] msgPayload)
         {
@@ -608,7 +601,7 @@ namespace RobotInterface
                     YG.Text = "YGhost : " + BitConverter.ToSingle(msgPayload, 4);
                     TextBoxréception.Text = "Distance" + BitConverter.ToSingle(msgPayload, 12);
                     ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8).ToString("N3");
-                    Graph(BitConverter.ToSingle(msgPayload, 16), BitConverter.ToSingle(msgPayload, 20));
+                    Graph(BitConverter.ToSingle(msgPayload, 8));
                     
 
 

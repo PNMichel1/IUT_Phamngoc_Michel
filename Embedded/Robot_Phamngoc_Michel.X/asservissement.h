@@ -40,13 +40,17 @@ typedef struct _Ghost
  double ThetaArret;
  double incrementTheta;
  double Distance;
- double Hypotenus;
+ double DisPro;
  double HypoWay;
  double X_Ghost;
  double Y_Ghost;
  double X_Droite;
  double Y_Droite;
+ double ProjeteY; 
 
+ double ecartangle;
+ double DisPar;
+ 
  
 
 } Ghost;

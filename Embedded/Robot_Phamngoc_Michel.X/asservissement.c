@@ -10,7 +10,7 @@
 #include "math.h"
 
 Ghost Rotation;
-
+double VitesseTheta = 2;
 
 
 
@@ -135,7 +135,7 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
             VitesseTheta = Min(VitesseTheta + AccelerationTheta/ FREQ_ECH_QEI,VitesseThetaMax);
         }
         else if (Rotation.ThetaRestant < 0) {
-            VitesseTheta = Min(VitesseTheta - AccelerationTheta/ FREQ_ECH_QEI,-VitesseThetaMax);// 
+            VitesseTheta = Max(VitesseTheta - AccelerationTheta/ FREQ_ECH_QEI,-VitesseThetaMax);// 
         }        
     }
     
@@ -179,25 +179,21 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
 }
 void Send_Ghost(){
     
-   unsigned char payload[24];
+   unsigned char payload[17];
    getBytesFromFloat(payload,0,Rotation.X_Ghost);
    getBytesFromFloat(payload,4,Rotation.Y_Ghost);
    getBytesFromFloat(payload, 8,Rotation.ThetaGhost);
-   getBytesFromFloat(payload,12,Rotation.DisPro);
-   getBytesFromFloat(payload,16,Rotation.X_Droite);
-   getBytesFromFloat(payload,20,Rotation.Y_Droite);
-
-  
-   UartEncodeAndSendMessage(0x81,24,payload);
+   getBytesFromFloat(payload,12,Rotation.ecartangle);
+   UartEncodeAndSendMessage(0x81,17,payload);
     
 }
 
 void Distance_to_waypoint(){
-    
-    Rotation.DisPro= sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y))*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
+    Rotation.HypoWay=sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y));
+    Rotation.DisPro= Rotation.HypoWay*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
     Rotation.DisPar = sqrt(robotState.xPosFromOdometry*robotState.xPosFromOdometry+robotState.yPosFromOdometry*robotState.yPosFromOdometry);
  
-    Rotation.ecartangle = atan((Rotation.Hypotenus*sin(robotState.angleRadianFromOdometry-Rotation.ThetaWay))/(Rotation.DisPro-Rotation.DisPar));
+    Rotation.ecartangle = atan((Rotation.HypoWay*sin(Rotation.ThetaWay-robotState.angleRadianFromOdometry))/(Rotation.DisPro-Rotation.DisPar));
     
     
     

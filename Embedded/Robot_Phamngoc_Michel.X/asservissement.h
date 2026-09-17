@@ -47,6 +47,7 @@ typedef struct _Ghost
  double X_Droite;
  double Y_Droite;
  double ProjeteY; 
+ double Hypotenus;
 
  double ecartangle;
  double DisPar;
@@ -57,7 +58,7 @@ typedef struct _Ghost
 extern Ghost Rotation;
 void RotationGhost();
  void Send_Ghost();
-static double VitesseTheta = 2;
+extern double VitesseTheta;
 
 extern PidCorrector PidX;
 extern PidCorrector PidTheta;

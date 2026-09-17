@@ -39,6 +39,7 @@ void InitQEI2() {
     QEI2CONbits.QEIEN = 1; // Enable QEI Module
 }
 
+
 void QEIUpdateData() {
     //calcul modèle inverse (R pour rayon de courbure )
     //On sauvegarde les anciennes valeurs

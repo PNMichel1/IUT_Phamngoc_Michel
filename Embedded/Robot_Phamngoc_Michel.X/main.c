@@ -110,18 +110,19 @@ int main(void) {
             volts = ((float) result [4])* 3.3 / 4096;
             robotState.distanceTelemetreDroit1 = 34 / volts - 5;
 
-
+            
             
                         if (counter++ % 50 == 0) {
                             // UartEncodeAndSendMessage(0x80, 7, payload);
-                            unsigned char payload2[3];
+                            unsigned char payload2[12];
 
 
-                            payload2[0] = robotState.distanceTelemetreGauche;
-                            payload2[1] = robotState.distanceTelemetreCentre;
-                            payload2[2] = robotState.distanceTelemetreDroit;
+                            getBytesFromFloat(payload2,0,robotState.distanceTelemetreGauche) ;
+                            getBytesFromFloat(payload2,4,robotState.distanceTelemetreCentre) ;
+                            getBytesFromFloat(payload2,8,robotState.distanceTelemetreDroit) ;
+                          
 
-                            UartEncodeAndSendMessage(0x30, 3, payload2);
+                            UartEncodeAndSendMessage(0x30, 12, payload2);
                         }  
 
             if (robotState.distanceTelemetreGauche1 < 30) {
@@ -183,6 +184,7 @@ void CompteurEtape(void) {
 
     UartEncodeAndSendMessage(0x50, 5, payload3);
 }
+
 
 void OperatingSystemLoop(void) {
     /*

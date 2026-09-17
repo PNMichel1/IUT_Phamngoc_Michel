@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using ExtendedSerialPort_NS;
 using System.Windows.Threading;
 using System.Net.NetworkInformation;
-using KeyboardHook_NS;
+//using KeyboardHook_NS;
 using System.Windows.Media.Animation;
 using WpfAsservissementDisplay_NS;
 using SciChart.Data.Model;
@@ -54,11 +54,11 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
-            var _globalKeyboardHook = new GlobalKeyboardHook();
-          //  _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
+           //var _globalKeyboardHook = new GlobalKeyboardHook();
+           // _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
             this.Loaded += MainWindow_Loaded;
 
 
@@ -273,7 +273,7 @@ namespace RobotInterface
 
         }
 
-        private void _globalKeyboardHook_KeyPressed(object? sender, KeyArgs e)
+      /*  private void _globalKeyboardHook_KeyPressed(object? sender, KeyArgs e)
         {
             if (autoControlActivated == false)
             {
@@ -305,7 +305,7 @@ namespace RobotInterface
 
                 }
             }
-        }
+        }*/
 
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
@@ -348,13 +348,15 @@ namespace RobotInterface
                 return;
             if (!float.TryParse(YInput.Text, out float YInput1))
                 return;
+           
 
-            
+
             PointWay(XInput1, YInput1);
 
             List<byte> Input = new List<byte>();
             Input.AddRange(BitConverter.GetBytes(XInput1));
             Input.AddRange(BitConverter.GetBytes(YInput1));
+          
             byte[] ThetaTab = Input.ToArray();
 
             UartEncodeAndSendMessage(0x81, ThetaTab.Length, ThetaTab);
@@ -392,23 +394,6 @@ namespace RobotInterface
 
         }
 
-        private void TextKi_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void Kd_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextKd_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-        private void ThetaInput_KeyUp(object sender, KeyEventArgs e)
-        {
-        }
 
 
 
@@ -523,9 +508,9 @@ namespace RobotInterface
                     break;
 
                 case StateMessage.IRDistance:
-                    IRG.Text = "IR Gauche : " + msgPayload[0] + " cm";
-                    IRC.Text = "IR Centre : " + msgPayload[1] + " cm";
-                    IRD.Text = "IR Droite : " + msgPayload[2] + " cm";
+                    IRG.Text = "IR Gauche : " + BitConverter.ToSingle(msgPayload, 0) + " cm";
+                    IRC.Text = "IR Centre : " + BitConverter.ToSingle(msgPayload, 4) + " cm";
+                    IRD.Text = "IR Droite : " + BitConverter.ToSingle(msgPayload, 8) + " cm";
                     break;
                 case StateMessage.Moteur:
                     MG.Text = "Vitesse Gauche : " + msgPayload[0] + "%";
@@ -599,19 +584,16 @@ namespace RobotInterface
                     float ghost = BitConverter.ToSingle(msgPayload, 0);
                     XG.Text = "XGhost : " + BitConverter.ToSingle(msgPayload, 0);
                     YG.Text = "YGhost : " + BitConverter.ToSingle(msgPayload, 4);
-                    TextBoxréception.Text = "Distance" + BitConverter.ToSingle(msgPayload, 12);
+          
                     ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8).ToString("N3");
                     Graph(BitConverter.ToSingle(msgPayload, 8));
-                    
+                    TextBoxréception.Text = BitConverter.ToSingle(msgPayload, 12).ToString("N3");
+
 
 
 
 
                     break; 
-
-
-              
-
 
 
 
@@ -709,8 +691,6 @@ namespace RobotInterface
                     }
 
 
-
-
                     break;
                 case StateReception.CheckSum:
                     byte calculatedChecksum = CalculateChecksum(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
@@ -731,13 +711,7 @@ namespace RobotInterface
 
 
 
-
-
-
-
     }
-
-
 
 
 

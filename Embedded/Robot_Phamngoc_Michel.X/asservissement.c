@@ -216,7 +216,7 @@ void Longueur() {
    longitunal.ThetaGhost = longitunal.ThetaGhost + longitunal.incrementTheta;
   
 //   UartEncodeAndSendMessage(0x81,72,payload);
-    Send_GhostLong();
+    //Send_GhostLong();
   
     
   
@@ -239,8 +239,7 @@ void Send_Ghost(){
    getBytesFromFloat(payload, 8,Rotation.ThetaGhost);
    getBytesFromFloat(payload,12,Rotation.HypoWay);
    getBytesFromFloat(payload,16, longitunal.ThetaGhost);
-   getBytesFromFloat(payload,20,longitunal.X_Ghost);
-    getBytesFromFloat(payload,24,longitunal.Y_Ghost);
+  
    
    UartEncodeAndSendMessage(0x81,20,payload);
     

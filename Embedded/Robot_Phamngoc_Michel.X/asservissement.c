@@ -10,7 +10,9 @@
 #include "math.h"
 
 Ghost Rotation;
-double VitesseTheta = 2;
+Ghost longitunal;
+double VitesseTheta = 4;
+double VitesseLineaire = 2;
 
 
 
@@ -162,42 +164,100 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
        Rotation.ThetaGhost = Rotation.ThetaWay;
        Rotation.X_Ghost=Rotation.X;
        Rotation.Y_Ghost=Rotation.Y;
-       
-       
-       
-       
- 
+      // Longueur();
+
 //       getBytesFromFloat(payload,48,Y);
-     
-     
-       
-       
-       
+ 
        
    }
 
 }
+
+
+
+void Longueur() {
+
+    
+            
+    longitunal.longRestant =  Rotation.DisPro-Rotation.ThetaGhost;
+    
+            
+    longitunal.incrementTheta =VitesseLineaire/FREQ_ECH_QEI ;
+    
+        if(VitesseLineaire<0){
+        longitunal.ThetaArret=-longitunal.ThetaArret;
+    }
+    
+    if(((longitunal.ThetaArret >= 0 && longitunal.longRestant>=0) || (longitunal.ThetaArret <= 0 && longitunal.longRestant <=0)) && (Abs(longitunal.longRestant) >= Abs(longitunal.ThetaArret)))
+    {
+        if (longitunal.longRestant > 0) {
+            VitesseLineaire = Min(VitesseLineaire + AccelerationLineaire/ FREQ_ECH_QEI,VitesseThetaMax);
+        }
+        else if (longitunal.longRestant < 0) {
+            VitesseLineaire = Max(VitesseLineaire - AccelerationLineaire/ FREQ_ECH_QEI,-VitesseThetaMax);// 
+        }        
+    }
+    
+    else {
+        
+        if (VitesseLineaire >0) {
+            
+           VitesseLineaire = Min(VitesseLineaire - AccelerationLineaire/ FREQ_ECH_QEI,0);
+        }
+        
+        else if (VitesseLineaire <0) {
+           VitesseLineaire = Max(VitesseLineaire + AccelerationLineaire/ FREQ_ECH_QEI,0);
+        }
+        if (Abs(longitunal.longRestant) < Abs(incrementLine)){
+            longitunal.incrementTheta = longitunal.longRestant;
+        }
+    }
+   
+   longitunal.ThetaGhost = longitunal.ThetaGhost + longitunal.incrementTheta;
+  
+//   UartEncodeAndSendMessage(0x81,72,payload);
+    longitunal.X_Ghost = longitunal.ThetaGhost * cos(Rotation.ThetaGhost);
+    longitunal.Y_Ghost = longitunal.ThetaGhost * sin(Rotation.ThetaGhost);
+
+    
+  
+    
+    
+   if(VitesseLineaire==0 && Abs(longitunal.longRestant) <0.01){
+       longitunal.ThetaGhost = Rotation.DisPro;
+       
+       
+       
+  
+  }
+
+}
 void Send_Ghost(){
     
-   unsigned char payload[17];
+   unsigned char payload[28];
    getBytesFromFloat(payload,0,Rotation.X_Ghost);
    getBytesFromFloat(payload,4,Rotation.Y_Ghost);
    getBytesFromFloat(payload, 8,Rotation.ThetaGhost);
-   getBytesFromFloat(payload,12,Rotation.ecartangle);
-   UartEncodeAndSendMessage(0x81,17,payload);
+   getBytesFromFloat(payload,12,Rotation.HypoWay);
+   getBytesFromFloat(payload,16, longitunal.ThetaGhost);
+   getBytesFromFloat(payload,20,longitunal.X_Ghost);
+    getBytesFromFloat(payload,24,longitunal.Y_Ghost);
+   
+   UartEncodeAndSendMessage(0x81,28,payload);
     
 }
 
+
+
 void Distance_to_waypoint(){
     Rotation.HypoWay=sqrt((Rotation.X*Rotation.X)+(Rotation.Y*Rotation.Y));
+    
     Rotation.DisPro= Rotation.HypoWay*cos(robotState.angleRadianFromOdometry-Rotation.ThetaWay);
     Rotation.DisPar = sqrt(robotState.xPosFromOdometry*robotState.xPosFromOdometry+robotState.yPosFromOdometry*robotState.yPosFromOdometry);
- 
     Rotation.ecartangle = atan((Rotation.HypoWay*sin(Rotation.ThetaWay-robotState.angleRadianFromOdometry))/(Rotation.DisPro-Rotation.DisPar));
-    
+
     
     
 
-    
     
 }

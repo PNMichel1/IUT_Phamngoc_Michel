@@ -55,7 +55,7 @@ void PWMSetSpeed(float vitesseEnPourcents, float moteur) {
 */
 
 void PWMSetSpeedConsigne(float vitesseEnPourcents, int moteur){
-    static unsigned char payload3[2]={0,0};
+    static unsigned char payload3[2];
     if(moteur==MOTEUR_DROIT){
         robotState.vitesseDroiteConsigne=-vitesseEnPourcents;
         payload3[1]=vitesseEnPourcents;

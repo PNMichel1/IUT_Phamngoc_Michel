@@ -9,9 +9,12 @@
 #define	ASSERVISSEMENT_H
 #define M_TO_PERCENT 32
 
-#define VitesseThetaMax 1
+#define VitesseThetaMax 10
 #define AccelerationTheta 0.1
+#define AccelerationLineaire 0.2
 #define incrementAng 0.2
+#define incrementLine 0.2
+
 
 typedef struct _PidCorrector
 {
@@ -51,11 +54,14 @@ typedef struct _Ghost
 
  double ecartangle;
  double DisPar;
+ double longRestant;
  
  
 
 } Ghost;
 extern Ghost Rotation;
+extern Ghost longitunal;
+void Longueur();
 void RotationGhost();
  void Send_Ghost();
 extern double VitesseTheta;

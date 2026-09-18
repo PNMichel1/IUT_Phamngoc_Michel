@@ -54,7 +54,7 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
            //var _globalKeyboardHook = new GlobalKeyboardHook();
@@ -140,6 +140,7 @@ namespace RobotInterface
             Array.Copy(array, 0, payload, 0, 4);
             array = BitConverter.GetBytes(Y);
             Array.Copy(array, 0, payload, 4, 4);
+            
             UartEncodeAndSendMessage(0x0081, payload.Length, payload); //1.57   
             XW.Text = "XWaypoint :" + x;
             YW.Text = "YWaypoint :" + Y;
@@ -587,7 +588,9 @@ namespace RobotInterface
           
                     ThetaG.Text= "ThetaGhost :"+ BitConverter.ToSingle(msgPayload, 8).ToString("N3");
                     Graph(BitConverter.ToSingle(msgPayload, 8));
-                    TextBoxréception.Text = BitConverter.ToSingle(msgPayload, 12).ToString("N3");
+                    TextBoxréception.Text = BitConverter.ToSingle(msgPayload, 12).ToString("N3"); 
+                    //TextBoxréception.Text = BitConverter.ToSingle(msgPayload, 16).ToString("N3");
+
 
 
 
@@ -600,6 +603,11 @@ namespace RobotInterface
             }
 
 
+
+        }
+
+        private void PositionGhost()
+        {
 
         }
 
@@ -676,8 +684,17 @@ namespace RobotInterface
                     break;
                 case StateReception.PayloadLengthLSB:
                     msgDecodedPayloadLength += c;
-                    msgDecodedPayload = new byte[msgDecodedPayloadLength];
-                    rcvState = StateReception.Payload;
+                    if (msgDecodedPayloadLength == 0)
+                        rcvState = StateReception.CheckSum;
+                    else if (msgDecodedPayloadLength < 1024)
+                    {
+                        msgDecodedPayload = new byte[msgDecodedPayloadLength];
+                        rcvState = StateReception.Payload;
+                    }
+                    else
+                    {
+                        rcvState = StateReception.Waiting;
+                    }
                     break;
                 case StateReception.Payload:
 

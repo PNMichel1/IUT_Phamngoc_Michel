@@ -58,9 +58,9 @@
         <targetDevice>dsPIC33EP512MU814</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD4Tool</platformTool>
+        <platformTool>ICD5Tool</platformTool>
         <languageToolchain>XCDSC</languageToolchain>
-        <languageToolchainVersion>3.21</languageToolchainVersion>
+        <languageToolchainVersion>3.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -357,7 +357,7 @@
         <property key="programoptions.pgdconfig" value="pull down"/>
         <property key="programoptions.pgdresistor.value" value="4.7"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.pgmspeed" value="Min"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
                   value="${memories.dataflash.default}"/>

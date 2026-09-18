@@ -36,7 +36,9 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     ADC1StartConversionSequence();
    QEIUpdateData();  
     //UpdateAsservissement();
-    RotationGhost();    
+    EtatGhost();
+    
+    
     Send_Ghost();
      Distance_to_waypoint();
   SendPositionData();

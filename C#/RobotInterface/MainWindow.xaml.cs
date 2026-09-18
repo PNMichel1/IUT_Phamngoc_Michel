@@ -55,7 +55,7 @@ namespace RobotInterface
             timerAffichage.Tick += TimerAffichage_Tick;
             timerAffichage.Start();
             InitializeComponent();
-            serialPort1 = new ExtendedSerialPort("COM6", 115200, Parity.None, 8, StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.DataReceived += SerialPort1_DataReceived;
             serialPort1.Open();
            //var _globalKeyboardHook = new GlobalKeyboardHook();
@@ -75,7 +75,20 @@ namespace RobotInterface
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            System.Windows.Point Point1 = new System.Windows.Point(myGrid.ActualWidth / 2, (myGrid.ActualHeight / 2) - 50);
+            System.Windows.Point Point2 = new System.Windows.Point(myGrid.ActualWidth / 2, (myGrid.ActualHeight / 2) + 50);
+            System.Windows.Point Point3 = new System.Windows.Point((myGrid.ActualWidth / 2) + 50, myGrid.ActualHeight / 2);
+            PointCollection myPointCollection = new PointCollection();
+            myPointCollection.Add(Point1);
+            myPointCollection.Add(Point2);
+            myPointCollection.Add(Point3);
+            PositionGhost.Points = myPointCollection;
+
+
+            RotationGhost.CenterX = myGrid.ActualWidth / 2;
+            RotationGhost.CenterY = myGrid.ActualHeight / 2;
+            PositionGhost.RenderTransform = RotationGhost;
+
         }
 
 
@@ -328,20 +341,7 @@ namespace RobotInterface
             Ordonnee.Y2 = myGrid.ActualHeight;
 
 
-            System.Windows.Point Point1 = new System.Windows.Point(myGrid.ActualWidth / 2, (myGrid.ActualHeight / 2) - 50);
-            System.Windows.Point Point2 = new System.Windows.Point(myGrid.ActualWidth / 2, (myGrid.ActualHeight / 2) + 50);
-            System.Windows.Point Point3 = new System.Windows.Point((myGrid.ActualWidth / 2) + 50, myGrid.ActualHeight / 2);
-            PointCollection myPointCollection = new PointCollection();
-            myPointCollection.Add(Point1);
-            myPointCollection.Add(Point2);
-            myPointCollection.Add(Point3);
-            PositionGhost.Points = myPointCollection;
-    
-
-            RotationGhost.CenterX = myGrid.ActualWidth / 2;
-            RotationGhost.CenterY = myGrid.ActualHeight / 2;
-            PositionGhost.RenderTransform = RotationGhost;
-            
+          
 
         }
 
@@ -611,8 +611,9 @@ namespace RobotInterface
         private void PositionGhost1(float x, float y)
         {
             TranslateTransform Long = new TranslateTransform();
-            Long.X = x;
-            Long.Y = y;
+           
+            Long.X = 50*x;
+            Long.Y = -50*y;
             RotationGhost.CenterX = myGrid.ActualWidth / 2 + x;
             RotationGhost.CenterY = myGrid.ActualHeight / 2 + y;
             PositionGhost.RenderTransform = Long;

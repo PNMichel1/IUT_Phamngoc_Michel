@@ -164,7 +164,7 @@ Rotation.ThetaRestant= ModuloByAngle(Rotation.ThetaGhost,Rotation.ThetaWay)-Rota
        Rotation.ThetaGhost = Rotation.ThetaWay;
        Rotation.X_Ghost=Rotation.X;
        Rotation.Y_Ghost=Rotation.Y;
-      // Longueur();
+        etapeghost=TRANSLATION;
 
 //       getBytesFromFloat(payload,48,Y);
  
@@ -179,8 +179,9 @@ void Longueur() {
 
     
             
-    longitunal.longRestant =  Rotation.DisPro-Rotation.ThetaGhost;
+    longitunal.longRestant =  Rotation.HypoWay-longitunal.ThetaGhost;
     
+    longitunal.ThetaArret = VitesseLineaire*VitesseLineaire /(2*AccelerationTheta);
             
     longitunal.incrementTheta =VitesseLineaire/FREQ_ECH_QEI ;
     
@@ -214,9 +215,11 @@ void Longueur() {
     }
    
    longitunal.ThetaGhost = longitunal.ThetaGhost + longitunal.incrementTheta;
-  
+    longitunal.X_Ghost = longitunal.ThetaGhost * cos(Rotation.ThetaGhost);
+    longitunal.Y_Ghost = longitunal.ThetaGhost * sin(Rotation.ThetaGhost);
+    
 //   UartEncodeAndSendMessage(0x81,72,payload);
-    //Send_GhostLong();
+    Send_GhostLong();
   
     
   
@@ -224,6 +227,8 @@ void Longueur() {
     
    if(VitesseLineaire==0 && Abs(longitunal.longRestant) <0.01){
        longitunal.ThetaGhost = Rotation.DisPro;
+       etapeghost=0;
+    
        
        
        
@@ -245,14 +250,32 @@ void Send_Ghost(){
     
 }
 void Send_GhostLong(){
-    longitunal.X_Ghost = longitunal.ThetaGhost * cos(Rotation.ThetaGhost);
-    longitunal.Y_Ghost = longitunal.ThetaGhost * sin(Rotation.ThetaGhost);
-    
+  
      unsigned char payload[8];
      getBytesFromFloat(payload,0,longitunal.X_Ghost);
      getBytesFromFloat(payload,4,longitunal.Y_Ghost);
      
      UartEncodeAndSendMessage(0x82,8,payload);
+}
+
+void EtatGhost(){
+    
+    
+    switch(etapeghost){
+        
+        case ROTATION:
+            
+            RotationGhost();
+            
+            break; 
+        
+        case TRANSLATION:
+            Longueur();
+            break; 
+        
+        
+    }
+    
 }
 
 

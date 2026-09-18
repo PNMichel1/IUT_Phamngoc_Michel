@@ -18,7 +18,7 @@ int receivedChecksum, calculatedChecksum = 0x00;
 int rcvState = 0;
 int autoControlActivated=0;
 PidCorrector PidX;
-
+int etapeghost;
 float a;
 float b;
 float c;
@@ -185,6 +185,7 @@ void UartProcessDecodedMessage(int function,
             break;
            
         case ROTATION_GHOST: 
+            etapeghost=ROTATION;
             Rotation.X =getFloatFromBytes(payload,0);
             Rotation.Y =getFloatFromBytes(payload,4);
             

@@ -14,7 +14,8 @@
 #define AccelerationLineaire 0.2
 #define incrementAng 0.2
 #define incrementLine 0.2
-
+#define ROTATION 1
+#define TRANSLATION 2
 
 typedef struct _PidCorrector
 {
@@ -61,8 +62,9 @@ typedef struct _Ghost
 } Ghost;
 extern Ghost Rotation;
 extern Ghost longitunal;
-void Longueur();
-void RotationGhost();
+extern void Longueur();
+extern void RotationGhost();
+extern void EtatGhost();
 void Send_Ghost();
 void Send_GhostLong();
 extern double VitesseTheta;
@@ -71,6 +73,7 @@ extern PidCorrector PidX;
 extern PidCorrector PidTheta;
 extern float saveSpeed;
 extern float saveSpeed_1;
+extern int etapeghost;
 
 void Distance_to_waypoint();
 void TransmitAsserv();

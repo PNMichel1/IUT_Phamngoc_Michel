@@ -63,7 +63,8 @@ extern Ghost Rotation;
 extern Ghost longitunal;
 void Longueur();
 void RotationGhost();
- void Send_Ghost();
+void Send_Ghost();
+void Send_GhostLong();
 extern double VitesseTheta;
 
 extern PidCorrector PidX;

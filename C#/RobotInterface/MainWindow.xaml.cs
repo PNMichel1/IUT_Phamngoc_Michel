@@ -41,8 +41,9 @@ namespace RobotInterface
         ExtendedSerialPort serialPort1;
         DispatcherTimer timerAffichage;
         Robot robot = new Robot();
+        RotateTransform RotationGhost = new RotateTransform();
 
-       
+
 
 
 
@@ -60,6 +61,7 @@ namespace RobotInterface
            //var _globalKeyboardHook = new GlobalKeyboardHook();
            // _globalKeyboardHook.KeyPressed += _globalKeyboardHook_KeyPressed;
             this.Loaded += MainWindow_Loaded;
+    
 
 
 
@@ -334,12 +336,12 @@ namespace RobotInterface
             myPointCollection.Add(Point2);
             myPointCollection.Add(Point3);
             PositionGhost.Points = myPointCollection;
-            RotateTransform RotationGhost = new RotateTransform();
+    
 
             RotationGhost.CenterX = myGrid.ActualWidth / 2;
             RotationGhost.CenterY = myGrid.ActualHeight / 2;
             PositionGhost.RenderTransform = RotationGhost;
-
+            
 
         }
 
@@ -460,9 +462,6 @@ namespace RobotInterface
         rotateTransform.CenterX = myGrid.ActualWidth / 2;
         rotateTransform.CenterY = myGrid.ActualHeight / 2;
         PositionGhost.RenderTransform = rotateTransform;
-
-
-
 
 
         }
@@ -590,13 +589,16 @@ namespace RobotInterface
                     Graph(BitConverter.ToSingle(msgPayload, 8));
                     TextBoxréception.Text = BitConverter.ToSingle(msgPayload, 12).ToString("N3"); 
                     //TextBoxréception.Text = BitConverter.ToSingle(msgPayload, 16).ToString("N3");
+                    
+
+         
+                    break;
+
+                case StateMessage.GhostLong:
+                    PositionGhost1(BitConverter.ToSingle(msgPayload, 0), BitConverter.ToSingle(msgPayload, 4));
+                    break;
 
 
-
-
-
-
-                    break; 
 
 
 
@@ -606,8 +608,14 @@ namespace RobotInterface
 
         }
 
-        private void PositionGhost()
+        private void PositionGhost1(float x, float y)
         {
+            TranslateTransform Long = new TranslateTransform();
+            Long.X = x;
+            Long.Y = y;
+            RotationGhost.CenterX = myGrid.ActualWidth / 2 + x;
+            RotationGhost.CenterY = myGrid.ActualHeight / 2 + y;
+            PositionGhost.RenderTransform = Long;
 
         }
 
@@ -626,6 +634,7 @@ namespace RobotInterface
             PID_Verifiy= 0x0068,
             Corr_Pid_Variables = 0x0069,
             Ghost = 0x0081,
+            GhostLong = 0x0082,
 
 
 
